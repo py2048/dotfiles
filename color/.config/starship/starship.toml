@@ -1,0 +1,5 @@
+
+[conda]
+ignore_base = false
+symbol = "🅒 "
+format = "[$symbol$environment](dimmed green) "
