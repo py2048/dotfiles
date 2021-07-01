@@ -1,5 +1,2 @@
 **/.DS_Store
 **/._*
-nvim/.config/nvim/autoload/
-nvim/.config/nvim/.netrwhist
-zsh/.config/zsh/.zcompdump
