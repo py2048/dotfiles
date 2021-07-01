@@ -170,6 +170,27 @@ gls.right[3] = {
 }
 
 gls.right[4] = {
+    FIcon = {
+        provider = "FileIcon",
+        condition = condition.buffer_not_empty,
+        highlight = {colors.statusline_bg, colors.cyan},
+        separator = " ",
+        separator_highlight = {colors.cyan, colors.lightbg},
+        -- highlight = {colors.white, colors.lightbg}
+    }
+}
+
+gls.right[5] = {
+    BufferType = {
+        provider = 'FileTypeName',
+        condition = condition.hide_in_width,
+        separator = " ",
+        -- separator_highlight = {colors.lightbg, colors.lightbg},
+        highlight = {colors.cyan, colors.lightbg},
+    }
+}
+
+gls.right[6] = {
     viMode_icon = {
         provider = function()
             return " "
@@ -180,7 +201,7 @@ gls.right[4] = {
     }
 }
 
-gls.right[5] = {
+gls.right[7] = {
     ViMode = {
         provider = function()
             local alias = {
@@ -204,7 +225,7 @@ gls.right[5] = {
     }
 }
 
-gls.right[6] = {
+gls.right[8] = {
     some_icon = {
         provider = function()
             return " "
@@ -215,7 +236,7 @@ gls.right[6] = {
     }
 }
 
-gls.right[7] = {
+gls.right[9] = {
     line_percentage = {
         provider = function()
             local current_line = vim.fn.line(".")
@@ -232,4 +253,3 @@ gls.right[7] = {
         highlight = {colors.green, colors.lightbg}
     }
 }
-

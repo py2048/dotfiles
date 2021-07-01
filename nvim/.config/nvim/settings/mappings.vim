@@ -1,6 +1,6 @@
 " Better nav for omnicomplete
-inoremap <expr> <c-j> ("\<C-n>")
-inoremap <expr> <c-k> ("\<C-p>")
+" inoremap <expr> <c-j> ("\<C-n>")
+" inoremap <expr> <c-k> ("\<C-p>")
 
 " Use alt + hjkl to resize windows
 nnoremap <M-j>    :resize -2<CR>
@@ -9,8 +9,8 @@ nnoremap <M-h>    :vertical resize -2<CR>
 nnoremap <M-l>    :vertical resize +2<CR>
 
 " I hate escape more than anything else
-inoremap kj <Esc>
 " inoremap kj <Esc>
+" inoremap jk <Esc>
 
 " Easy CAPS
 inoremap <c-u> <ESC>viwUi
@@ -28,7 +28,7 @@ nnoremap <S-TAB> :bnext<CR>
 " Use control-c instead of escape
 " nnoremap <C-c> <Esc>
 " <TAB>: completion.
-inoremap <expr><TAB> pumvisible() ? '\<C-n>' : '\<TAB>'
+" inoremap <expr><TAB> pumvisible() ? '\<C-n>' : '\<TAB>'
 
 " Better tabbing
 vnoremap < <gv
@@ -56,9 +56,6 @@ nmap <leader>sh :split<CR>
 " Terminal
 " tnoremap <Esc> <C-\><C-n>
 map <leader>. :FloatermNew<CR>
-nmap -*# :FloatermToggle<CR>
-tnoremap -*# <C-\><C-n> :FloatermToggle<CR>
-
 nmap <leader>r :w<CR>:FloatermNew --autoclose=1 run.sh % && read<CR>
 
 " map <leader>n :FloatermNew nnn<CR>
@@ -70,8 +67,8 @@ nmap <space>p "_ddkp
 vmap <space>p "_dkp
 
 " Selece lines
-nmap <space>v 0v$
-vmap <space>v <Esc>0v$
+nmap <space>v 0v$h
+vmap <space>v <Esc>0v$h
 
 " Page Motion
 nmap K <C-u>

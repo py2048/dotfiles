@@ -12,7 +12,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Plug 'sheerun/vim-polyglot'
     
     " Auto pairs for '(' '[' '{' 
-    Plug 'jiangmiao/auto-pairs'
+    " Plug 'jiangmiao/auto-pairs'
+    Plug 'windwp/nvim-autopairs'
     
     " Status line
 
@@ -26,7 +27,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " FZF
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
-    Plug 'airblade/vim-rooter'
+    " Plug 'airblade/vim-rooter'
     " Vim-which-key
     Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
     " Color
@@ -53,7 +54,13 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'karb94/neoscroll.nvim'
 
     " Any jump
-    Plug 'pechorin/any-jump.vim'
+    " Plug 'pechorin/any-jump.vim'
+    "
+    "
+    " Complesion
+    " Plug 'hrsh7th/nvim-compe', { 'on': 'InsertEnter'}
+    "Plug 'hrsh7th/nvim-compe'
+
     call plug#end()
 
     
