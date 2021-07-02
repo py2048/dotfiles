@@ -50,7 +50,7 @@ alias k="v ~/.config/kitty/kitty.conf"
 alias g='git'
 alias gc='git clone'
 alias gl='git pull'
-alias gp='git pull'
+alias gp='git push'
 alias ga='git add'
 alias gm='git commit -m'
 alias gl='git log'
@@ -74,11 +74,6 @@ bwhich(){
     bat $(which $1)
 }
 compdef _path_commands bwhich 
-
-# Update zsh plugin
-plug_update(){
-    find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull
-}
 
 function z_plug() {
     PLUGIN_NAME=$(echo $1 | cut -d "/" -f 2)
