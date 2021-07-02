@@ -1,5 +1,5 @@
 " Lua plugins config
-lua require"surround".setup{}
+" lua require"surround".setup{}
 lua require('glxline')
 lua require('comment')
 lua require('treesitter')

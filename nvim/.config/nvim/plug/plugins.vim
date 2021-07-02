@@ -11,7 +11,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Better Syntax Support
     " Plug 'sheerun/vim-polyglot'
     
-    " Auto pairs for '(' '[' '{' 
+    " Auto pairs 
     " Plug 'jiangmiao/auto-pairs'
     Plug 'windwp/nvim-autopairs'
     
@@ -39,10 +39,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Tag bar
     Plug 'preservim/tagbar'
     " Surround
-    Plug 'blackcauldron7/surround.nvim'
-    " Snippets
-    "Plug 'SirVer/ultisnips'
-    " Plug 'honza/vim-snippets'
+    " Plug 'blackcauldron7/surround.nvim'
+    Plug 'machakann/vim-sandwich'
     " nnn
     Plug 'mcchrish/nnn.vim'
     
