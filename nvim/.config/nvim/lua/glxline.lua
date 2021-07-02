@@ -185,7 +185,7 @@ gls.right[5] = {
         provider = 'FileTypeName',
         condition = condition.hide_in_width,
         separator = " ",
-        -- separator_highlight = {colors.lightbg, colors.lightbg},
+        separator_highlight = {colors.lightbg, colors.lightbg},
         highlight = {colors.cyan, colors.lightbg},
     }
 }

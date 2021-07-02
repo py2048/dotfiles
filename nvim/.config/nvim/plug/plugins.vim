@@ -59,9 +59,13 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     "
     " Complesion
     " Plug 'hrsh7th/nvim-compe', { 'on': 'InsertEnter'}
-    "Plug 'hrsh7th/nvim-compe'
+    Plug 'hrsh7th/nvim-compe'
 
-    call plug#end()
+    " Snippet
+    Plug 'hrsh7th/vim-vsnip'
+    Plug 'rafamadriz/friendly-snippets'
+
+call plug#end()
 
     
 

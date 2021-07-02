@@ -36,8 +36,6 @@ set clipboard=unnamedplus               " Copy paste between vim and everything 
 set eol
 filetype plugin on
 
-au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
-
 " You can't stop me
 cmap w!! w !sudo tee %
 

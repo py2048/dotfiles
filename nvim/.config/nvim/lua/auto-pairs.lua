@@ -1,4 +1,3 @@
-local remap = vim.api.nvim_set_keymap
 local npairs = require('nvim-autopairs')
 local Rule = require('nvim-autopairs.rule')
 
@@ -19,7 +18,10 @@ MUtils.completion_confirm=function()
 end
 
 
-remap('i' , '<CR>','v:lua.MUtils.completion_confirm()', {expr = true , noremap = true})
+require("nvim-autopairs.completion.compe").setup({
+  map_cr = true, --  map <CR> on insert mode
+  map_complete = true -- it will auto insert `(` after select function or method item
+})
 
 npairs.setup({
     check_ts = true,
@@ -37,25 +39,16 @@ require('nvim-treesitter.configs').setup {
 local ts_conds = require('nvim-autopairs.ts-conds')
 
 -- press % => %% is only inside comment or string
-npairs.add_rules({
-    Rule("%", "%", "lua")
-        :with_pair(ts_conds.is_ts_node({'string','comment'})),
-    Rule("$", "$", "lua")
-        :with_pair(ts_conds.is_not_ts_node({'function'})),
-})
-
 -- npairs.add_rules({
---     Rule("$$","$$","tex"),
---     Rule("$","$","tex")
---     :with_pair(function(opts)
---         print(vim.inspect(opts))
---         if opts.line=="aa $$" then
---         -- don't add pair on that line
---           return false
---         end
---     end)
+--     Rule("%", "%", "lua")
+--         :with_pair(ts_conds.is_ts_node({'string','comment'})),
+--     Rule("$", "$", "lua")
+--         :with_pair(ts_conds.is_not_ts_node({'function'})),
 -- })
 
 npairs.add_rules({
+    -- Rule("$$","$$","tex"),
+    Rule("$","$","tex"),
     Rule("'''", "'''", "python")
 })
+

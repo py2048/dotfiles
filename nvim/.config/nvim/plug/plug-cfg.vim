@@ -1,15 +1,14 @@
 " Lua plugins config
-" lua require('auto-pairs')
-" lua require"surround".setup{}
+lua require"surround".setup{}
 lua require('glxline')
 lua require('comment')
 lua require('treesitter')
 lua require('nscroll')
-" lua require('compe')
+lua require('nvcompe')
+lua require('auto-pairs')
 
 " Vim plugins config
 source $HOME/.config/nvim/plug/fzf.vim
-" source $HOME/.config/nvim/plug/compe.vim
 
 " Plugins config values
 

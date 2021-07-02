@@ -13,7 +13,7 @@ nnoremap <M-l>    :vertical resize +2<CR>
 " inoremap jk <Esc>
 
 " Easy CAPS
-inoremap <c-u> <ESC>viwUi
+" inoremap <c-u> <ESC>viwUi
 " nnoremap <c-s-u> viwU<Esc>
 
 " TAB in general mode will move to text buffer
@@ -90,3 +90,11 @@ nnoremap c# #<C-o>cgn
 
 " Turn off highlight until next search
 nmap <leader>h :noh<CR>
+
+
+"
+imap <c-h> <Left>
+imap <c-j> <Down>
+imap <c-k> <Up>
+imap <c-l> <Right>
+
