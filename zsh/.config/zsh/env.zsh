@@ -35,7 +35,10 @@ alias la='ls -a'
 alias l='ls -la'
 # Vim bindings
 alias :q='exit'
+
+# profile
 alias p="nvim $ZDOTDIR/.zshrc"
+alias d="cd ~/dotfiles"
 
 # Tree
 alias tree='tree -C'
@@ -44,8 +47,14 @@ alias tree='tree -C'
 alias k="v ~/.config/kitty/kitty.conf"
 
 # Git
-alias gc="git clone"
-alias gp="git pull"
+alias g='git'
+alias gc='git clone'
+alias gl='git pull'
+alias gp='git pull'
+alias ga='git add'
+alias gm='git commit -m'
+alias gl='git log'
+alias gt='git status'
 
 # Open
 type open > /dev/null || alias open='xdg-open'
