@@ -91,8 +91,7 @@ nnoremap c# #<C-o>cgn
 " Turn off highlight until next search
 nmap <leader>h :noh<CR>
 
-
-"
+" Replace arrow in insert mode
 imap <c-h> <Left>
 imap <c-j> <Down>
 imap <c-k> <Up>

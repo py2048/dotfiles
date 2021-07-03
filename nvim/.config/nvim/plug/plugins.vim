@@ -53,8 +53,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Any jump
     " Plug 'pechorin/any-jump.vim'
-    "
-    "
+
+
     " Complesion
     " Plug 'hrsh7th/nvim-compe', { 'on': 'InsertEnter'}
     Plug 'hrsh7th/nvim-compe'
@@ -62,6 +62,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Snippet
     Plug 'hrsh7th/vim-vsnip'
     Plug 'rafamadriz/friendly-snippets'
+
+    " Motion
+    Plug 'justinmk/vim-sneak'
+    Plug 'unblevable/quick-scope'
 
 call plug#end()
 

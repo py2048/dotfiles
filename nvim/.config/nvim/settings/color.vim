@@ -2,7 +2,8 @@
 let g:nvcode_termcolors=256
 
 syntax on
-colorscheme lunar " Or whatever colorscheme you make
+" colorscheme onedark 
+colorscheme lunar
 
 
 " checks if your terminal has 24-bit color support
