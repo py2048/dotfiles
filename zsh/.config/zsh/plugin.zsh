@@ -17,12 +17,14 @@ eval "$(lua $HOME/Apps/z.lua/z.lua --init zsh enhanced once echo)"
 export _ZL_DATA=$HOME/.cache/zlua
 
 # fzf
-source ~/.config/fzf/general.zsh
-source ~/.config/fzf/key-bindings.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.config/fzf/general.zsh ] && source ~/.config/fzf/general.zsh
+[ -f ~/.config/fzf/key-bindings.zsh ] && source ~/.config/fzf/key-bindings.zsh
 
 # Activate conda environment
 conda()
 {
+    [ -f /usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh ] && source /usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh
     [ -f ~/.miniconda3/etc/profile.d/conda.sh ] && source ~/.miniconda3/etc/profile.d/conda.sh
     conda activate base
 }

@@ -61,10 +61,12 @@ type open > /dev/null || alias open='xdg-open'
 
 
 # Set env for intel
-export FEAPHOME8_4=/home/py1024/FEAP/ver84
-source /opt/intel/oneapi/compiler/latest/env/vars.sh
-source /opt/intel/oneapi/mkl/latest/env/vars.sh
-source /opt/intel/oneapi/mpi/latest/env/vars.sh
+if [ -d /opt/intel ]; then
+    export FEAPHOME8_4=/home/py1024/FEAP/ver84
+    source /opt/intel/oneapi/compiler/latest/env/vars.sh
+    source /opt/intel/oneapi/mkl/latest/env/vars.sh
+    source /opt/intel/oneapi/mpi/latest/env/vars.sh
+fi
 
 
 # Custom function
