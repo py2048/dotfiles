@@ -4,8 +4,16 @@ add_path(){
     [ -d "$1" ] && export PATH="$1:$PATH"
 }
 
+# Mac os
+
 # Homebrew sbin
 add_path /usr/local/sbin
+# pip
+add_path $HOME/Library/Python/3.9/bin
+
+
+# Linux
+
 # Local executable
 add_path $HOME/.local/bin
 # Rust
