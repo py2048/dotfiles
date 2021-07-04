@@ -64,12 +64,12 @@ alias k="v ~/.config/kitty/kitty.conf"
 # Git
 alias g='git'
 alias gc='git clone'
-alias gl='git pull'
+alias gpl='git pull'
 alias gp='git push'
 alias ga='git add'
 alias gm='git commit -m'
 alias gl='git log'
-alias gt='git status'
+alias gst='git status'
 
 # Open
 type open > /dev/null || alias open='xdg-open'
