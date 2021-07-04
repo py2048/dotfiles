@@ -1,18 +1,25 @@
 # Set PATH
 
-# User executable
-export PATH="$HOME/.local/bin:$PATH"
-# Rust binaries
-export PATH="$HOME/.cargo/bin:$PATH"
-# Npm global packages
-export PATH="$HOME/.npm-global/bin:$PATH"
-# Go binaries
-export PATH="$HOME/go/bin:$PATH"
+add_path(){
+    [ -d "$1" ] && export PATH="$1:$PATH"
+}
+
+# Homebrew sbin
+add_path /usr/local/sbin
+# Local executable
+add_path $HOME/.local/bin
+# Rust
+add_path $HOME/.cargo/bin
+# Node js
+add_path $HOME/.npm-global/bin
+# Go
+add_path $HOME/go/bin
 
 
 # MANPAGER
-# export MANPATH="/usr/local/man:$MANPATH"
+export MANPATH="/usr/local/man:$MANPATH"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
 
 # Set language environment
 export LANG=en_US.UTF-8
