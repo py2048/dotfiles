@@ -18,6 +18,5 @@ source $HOME/.config/nvim/plug/sneak.vim
 " Set NNN layout
 let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
 
-" Quickscope
+" Quick scope
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-let g:qs_max_chars=150

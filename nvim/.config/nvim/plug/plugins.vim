@@ -15,6 +15,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Plug 'jiangmiao/auto-pairs'
     Plug 'windwp/nvim-autopairs'
     
+    " Julia support
+    Plug 'JuliaEditorSupport/julia-vim'
+
     " Status line
 
     Plug 'kyazdani42/nvim-web-devicons'
@@ -50,10 +53,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Scroll
     Plug 'karb94/neoscroll.nvim'
-
-    " Any jump
-    " Plug 'pechorin/any-jump.vim'
-
 
     " Complesion
     " Plug 'hrsh7th/nvim-compe', { 'on': 'InsertEnter'}
