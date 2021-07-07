@@ -43,6 +43,7 @@ export VISUAL="nvim"
 alias v='nvim'
 # alias vim="~/Apps/nvcode/nvim"
 alias nv='cd ~/.config/nvim && nvim ~/.config/nvim/init.vim'
+alias vim='nvim -u ~/.config/nvcode/init.vim'
 
 # Lsd replace for ls
 alias ls='lsd'
@@ -74,6 +75,7 @@ alias gst='git status'
 # Open
 type open > /dev/null || alias open='xdg-open'
 
+[ $(uname) = "Darwin" ] && alias dr="open -a /Applications/Dropover.app/Contents/MacOS/Dropover"
 
 # Set env for intel
 if [ -d /opt/intel ]; then
