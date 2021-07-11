@@ -1,2 +1,3 @@
 .zcomp*
 plugins/
+.zsh_*/
