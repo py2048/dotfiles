@@ -12,6 +12,7 @@ brew_update(){
     set -x
     brew update
     brew upgrade
+    brew list --cask | xargs brew upgrade --cask
 }
 
 os_update(){
@@ -47,7 +48,8 @@ cargo_update(){
 pip_update(){
     set -x
     [ $CONDA_DEFAULT_ENV ] && echo Cannot update pip: anaconda environment is activated && return 1
-    pip3 install -U numpy matplotlib scipy pandas pynvim yapf
+    # pip3 install -U numpy matplotlib scipy pandas pynvim yapf
+    pip list --user | tail -n +3 | awk '{print $1}' | xargs pip install -U --user
 }
 
 conda_update(){
