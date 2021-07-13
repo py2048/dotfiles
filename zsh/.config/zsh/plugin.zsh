@@ -11,8 +11,7 @@ source ~/.config/lf/icons.sh
 z_plug "zsh-users/zsh-autosuggestions"
 z_plug "zsh-users/zsh-syntax-highlighting"
 z_plug "skywind3000/z.lua"
-# z.lua
-eval "$(lua $HOME/Apps/z.lua/z.lua --init zsh enhanced once echo)"
+#
 # Change zlua cache location
 export _ZL_DATA=$ZDOTDIR/.zlua
 
