@@ -1,3 +1,5 @@
 .zcomp*
 plugins/
 .zsh_*/
+.zsh_history
+.zlua
