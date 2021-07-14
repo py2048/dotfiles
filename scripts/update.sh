@@ -1,18 +1,39 @@
 #!/bin/sh
 
-# Update System Packages Manager
+echo_green(){
+    bold=$(tput bold)
+    green=$(tput setaf 2)
+    reset=$(tput sgr0)
+    echo "\n${bold}${green}${@}${reset}\n"
+}
 
+echo_red(){
+    red=$(tput setaf 1)
+    reset=$(tput sgr0)
+    echo "\n${bold}${red}${@}${reset}\n"
+}
+
+# Print Command verbosely then execute
+verbose() {
+    log_cmd=${TMPDIR:-"/tmp"}/update_sh
+    echo "$(</dev/stdin)" > $log_cmd
+
+    read -r mess < $log_cmd
+    echo_green "❯ ${mess}"
+
+    zsh $log_cmd
+}
+
+# Update System Packages Manager
 apt_update(){
-    set -x
-    sudo apt update
-    sudo apt upgrade
+    echo sudo apt upgrade | verbose
+    echo sudo apt update | verbose
 }
 
 brew_update(){
-    set -x
-    brew update
-    brew upgrade
-    brew list --cask | xargs brew upgrade --cask
+    echo brew update | verbose
+    echo brew upgrade | verbose
+    brew list --cask | xargs echo brew upgrade --cask | verbose
 }
 
 os_update(){
@@ -32,7 +53,7 @@ os_update(){
             ;;
 
         *)
-            echo Cannot update packages manager: unknown operating system
+            echo_red Cannot update packages manager: unknown operating system
 
     esac
 
@@ -41,28 +62,35 @@ os_update(){
 # Other Packages Manager
 
 cargo_update(){
-    set -x
+    ! [ -x "$(command -v cargo)" ] && echo_red cargo is not installed && return
     cargo install --list | sed -n 'p;n' | awk '{print $1}' | xargs cargo install
 }
 
 pip_update(){
-    set -x
-    [ $CONDA_DEFAULT_ENV ] && echo Cannot update pip: anaconda environment is activated && return 1
-    # pip3 install -U numpy matplotlib scipy pandas pynvim yapf
-    pip list --user | tail -n +3 | awk '{print $1}' | xargs pip install -U --user
+    ! [ -x "$(command -v pip)" ] && echo_red pip is not installed && return
+    [ $CONDA_DEFAULT_ENV ] && echo_red Cannot update pip: anaconda environment is activated && return
+    pip list --user | tail -n +3 | awk '{print $1}' | xargs echo pip install -U --user | verbose
 }
 
 conda_update(){
-    set -x
-    [ -z $CONDA_DEFAULT_ENV ] && echo Cannot update conda: anaconda environment is not activated && return 1
-    conda update --all
-    [ "$CONDA_DEFAULT_ENV" = "base" ] && conda update conda
+    [ -z $CONDA_DEFAULT_ENV ] && echo_red Cannot update conda: anaconda environment is not activated && return
+    echo conda update --all | verbose
+    [ "$CONDA_DEFAULT_ENV" = "base" ] && echo conda update conda | verbose
 }
 
 # Update zsh plugin
 zsh_update(){
-    set -x
+    echo_green Updating zsh plugins...
     find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull
+}
+
+# Update all
+all_update(){
+    os_update
+    zsh_update
+    cargo_update
+    pip_update
+    conda_update
 }
 
 # Update from arguments
