@@ -72,6 +72,25 @@ alias gm='git commit -m'
 alias gl='git log'
 alias gst='git status'
 
+# Add, commit then push
+gg(){
+    mess="$1"
+    shift
+    
+    # If no more arguments, git add all
+    if [ -z "$1" ]; then
+        git add .
+    # If more arguments is provided, git add those directoris
+    else
+        for d in "$@"; do
+            git add "$d"
+        done
+    fi
+
+    git commit -m "$mess"
+    # git push
+}
+
 # Open
 type open > /dev/null || alias open='xdg-open'
 
