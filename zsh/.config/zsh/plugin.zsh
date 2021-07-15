@@ -26,6 +26,7 @@ conda()
     [ -f /usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh ] && source /usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh # MacOS
     [ -f ~/.miniconda3/etc/profile.d/conda.sh ] && source ~/.miniconda3/etc/profile.d/conda.sh
     conda activate base
+    [ -z "$1" ] || conda $@
 }
 
 # Change starhip config location
