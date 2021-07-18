@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env zsh
 
 echo_green(){
     bold=$(tput bold)
@@ -13,27 +13,16 @@ echo_red(){
     echo "\n${bold}${red}${@}${reset}\n"
 }
 
-# Print Command verbosely then execute
-verbose() {
-    log_cmd=${TMPDIR:-"/tmp"}/update_sh
-    echo "$(</dev/stdin)" > $log_cmd
-
-    read -r mess < $log_cmd
-    echo_green "❯ ${mess}"
-
-    zsh $log_cmd
-}
-
 # Update System Packages Manager
 apt_update(){
-    echo sudo apt upgrade | verbose
-    echo sudo apt update | verbose
+    verbose.sh sudo apt upgrade
+    verbose.sh sudo apt update
 }
 
 brew_update(){
-    echo brew update | verbose
-    echo brew upgrade | verbose
-    brew list --cask | xargs echo brew upgrade --cask | verbose
+    verbose.sh brew update
+    verbose.sh brew upgrade
+    brew list --cask | xargs verbose.sh brew upgrade --cask
 }
 
 os_update(){
@@ -69,13 +58,13 @@ cargo_update(){
 pip_update(){
     ! [ -x "$(command -v pip)" ] && echo_red pip is not installed && return
     [ $CONDA_DEFAULT_ENV ] && echo_red Cannot update pip: anaconda environment is activated && return
-    pip list --user | tail -n +3 | awk '{print $1}' | xargs echo pip install -U --user | verbose
+    pip list --user | tail -n +3 | awk '{print $1}' | xargs verbose.sh pip install -U --user
 }
 
 conda_update(){
     [ -z $CONDA_DEFAULT_ENV ] && echo_red Cannot update conda: anaconda environment is not activated && return
-    echo conda update --all | verbose
-    [ "$CONDA_DEFAULT_ENV" = "base" ] && echo conda update conda | verbose
+    verbose.sh conda update --all
+    [ "$CONDA_DEFAULT_ENV" = "base" ] && verbose.sh conda update conda
 }
 
 # Update zsh plugin
