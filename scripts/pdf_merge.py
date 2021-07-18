@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3.8
+#!/usr/bin/env zsh
 import os
 from PyPDF2 import PdfFileMerger
 

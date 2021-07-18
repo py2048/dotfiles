@@ -1,4 +1,4 @@
-#!/usr/local/bin/zsh
+#!/usr/bin/env zsh
 start=$(perl -MTime::HiRes=time -e 'printf "%.9f\n", time')
 
 for item in "$@"; do

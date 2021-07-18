@@ -1,4 +1,4 @@
-#!/usr/local/bin/zsh
+#!/usr/bin/env zsh
 cat <<EOF
 Visual Studio Code Variables Reference
 \${workspaceFolder} - the path of the folder opened in VS Code

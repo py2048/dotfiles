@@ -1,4 +1,4 @@
-#!/usr/local/bin/zsh
+#!/usr/bin/env zsh
 for i in *.wav; do
     abspath=$(realpath ${i})
     f=$(basename ${abspath})

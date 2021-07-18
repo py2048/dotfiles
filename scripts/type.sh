@@ -1,4 +1,4 @@
-#!/usr/local/bin/zsh
+#!/usr/bin/env zsh
 ABSPATH=$(realpath $0)
 DIRPATH=$(dirname ${ABSPATH})
 echo ${ABSPATH}

@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/usr/bin/env zsh
+
 
 for f in "$@"; do
     i=$(mkvmerge -i "$f" | grep subtitles | cut -b 10)

@@ -1,4 +1,4 @@
-#!/usr/local/bin/zsh
+#!/usr/bin/env zsh
 cd ~/Directory
 INPUT=$(realpath $1)
 echo ${INPUT}

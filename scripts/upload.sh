@@ -1,1 +1,0 @@
-curl -F file=@$1 https://api.anonymousfiles.io/

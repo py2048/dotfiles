@@ -1,4 +1,4 @@
-#!/usr/local/bin/zsh
+#!/usr/bin/env zsh
 cd ~/Documents/Backup
 ABSPATH=$(realpath $1)
 BASENAME=$(basename ${ABSPATH})

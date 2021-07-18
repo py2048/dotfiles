@@ -1,4 +1,4 @@
-#!/usr/local/bin/zsh
+#!/usr/bin/env zsh
 if [[ $(pwd) == "/Users/minhquandoan" ]]; then
     cd ~/Downloads
 fi

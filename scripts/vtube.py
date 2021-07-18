@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import sys
 import os
+import platform
 import pyperclip
 from urllib.parse import urlparse, parse_qs
 
@@ -31,10 +32,9 @@ def open(url):
     pre = 'https://www.youtube.com/'
     vid = pre + 'watch?v=' + yid
     chat = pre + 'live_chat?is_popout=1&v=' + yid
-    os.system(f"open -a IINA \"{vid}\"")
-    os.system(f"open -a /Applications/Firefox.app \"{chat}\"")
-    # print(f"open -a iina \"{vid}\"")
-    # print(f"open -a /Applications/Vivaldi.app \"{chat}\"")
+    if platform.system() == 'Darwin':
+        os.system(f"open -a IINA \"{vid}\"")
+        os.system(f"open -a /Applications/Firefox.app \"{chat}\"")
 
 
 if len(sys.argv) > 1:

@@ -1,4 +1,4 @@
-#!/usr/local/bin/zsh
+#!/usr/bin/env zsh
 if [[ "$1" = "--help" || -z $1 ]]; then
     echo "usage: encrypt.sh FILE "
     exit

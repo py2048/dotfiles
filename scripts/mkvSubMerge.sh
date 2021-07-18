@@ -1,4 +1,4 @@
-#!/usr/local/bin/zsh
+#!/usr/bin/env zsh
 if [[ "$1" = "--help" || -z $3 ]]; then
     echo "mkvSubMerge.sh [mkvPATH] [subPATH] {language [vi] OR [eng])}"
     exit
