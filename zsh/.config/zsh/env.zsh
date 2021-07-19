@@ -1,3 +1,6 @@
+# Set go env
+export GOPATH=$HOME/.go
+
 # Set PATH
 
 add_path(){
@@ -21,7 +24,7 @@ add_path $HOME/.cargo/bin
 # Node js
 add_path $HOME/.npm-global/bin
 # Go
-add_path $HOME/go/bin
+add_path $HOME/.go/bin
 
 
 # MANPAGER
