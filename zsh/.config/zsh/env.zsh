@@ -13,7 +13,8 @@ add_path(){
 add_path /usr/local/sbin
 # pip
 add_path $HOME/Library/Python/3.9/bin
-
+# Mac OS coreutils
+add_path /usr/local/opt/coreutils/libexec/gnubin
 
 # Linux
 
