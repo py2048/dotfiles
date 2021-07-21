@@ -18,6 +18,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Julia support
     Plug 'JuliaEditorSupport/julia-vim'
 
+    " Subtitle Alpha support
+    Plug 'joeky888/Ass.vim'
+
     " Status line
 
     Plug 'kyazdani42/nvim-web-devicons'
