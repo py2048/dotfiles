@@ -149,6 +149,7 @@
 
 lalt - return: cd && /usr/local/bin/kitty &
 lalt - d: /Applications/GoldenDict.app/Contents/MacOS/GoldenDict &
+lalt - s: ~/.local/bin/sidecar.sh
 # lalt - enter: open ~
 
 lalt - h: yabai -m window --focus west || yabai -m display --focus next
@@ -168,7 +169,7 @@ lalt - 6: yabai -m space --focus 6
 lalt - 7: yabai -m space --focus 7
 
 lalt - f: yabai -m window --toggle zoom-fullscreen
-lalt - d: yabai -m window --toggle float
+lalt - g: yabai -m window --toggle float
 
 shift + lalt - h: yabai -m window --swap west
 shift + lalt - l: yabai -m window --swap east
