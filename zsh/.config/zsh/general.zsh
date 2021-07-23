@@ -1,5 +1,5 @@
 # History
-# HISTFILE=~/.cache/zsh_history
+HISTFILE=$ZDOTDIR/.zsh_history
 HISTSIZE=5000
 SAVEHIST=5000
 

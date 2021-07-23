@@ -52,7 +52,7 @@ os_update(){
 
 cargo_update(){
     ! [ -x "$(command -v cargo)" ] && echo_red cargo is not installed && return
-    cargo install --list | sed -n 'p;n' | awk '{print $1}' | xargs cargo install
+    cargo install --list | sed -n 'p;n' | awk '{print $1}' | xargs verbose.sh cargo install
 }
 
 pip_update(){
