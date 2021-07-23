@@ -16,7 +16,7 @@ echo_red(){
 # Update System Packages Manager
 apt_update(){
     verbose.sh sudo apt update
-    verbose.sh sudo apt upgrade
+    verbose.sh sudo apt upgrade -y
 }
 
 brew_update(){
