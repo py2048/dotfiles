@@ -80,6 +80,7 @@ all_update(){
     cargo_update
     pip_update
     conda_update
+    [ "$RANDOM" -lt "10000" ] && echo_green Cleanning history && clear_hist.sh
 }
 
 # Update from arguments
