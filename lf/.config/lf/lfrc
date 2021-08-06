@@ -1,3 +1,4 @@
 set hidden true
 set drawbox true
 set icons true
+set previewer ~/.go/bin/pistol
