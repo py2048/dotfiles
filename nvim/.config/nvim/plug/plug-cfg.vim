@@ -15,8 +15,14 @@ source $HOME/.config/nvim/plug/sneak.vim
 
 " Plugins config values
 
+" Float Term
+hi FloatermBorder guibg=NONE guifg=#5e81ac
+
 " Set NNN layout
 let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
 
 " Quick scope
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+com! Q :q
+
+let g:vsnip_snippet_dir = "$HOME/.config/nvcode/snippets/src"

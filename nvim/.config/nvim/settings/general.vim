@@ -42,6 +42,16 @@ cmap w!! w !sudo tee %
 " Fortran
 au BufWritePost *.f90 silent! execute "!fprettify -i 4 <afile>" | e!
 
+" Vscode snippets
+au BufRead,BufNewFile *.code-snippets set filetype=jsonc
+
+" Latex files
+au BufRead,BufNewFile *.tex set filetype=latex
+
+" Set tab
+autocmd FileType json setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType jsonc setlocal shiftwidth=2 softtabstop=2 expandtab
+
 " Set numberline
 set number relativenumber
             

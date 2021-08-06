@@ -19,7 +19,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'JuliaEditorSupport/julia-vim'
 
     " Subtitle Alpha support
-    Plug 'joeky888/Ass.vim'
+    " Plug 'joeky888/Ass.vim'
 
     " Status line
 
@@ -39,7 +39,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Color
     Plug 'norcalli/nvim-colorizer.lua'
     " Start screen
-    Plug 'mhinz/vim-startify'
+    " Plug 'mhinz/vim-startify'
     " Terminal
     Plug 'voldikss/vim-floaterm'
     " Tag bar
@@ -63,6 +63,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Snippet
     Plug 'hrsh7th/vim-vsnip'
+    " Plug 'hrsh7th/vim-vsnip', { 'on': 'InsertEnter'}
     Plug 'rafamadriz/friendly-snippets'
 
     " Motion

@@ -55,7 +55,13 @@ nmap <leader>sh :split<CR>
 
 " Terminal
 " tnoremap <Esc> <C-\><C-n>
-map <leader>. :FloatermNew<CR>
+map <leader>, :FloatermNew<CR>
+map <leader>. :FloatermToggle<CR>
+map <silent> [t :FloatermToggle<CR>
+tnoremap <silent> [t <C-\><C-n>:FloatermToggle<CR>
+tnoremap <silent> [n <C-\><C-n>:FloatermNew<CR>
+tnoremap <silent> <S-TAB> <C-\><C-n>:FloatermNext<CR>
+" tnoremap <silent> [[ <C-\><C-n>:FloatermPrev<CR>
 nmap <leader>r :w<CR>:FloatermNew --autoclose=1 run.sh % && read<CR>
 
 " map <leader>n :FloatermNew nnn<CR>
