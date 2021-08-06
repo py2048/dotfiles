@@ -1,50 +1,50 @@
 #!/usr/bin/env zsh
-start=$(perl -MTime::HiRes=time -e 'printf "%.9f\n", time')
+start=$(date +%s.%N)
 
-in=""
-
-CC=gcc-11
-CXX=g++-11
-FF=gfortran
-
+CC=${CC:-gcc-11}
+CXX=${CXX:-g++-11}
+FF=${FF:-gfortran}
+F90=${FF:-gfortran}
+PY=${PY:-python3}
+SH=${SH:-zsh}
+CD=${CD:-false}
 
 for item in "$@"; do
-    abspath=$(realpath ${item})
-    dirpath=$(dirname ${item})
-    file=$(basename ${abspath})
-    base="${file%.*}"
-    ext="${file##*.}"
+    [ "$item" = "-d" ] && CD=true && continue
+    src=$(realpath "$item")
+    base="${src%.*}"
+    ext="${src##*.}"
 
+    [ "$CD" = true ] && DIRN=$(dirname "$src") cd "$DIRN" && CD=false
 
-    case ${ext} in
+    shebang=$(head -1 "$src")
+    [ $(echo $shebang | cut -c 1-2) = "#!" ] && eval "${shebang##*!} \"$src\"" && continue
+
+    case $ext in
         c)
-            $CC ${file} -o ${base} ${in}
-            ./${base}
+            $CC "$src" -o "$base" && "$base"
             ;;
-        cpp)
-            $CXX ${file} -o ${base} ${in}
-            ./${base}
+        cpp|c++)
+            $CXX "$src" -o "$base" && "$base"
             ;;
-        #f)
-            #ifort ${file} -o ${base} ${in}
-            #./${base}
-            #;;
-        f|f90|f95|f08)
-            $FF ${file} -o ${base} ${in}
-            ./${base}
+        f)
+            $FF "$src" -o "$base" && "$base"
             ;;
-        ipynb)
-            jupyter lab
+        f90|f95|f03|f08)
+            $F90 "$src" -o "$base" && "$base"
             ;;
         py)
-            python -u ${file} ${in}
+            $PY -u "$src"
             ;;
         sh)
-            ./${file}
+            $SH "$src"
+            ;;
+        *)
+            echo Cannot execute
             ;;
     esac
 done
 
-end=$(perl -MTime::HiRes=time -e 'printf "%.9f\n", time')
+end=$(date +%s.%N)
 dtime=$(printf %.3f $(( $end - $start )))
 echo "[Finished in ${dtime}s]"
