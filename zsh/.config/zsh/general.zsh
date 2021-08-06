@@ -15,6 +15,8 @@ autoload -U colors && colors
 # Enable auto completion
 # Color for ls
 autoload -U compinit 
+
+# Cycle through suggestions
 zstyle ':completion:*' menu select
 # Auto complete with case insenstivity
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'

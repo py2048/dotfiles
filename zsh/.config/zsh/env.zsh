@@ -41,6 +41,15 @@ export EDITOR='nvim'
 export VISUAL="nvim"
 
 
+# lf icons
+source ~/.config/lf/icons.sh
+
+# ls colors
+export LS_COLORS="$(vivid generate one-dark)"
+# Color for suggestions
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+
 # User aliases
 
 # Neovim aliases

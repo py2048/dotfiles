@@ -4,9 +4,6 @@
 # nnn config
 source ~/.config/nnn/nnn.zsh
 
-# lf icons
-source ~/.config/lf/icons.sh
-
 # zsh plugins
 z_plug "zsh-users/zsh-autosuggestions"
 z_plug "zsh-users/zsh-syntax-highlighting"
@@ -30,7 +27,37 @@ conda()
     [ -z "$1" ] || conda $@
 }
 
-# Change starhip config location
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
-# Starship prompt
-eval "$(starship init zsh)"
+# Set PS1 prompt
+setopt prompt_subst
+
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable git
+precmd(){
+    # Last command status
+    [ "$?" != 0 ] && status_color="%{$fg[red]%}" || status_color="%{$fg[green]%}"
+    # Check conda env
+    [ -z $CONDA_DEFAULT_ENV ] && conda_env='' || conda_env="🅒 $CONDA_DEFAULT_ENV"
+    # Check git
+    vcs_info
+}
+zstyle ':vcs_info:git:*' formats '  %b' # Change git style
+
+last_c(){
+}
+
+NEWLINE=$'\n'
+# Current Directory
+PS1="${NEWLINE}%B%{$fg[cyan]%}%~%b"
+
+# Git branch
+PS1+=" %{$fg[yellow]%}"
+PS1+=\$vcs_info_msg_0_
+
+# Conda
+PS1+=" %{$fg[green]%}"
+PS1+=\$conda_env
+
+# New line prompt
+PS1+="${NEWLINE}"
+PS1+=\$status_color
+PS1+="❯ "
