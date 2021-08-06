@@ -1,0 +1,14 @@
+{
+  "InlineMath": {
+    "prefix": "im",
+    "body": [
+      "\\$$0\\$"
+    ]
+  },
+  "LineMath": {
+    "prefix": "mm",
+    "body": [
+      "\\$$$0$\\$"
+    ]
+  }
+}

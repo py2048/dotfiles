@@ -13,7 +13,7 @@ call plug#begin('~/.config/nvcode/autoload/plugged')
     
     " Motion
     Plug 'justinmk/vim-sneak'
-    " Plug 'unblevable/quick-scope'
+    Plug 'unblevable/quick-scope'
 
     " Latex
     Plug 'py2048/vim-latex-objects'
@@ -39,7 +39,7 @@ nmap gS <Plug>Sneak_,
 let g:sneak#s_next = 1
 
 " " Quickscope
-" let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-" let g:qs_max_chars=150
-" highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline
-" highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+let g:qs_max_chars=150
+highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline
+highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline

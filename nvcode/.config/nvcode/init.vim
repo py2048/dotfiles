@@ -11,6 +11,9 @@ map <space>d "_d
 nmap <space>p "_ddkp
 vmap <space>p "_dkp
 
+" Comment
+map <space>/ <Plug>VSCodeCommentary
+
 " Indent
 vnoremap < <gv
 vnoremap > >gv
@@ -37,5 +40,18 @@ augroup END
 " nmap <A-j> <J>
 nmap K <C-u>
 nmap J <C-d>
+
+imap <C-h> <Left>
+imap <C-j> <Down>
+imap <C-k> <Up>
+imap <C-l> <Right>
+
+" Change word and occurrences
+nnoremap c* *<c-o>cgn
+nnoremap c# #<C-o>cgn
+
+" Move lines in visual mode
+vmap K :move '<-2<CR>gv-gv
+vmap J :move '>+1<CR>gv-gv
 
 com! -nargs=1 Search :let @/='\V'.escape(<q-args>, '\/')| normal! n
