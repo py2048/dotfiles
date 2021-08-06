@@ -1,6 +1,10 @@
-command_timeout = 1000
-
 [conda]
 ignore_base = false
 symbol = "🅒 "
 format = "[$symbol$environment](dimmed green) "
+[git_status]
+disabled = true
+[git_commit]
+disabled = false
+[git_metrics]
+disabled = true
