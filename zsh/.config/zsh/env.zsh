@@ -1,22 +1,15 @@
-# Set go env
-export GOPATH=$HOME/.go
-
 # Set PATH
-
 add_path(){
     [ -d "$1" ] && export PATH="$1:$PATH"
 }
 
-# Mac os
+# Source file
+load_file(){
+    [ -f "$1" ] && source "$1"
+}
 
-# Homebrew sbin
-add_path /usr/local/sbin
-# pip
-add_path $HOME/Library/Python/3.9/bin
-# Mac OS coreutils
-add_path /usr/local/opt/coreutils/libexec/gnubin
-
-# Linux
+# Set go env
+export GOPATH=$HOME/.go
 
 # Local executable
 add_path $HOME/.local/bin
@@ -31,7 +24,6 @@ add_path $HOME/.go/bin
 # MANPAGER
 export MANPATH="/usr/local/man:$MANPATH"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-
 
 # Set language environment
 export LANG=en_US.UTF-8
@@ -104,26 +96,7 @@ gg(){
     # git push
 }
 
-# Open
-type open > /dev/null || alias open='xdg-open'
-
-[ $(uname) = "Darwin" ] && alias dr="open -a /Applications/Dropover.app/Contents/MacOS/Dropover"
-
-# Set env for intel
-if [ -d /opt/intel ]; then
-    export FEAPHOME8_4=$HOME/FEAP/ver84
-    export FEAPPVHOME5_1=$HOME/FEAP/feappv
-    source /opt/intel/oneapi/compiler/latest/env/vars.sh
-    source /opt/intel/oneapi/mkl/latest/env/vars.sh
-    source /opt/intel/oneapi/mpi/latest/env/vars.sh
-    export I_MPI_F90=ifort
-    export I_MPI_F77=ifort
-    export I_MPI_FC=ifort
-    export I_MPI_CC=icc
-    export I_MPI_CXX=icpc
-fi
-
-
+#
 # Custom function
 
 # Print out which 

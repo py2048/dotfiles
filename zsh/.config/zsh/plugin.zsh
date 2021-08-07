@@ -13,19 +13,6 @@ z_plug "skywind3000/z.lua"
 # Change zlua cache location
 export _ZL_DATA=$ZDOTDIR/.zlua
 
-# fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh # MacOS
-[ -f ~/.config/fzf/general.zsh ] && source ~/.config/fzf/general.zsh
-[ -f ~/.config/fzf/key-bindings.zsh ] && source ~/.config/fzf/key-bindings.zsh
-
-# Activate conda environment
-conda()
-{
-    [ -f /usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh ] && source /usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh # MacOS
-    [ -f ~/.miniconda3/etc/profile.d/conda.sh ] && source ~/.miniconda3/etc/profile.d/conda.sh
-    conda activate base
-    [ -z "$1" ] || conda $@
-}
 
 # Set PS1 prompt
 setopt prompt_subst
@@ -41,9 +28,6 @@ precmd(){
     vcs_info
 }
 zstyle ':vcs_info:git:*' formats '  %b' # Change git style
-
-last_c(){
-}
 
 NEWLINE=$'\n'
 # Current Directory
