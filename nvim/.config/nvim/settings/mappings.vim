@@ -17,9 +17,9 @@ nnoremap <M-l>    :vertical resize +2<CR>
 " nnoremap <c-s-u> viwU<Esc>
 
 " TAB in general mode will move to text buffer
-" nnoremap <TAB> :bnext<CR>
+nnoremap <TAB> :bnext<CR>
 " SHIFT-TAB will go back
-nnoremap <S-TAB> :bnext<CR>
+nnoremap <S-TAB> :bprevious<CR>
 
 " Alternate way to save
 " nnoremap <C-s> :w<CR>
@@ -70,7 +70,7 @@ nnoremap <leader>n :NnnPicker %:p:h<CR>
 " Delete without copy to clipboard
 map <space>d "_d
 nmap <space>p "_ddkp
-vmap <space>p "_dkp
+vmap <space>p "_P
 
 " Selece lines
 nmap <space>v 0v$h
@@ -81,8 +81,8 @@ nmap K <C-u>
 nmap J <C-d>
 
 " Move lines in visual mode
-vmap K :move '<-2<CR>gv-gv
-vmap J :move '>+1<CR>gv-gv
+vmap <c-k> :move '<-2<CR>gv-gv
+vmap <c-j> :move '>+1<CR>gv-gv
 
 " Search for any string
 com! -nargs=1 Search :let @/='\V'.escape(<q-args>, '\/')| normal! n
@@ -103,3 +103,7 @@ imap <c-j> <Down>
 imap <c-k> <Up>
 imap <c-l> <Right>
 
+" Set F12 key
+set <F12>=<c-v><F12>
+" set <S-F12>=<c-v><S-F12>
+" imap <F12> <c-t>

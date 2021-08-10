@@ -33,17 +33,16 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " FZF
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
-    " Plug 'airblade/vim-rooter'
     " Vim-which-key
     Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
     " Color
-    Plug 'norcalli/nvim-colorizer.lua'
+    " Plug 'norcalli/nvim-colorizer.lua'
     " Start screen
     " Plug 'mhinz/vim-startify'
     " Terminal
     Plug 'voldikss/vim-floaterm'
     " Tag bar
-    Plug 'preservim/tagbar'
+    " Plug 'preservim/tagbar'
     " Surround
     " Plug 'blackcauldron7/surround.nvim'
     Plug 'machakann/vim-sandwich'
@@ -64,7 +63,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Snippet
     Plug 'hrsh7th/vim-vsnip'
     " Plug 'hrsh7th/vim-vsnip', { 'on': 'InsertEnter'}
-    Plug 'rafamadriz/friendly-snippets'
+    " Plug 'rafamadriz/friendly-snippets'
 
     " Motion
     Plug 'justinmk/vim-sneak'

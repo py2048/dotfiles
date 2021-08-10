@@ -11,6 +11,7 @@ luafile $HOME/.config/nvim/lua/auto-pairs.lua
 source $HOME/.config/nvim/plug/fzf.vim
 source $HOME/.config/nvim/autoload/plugged/vim-sandwich/macros/sandwich/keymap/surround.vim
 source $HOME/.config/nvim/plug/sneak.vim
+source $HOME/.config/nvim/plug/vsnip.vim
 
 
 " Plugins config values

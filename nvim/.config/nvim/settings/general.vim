@@ -42,6 +42,13 @@ cmap w!! w !sudo tee %
 " Fortran
 au BufWritePost *.f90 silent! execute "!fprettify -i 4 <afile>" | e!
 
+" C auto format
+function! Formatonsave()
+  let l:formatdiff = 1
+  py3f ~/.local/bin/clang-format.py
+endfunction
+autocmd BufWritePre *.c,*.h,*.cc,*.cpp call Formatonsave()
+
 " Vscode snippets
 au BufRead,BufNewFile *.code-snippets set filetype=jsonc
 
@@ -49,8 +56,8 @@ au BufRead,BufNewFile *.code-snippets set filetype=jsonc
 au BufRead,BufNewFile *.tex set filetype=latex
 
 " Set tab
-autocmd FileType json setlocal shiftwidth=2 softtabstop=2 expandtab
-autocmd FileType jsonc setlocal shiftwidth=2 softtabstop=2 expandtab
+" autocmd FileType json setlocal shiftwidth=2 softtabstop=2 expandtab
+" autocmd FileType jsonc setlocal shiftwidth=2 softtabstop=2 expandtab
 
 " Set numberline
 set number relativenumber
