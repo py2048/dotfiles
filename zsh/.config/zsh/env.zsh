@@ -120,3 +120,22 @@ function z_plug() {
 
     fi
 }
+
+
+# Os specific
+if [ $(uname) = "Darwin" ]; then
+    NAME="MacOS"
+elif [ $(uname) = "Linux" ]; then
+    . /etc/os-release 
+fi
+case $NAME in
+
+    MacOS)
+        load_file $ZDOTDIR/mac.zsh
+        ;;
+
+    Ubuntu)
+        load_file $ZDOTDIR/linux.zsh
+        ;;
+
+esac
