@@ -43,6 +43,7 @@ os_update(){
 
         *)
             echo_red Cannot update packages manager: unknown operating system
+            ;;
 
     esac
 
