@@ -1,0 +1,18 @@
+{
+  "env": {
+    "prefix": ["env", "#!", "shebang"],
+    "body": "#!/usr/bin/env "
+  },
+  "zsh" : {
+    "prefix" : "zsh",
+    "body": "#!/usr/bin/env zsh\n"
+  },
+  "sh" : {
+    "prefix" : "sh",
+    "body": "#!/bin/sh\n"
+  },
+  "bash" : {
+    "prefix" : "bash",
+    "body": "${1|#!/usr/bin/env bash,#!/bin/bash|}\n"
+  }
+}
