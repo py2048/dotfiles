@@ -59,6 +59,7 @@ cargo_update(){
 pip_update(){
     ! [ -x "$(command -v pip)" ] && echo_red pip is not installed && return
     [ $CONDA_DEFAULT_ENV ] && echo_red Cannot update pip: anaconda environment is activated && return
+    pip install -U pip
     pip list --user | tail -n +3 | awk '{print $1}' | xargs verbose.sh pip install -U --user
 }
 
