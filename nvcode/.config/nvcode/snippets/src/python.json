@@ -13,5 +13,5 @@
         "prefix": "enco",
         "body": "# coding=utf-8\n$0",
         "description" : "Set default python3 encoding specification to utf-8, by default this is the encoding for python3.x as it is mentioned in pep-3120."
-    },
+    }
 }
