@@ -147,55 +147,63 @@
 #           yabai -m window --toggle topmost;\
 #           yabai -m window --toggle pip
 
-lalt - return: cd && /usr/local/bin/kitty &
-lalt - d: /Applications/GoldenDict.app/Contents/MacOS/GoldenDict &
-lalt - s: ~/.local/bin/sidecar.sh
+meh - return: cd && /usr/local/bin/kitty &
+meh - d: /Applications/GoldenDict.app/Contents/MacOS/GoldenDict &
+meh - s: ~/.local/bin/sidecar.sh
 # lalt - enter: open ~
 
-lalt - h: yabai -m window --focus west || yabai -m display --focus next
-lalt - l: yabai -m window --focus east || yabai -m display --focus prev
-lalt - j: yabai -m window --focus south
-lalt - k: yabai -m window --focus north
+meh - h: yabai -m window --focus west || yabai -m display --focus next
+meh - l: yabai -m window --focus east || yabai -m display --focus prev
+meh - j: yabai -m window --focus south
+meh - k: yabai -m window --focus north
 
-lalt - m: yabai -m space --focus next
-lalt - n: yabai -m space --focus prev
-lalt - b: skhd --key "ctrl - up"
-lalt - 1: yabai -m space --focus 1
-lalt - 2: yabai -m space --focus 2
-lalt - 3: yabai -m space --focus 3
-lalt - 4: yabai -m space --focus 4
-lalt - 5: yabai -m space --focus 5
-lalt - 6: yabai -m space --focus 6
-lalt - 7: yabai -m space --focus 7
+meh - 0x27: yabai -m display --focus prev
+meh - 0x29: yabai -m display --focus next
 
-lalt - f: yabai -m window --toggle zoom-fullscreen
-lalt - g: yabai -m window --toggle float
+meh - m: yabai -m space --focus next
+meh - n: yabai -m space --focus prev
+meh - b: skhd --key "ctrl - up"
+meh - 1: yabai -m space --focus 1
+meh - 2: yabai -m space --focus 2
+meh - 3: yabai -m space --focus 3
+meh - 4: yabai -m space --focus 4
+meh - 5: yabai -m space --focus 5
+meh - 6: yabai -m space --focus 6
+meh - 7: yabai -m space --focus 7
 
-shift + lalt - h: yabai -m window --swap west
-shift + lalt - l: yabai -m window --swap east
-shift + lalt - j: yabai -m window --swap south
-shift + lalt - k: yabai -m window --swap north
+meh - f: yabai -m window --toggle zoom-fullscreen
+meh - g: yabai -m window --toggle float
 
-shift + lalt - m: yabai -m window --display prev && yabai -m display --focus prev
-shift + lalt - n: yabai -m window --display next && yabai -m display --focus next
+hyper - h: yabai -m window --swap west
+hyper - l: yabai -m window --swap east
+hyper - j: yabai -m window --swap south
+hyper - k: yabai -m window --swap north
+
+hyper - 0x27: yabai -m window --display prev && yabai -m display --focus prev
+hyper - 0x29: yabai -m window --display next && yabai -m display --focus next
 
 # lalt - s : yabai -m space --create && \
 #                   set index "(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
 #                   yabai -m window --space $index && \
 #                   yabai -m space --focus "$index"
 
-lcmd + lalt - h: yabai -m window --warp west
-lcmd + lalt - l: yabai -m window --warp east
-lcmd + lalt - j: yabai -m window --warp south
-lcmd + lalt - k: yabai -m window --warp north
+# lcmd + lalt - h: yabai -m window --warp west
+# lcmd + lalt - l: yabai -m window --warp east
+# lcmd + lalt - j: yabai -m window --warp south
+# lcmd + lalt - k: yabai -m window --warp north
 
-lcmd + lalt - m: yabai -m window --space next && yabai -m space --focus next
-lcmd + lalt - n: yabai -m window --space prev && yabai -m space --focus prev
+hyper - m: yabai -m window --space next && yabai -m space --focus next
+hyper - n: yabai -m window --space prev && yabai -m space --focus prev
 
-lcmd + lalt - 1: yabai -m window --space 1 && yabai -m space --focus 1
-lcmd + lalt - 2: yabai -m window --space 2 && yabai -m space --focus 2
-lcmd + lalt - 3: yabai -m window --space 3 && yabai -m space --focus 3
-lcmd + lalt - 4: yabai -m window --space 4 && yabai -m space --focus 4
-lcmd + lalt - 5: yabai -m window --space 5 && yabai -m space --focus 5
-lcmd + lalt - 6: yabai -m window --space 6 && yabai -m space --focus 6
-lcmd + lalt - 7: yabai -m window --space 7 && yabai -m space --focus 7
+hyper - 1: yabai -m window --space 1 && yabai -m space --focus 1
+hyper - 2: yabai -m window --space 2 && yabai -m space --focus 2
+hyper - 3: yabai -m window --space 3 && yabai -m space --focus 3
+hyper - 4: yabai -m window --space 4 && yabai -m space --focus 4
+hyper - 5: yabai -m window --space 5 && yabai -m space --focus 5
+hyper - 6: yabai -m window --space 6 && yabai -m space --focus 6
+hyper - 7: yabai -m window --space 7 && yabai -m space --focus 7
+
+f12 [
+    "IINA": yabai -m display --focus prev || yabai -m display --focus next
+    "GoldenDict": yabai -m display --focus prev || yabai -m display --focus next
+]
