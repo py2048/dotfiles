@@ -47,7 +47,29 @@ function! Formatonsave()
   let l:formatdiff = 1
   py3f ~/.local/bin/clang-format.py
 endfunction
-autocmd BufWritePre *.c,*.h,*.cc,*.cpp call Formatonsave()
+
+augroup FormatSave
+    autocmd!
+    autocmd BufWritePre *.c,*.h,*.cc,*.cpp call Formatonsave()
+augroup END
+
+" ToggleFormat
+function! ToggleFormat()
+    if !exists('#FormatSave#BufWritePre')
+        augroup FormatSave
+            autocmd BufWritePre *.c,*.h,*.cc,*.cpp call Formatonsave()
+            autocmd!
+        augroup END
+    else
+        augroup FormatSave
+            autocmd!
+        augroup END
+    endif
+endfunction
+
+" ToggleFormat for keymap.c file
+au BufEnter keymap.c call ToggleFormat()
+au BufLeave keymap.c call ToggleFormat()
 
 " Vscode snippets
 au BufRead,BufNewFile *.code-snippets set filetype=jsonc
