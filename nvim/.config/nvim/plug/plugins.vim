@@ -36,7 +36,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Vim-which-key
     Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
     " Color
-    " Plug 'norcalli/nvim-colorizer.lua'
+    Plug 'norcalli/nvim-colorizer.lua'
     " Start screen
     " Plug 'mhinz/vim-startify'
     " Terminal

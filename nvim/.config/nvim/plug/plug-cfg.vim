@@ -6,6 +6,7 @@ luafile $HOME/.config/nvim/lua/treesitter.lua
 luafile $HOME/.config/nvim/lua/nscroll.lua
 luafile $HOME/.config/nvim/lua/nvcompe.lua
 luafile $HOME/.config/nvim/lua/auto-pairs.lua
+luafile $HOME/.config/nvim/lua/plug-colorizer.lua
 
 " Vim plugins config
 source $HOME/.config/nvim/plug/fzf.vim
