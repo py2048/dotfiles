@@ -1,3 +1,5 @@
+" Set F12 key
+set <F12>=<c-v><F12>
 " Better nav for omnicomplete
 " inoremap <expr> <c-j> ("\<C-n>")
 " inoremap <expr> <c-k> ("\<C-p>")
@@ -9,17 +11,20 @@ nnoremap <M-h>    :vertical resize -2<CR>
 nnoremap <M-l>    :vertical resize +2<CR>
 
 " I hate escape more than anything else
-" inoremap kj <Esc>
+inoremap kj <Esc>
 " inoremap jk <Esc>
 
 " Easy CAPS
 " inoremap <c-u> <ESC>viwUi
 " nnoremap <c-s-u> viwU<Esc>
 
+" nnoremap <TAB> :bnext<CR>
+" nnoremap <S-TAB> :bprevious<CR>
+
 " TAB in general mode will move to text buffer
-nnoremap <TAB> :bnext<CR>
+nnoremap <silent> <TAB> :BufferNext<CR>
 " SHIFT-TAB will go back
-nnoremap <S-TAB> :bprevious<CR>
+nnoremap <silent> <S-TAB> :BufferPrevious<CR>
 
 " Alternate way to save
 " nnoremap <C-s> :w<CR>
@@ -57,9 +62,9 @@ nmap <leader>sh :split<CR>
 " tnoremap <Esc> <C-\><C-n>
 map <leader>, :FloatermNew<CR>
 map <leader>. :FloatermToggle<CR>
-map <silent> [t :FloatermToggle<CR>
-tnoremap <silent> [t <C-\><C-n>:FloatermToggle<CR>
-tnoremap <silent> [n <C-\><C-n>:FloatermNew<CR>
+map <silent> <F12> :FloatermToggle<CR>
+tnoremap <silent> <F12> <C-\><C-n>:FloatermToggle<CR>
+tnoremap <silent> <F24> <C-\><C-n>:FloatermNew<CR>
 tnoremap <silent> <S-TAB> <C-\><C-n>:FloatermNext<CR>
 " tnoremap <silent> [[ <C-\><C-n>:FloatermPrev<CR>
 nmap <leader>r :w<CR>:FloatermNew --autoclose=1 run.sh % && read<CR>
@@ -102,8 +107,3 @@ imap <c-h> <Left>
 imap <c-j> <Down>
 imap <c-k> <Up>
 imap <c-l> <Right>
-
-" Set F12 key
-set <F12>=<c-v><F12>
-" set <S-F12>=<c-v><S-F12>
-" imap <F12> <c-t>

@@ -1,13 +1,15 @@
 " configure nvcode-color-schemes
-let g:nvcode_termcolors=256
+" let g:nvcode_termcolors=256
 
 syntax on
+
 " colorscheme onedark 
-colorscheme lunar
+" colorscheme lunar
+
+let g:ayu_mirage=1
+colorscheme ayu
 
 
-" checks if your terminal has 24-bit color support
-if (has("termguicolors"))
-    set termguicolors
-    hi LineNr ctermbg=NONE guibg=NONE
-endif
+" Set 24-bit color support
+set termguicolors
+hi LineNr ctermbg=NONE guibg=NONE

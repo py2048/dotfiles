@@ -7,6 +7,7 @@ set nowrap                              " Display long lines as just one line
 set encoding=utf-8                      " The encoding displayed
 set pumheight=10                        " Makes popup menu smaller
 set fileencoding=utf-8                  " The encoding written to file
+set fileformat=unix                     " Set file format to unix
 set ruler              			        " Show the cursor position all the time
 set cmdheight=2                         " More space for displaying messages
 set iskeyword+=-                      	" treat dash separated words as a word text object
@@ -40,7 +41,7 @@ filetype plugin on
 cmap w!! w !sudo tee %
 
 " Fortran
-au BufWritePost *.f90 silent! execute "!fprettify -i 4 <afile>" | e!
+" au BufWritePost *.f90 silent! execute "!fprettify -i 4 <afile>" | e!
 
 " C auto format
 function! Formatonsave()
@@ -70,9 +71,6 @@ endfunction
 " ToggleFormat for keymap.c file
 au BufEnter keymap.c call ToggleFormat()
 au BufLeave keymap.c call ToggleFormat()
-
-" Vscode snippets
-au BufRead,BufNewFile *.code-snippets set filetype=jsonc
 
 " Latex files
 au BufRead,BufNewFile *.tex set filetype=latex

@@ -5,21 +5,22 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
-call plug#begin('~/.config/nvim/autoload/plugged')
+" Set filetype
+au BufRead,BufNewFile *.jl set filetype=julia
 
+
+call plug#begin('~/.config/nvim/autoload/plugged')
     
-    " Better Syntax Support
-    " Plug 'sheerun/vim-polyglot'
-    
+
     " Auto pairs 
     " Plug 'jiangmiao/auto-pairs'
     Plug 'windwp/nvim-autopairs'
     
     " Julia support
-    Plug 'JuliaEditorSupport/julia-vim'
+    " Plug 'JuliaEditorSupport/julia-vim', { 'for': 'julia' }
 
     " Subtitle Alpha support
-    " Plug 'joeky888/Ass.vim'
+    " Plug 'joeky888/Ass.vim', { 'for': 'ass' }
 
     " Status line
 
@@ -44,13 +45,13 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Tag bar
     " Plug 'preservim/tagbar'
     " Surround
-    " Plug 'blackcauldron7/surround.nvim'
     Plug 'machakann/vim-sandwich'
     " nnn
     Plug 'mcchrish/nnn.vim'
     
     " Color scheme
-    Plug 'christianchiarulli/nvcode-color-schemes.vim'
+    " Plug 'christianchiarulli/nvcode-color-schemes.vim'
+    Plug 'Shatur/neovim-ayu'
     Plug 'nvim-treesitter/nvim-treesitter'
 
     " Scroll
@@ -69,6 +70,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'justinmk/vim-sneak'
     Plug 'unblevable/quick-scope'
 
+    " Vim ipython
+    Plug 'jpalardy/vim-slime', { 'for': 'python' }
+    Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
 call plug#end()
 
     
