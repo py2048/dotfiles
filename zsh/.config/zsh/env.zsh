@@ -59,7 +59,7 @@ alias :q='exit'
 
 # profile
 alias p="nvim $ZDOTDIR/.zshrc"
-alias d="cd ~/dotfiles"
+alias d="cd ~/repo/dotfiles"
 
 # Tree
 alias tree='tree -C'
