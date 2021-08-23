@@ -13,5 +13,26 @@
         "prefix": "enco",
         "body": "# coding=utf-8\n$0",
         "description" : "Set default python3 encoding specification to utf-8, by default this is the encoding for python3.x as it is mentioned in pep-3120."
+    },
+    "matplotlib" : {
+        "prefix": "import matplotlib",
+        "body": "import matplotlib.pyplot as plt\n",
+        "description" : "Import matplotlib library"
+    },
+    "numpy" : {
+        "prefix": "import numpy",
+        "body": "import numpy as np\n",
+        "description" : "Import numpy library"
+    },
+    "print": {
+        "prefix": "print",
+        "body": "print($0)",
+        "description": "print function"
+    },
+    "function": {
+        "prefix": "def",
+        "body": ["def ${1:func}($2):", "\t$3", "$4"],
+        "description": "create function"
     }
+
 }
