@@ -147,6 +147,17 @@
 #           yabai -m window --toggle topmost;\
 #           yabai -m window --toggle pip
 
+:: default
+:: swap @
+
+meh - z; swap 
+swap < meh - z; default
+
+swap < h: yabai -m window --swap west
+swap < l: yabai -m window --swap east
+swap < j: yabai -m window --swap south
+swap < k: yabai -m window --swap north
+
 meh - return: cd && /usr/local/bin/kitty &
 meh - d: /Applications/GoldenDict.app/Contents/MacOS/GoldenDict &
 meh - s: ~/.local/bin/sidecar.sh
@@ -160,9 +171,12 @@ meh - k: yabai -m window --focus north
 meh - 0x27: yabai -m display --focus prev
 meh - 0x29: yabai -m display --focus next
 
-meh - m: yabai -m space --focus next
-meh - n: yabai -m space --focus prev
-meh - b: skhd --key "ctrl - up"
+# meh - m: yabai -m space --focus next
+# meh - n: yabai -m space --focus prev
+meh - m: skhd --key "ctrl - right"
+meh - n: skhd --key "ctrl - left"
+meh - b: /System/Applications/Mission\ Control.app/Contents/MacOS/Mission\ Control
+meh - a: /System/Applications/Launchpad.app/Contents/MacOS/Launchpad
 meh - 1: yabai -m space --focus 1
 meh - 2: yabai -m space --focus 2
 meh - 3: yabai -m space --focus 3
@@ -181,6 +195,8 @@ hyper - k: yabai -m window --swap north
 
 hyper - 0x27: yabai -m window --display prev && yabai -m display --focus prev
 hyper - 0x29: yabai -m window --display next && yabai -m display --focus next
+
+meh - space: yabai -m space --balance
 
 # lalt - s : yabai -m space --create && \
 #                   set index "(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
