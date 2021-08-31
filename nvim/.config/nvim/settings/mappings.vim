@@ -73,13 +73,13 @@ nmap <leader>r :w<CR>:FloatermNew --autoclose=1 run.sh % && read<CR>
 nnoremap <leader>n :NnnPicker %:p:h<CR>
 
 " Delete without copy to clipboard
-map <space>d "_d
-nmap <space>p "_ddkp
-vmap <space>p "_P
+map <leader>d "_d
+nmap <leader>p "_ddkp
+vmap <leader>p "_P
 
 " Selece lines
-nmap <space>v 0v$h
-vmap <space>v <Esc>0v$h
+nmap <leader>v 0v$h
+vmap <leader>v <Esc>0v$h
 
 " Page Motion
 nmap K <C-u>
