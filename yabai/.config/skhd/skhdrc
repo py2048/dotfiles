@@ -1,3 +1,4 @@
+#!/usr/bin/env skhd -r
 # ################################################################ #
 # THE FOLLOWING IS AN EXPLANATION OF THE GRAMMAR THAT SKHD PARSES. #
 # FOR SIMPLE EXAMPLE MAPPINGS LOOK FURTHER DOWN THIS FILE..        #
@@ -151,17 +152,20 @@
 :: swap @
 
 meh - z; swap 
+swap < escape; default
 swap < meh - z; default
 
-swap < h: yabai -m window --swap west
-swap < l: yabai -m window --swap east
-swap < j: yabai -m window --swap south
-swap < k: yabai -m window --swap north
+swap < h: yabai -m window --swap west && skhd -k 'escape'
+swap < l: yabai -m window --swap east && skhd -k 'escape'
+swap < j: yabai -m window --swap south && skhd -k 'escape'
+swap < k: yabai -m window --swap north && skhd -k 'escape'
 
+# meh - return: /usr/local/bin/zsh -c "/usr/local/bin/kitty @ launch --type=os-window"
 meh - return: cd && /usr/local/bin/kitty &
 meh - d: /Applications/GoldenDict.app/Contents/MacOS/GoldenDict &
-meh - s: ~/.local/bin/sidecar.sh
+meh - s: ~/.local/bin/sidecar.sh &
 # lalt - enter: open ~
+meh - space: ~/.local/bin/app_menu.sh &
 
 meh - h: yabai -m window --focus west || yabai -m display --focus next
 meh - l: yabai -m window --focus east || yabai -m display --focus prev
@@ -196,7 +200,7 @@ hyper - k: yabai -m window --swap north
 hyper - 0x27: yabai -m window --display prev && yabai -m display --focus prev
 hyper - 0x29: yabai -m window --display next && yabai -m display --focus next
 
-meh - space: yabai -m space --balance
+meh + cmd - space: yabai -m space --balance
 
 # lalt - s : yabai -m space --create && \
 #                   set index "(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
