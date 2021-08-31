@@ -9,7 +9,7 @@ endif
 src = $(shell pwd)/src
 
 $(target): $(src)
-	ln -s $(src) $(target)
+	ln -sfn $(src) $(target)
 
 clean: $(target)
 	rm -r $(target)
