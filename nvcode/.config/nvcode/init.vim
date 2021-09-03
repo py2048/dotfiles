@@ -87,7 +87,7 @@ autocmd FileType python nmap <buffer> <silent> <space>r :call VSCodeCall('python
 " autocmd FileType notebook nmap <buffer> <silent> K :call VSCodeCall('notebook.focusPreviousEditor')<CR>
 
 " Command Palate
-map <silent> <space>p : call VSCodeCall('workbench.action.showCommands')<CR>
+map <silent> <space>; : call VSCodeCall('workbench.action.showCommands')<CR>
 
 " Split
 nmap <silent> <space>sv :call VSCodeCall('workbench.action.splitEditor')<CR>
