@@ -45,32 +45,33 @@ cmap w!! w !sudo tee %
 
 " C auto format
 function! Formatonsave()
-  let l:formatdiff = 1
+  let l:lines='all'
   py3f ~/.local/bin/clang-format.py
 endfunction
 
 augroup FormatSave
     autocmd!
     autocmd BufWritePre *.c,*.h,*.cc,*.cpp call Formatonsave()
+    " autocmd BufWritePre *.c,*.h,*.cc,*.cpp py3f ~/.local/bin/clang-format.py
 augroup END
 
 " ToggleFormat
-function! ToggleFormat()
-    if !exists('#FormatSave#BufWritePre')
-        augroup FormatSave
-            autocmd BufWritePre *.c,*.h,*.cc,*.cpp call Formatonsave()
-            autocmd!
-        augroup END
-    else
-        augroup FormatSave
-            autocmd!
-        augroup END
-    endif
-endfunction
+" function! ToggleFormat()
+"     if !exists('#FormatSave#BufWritePre')
+"         augroup FormatSave
+"             autocmd BufWritePre *.c,*.h,*.cc,*.cpp call Formatonsave()
+"             autocmd!
+"         augroup END
+"     else
+"         augroup FormatSave
+"             autocmd!
+"         augroup END
+"     endif
+" endfunction
 
 " ToggleFormat for keymap.c file
-au BufEnter keymap.c call ToggleFormat()
-au BufLeave keymap.c call ToggleFormat()
+" au BufEnter keymap.c call ToggleFormat()
+" au BufLeave keymap.c call ToggleFormat()
 
 " Latex files
 au BufRead,BufNewFile *.tex set filetype=latex
