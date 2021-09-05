@@ -63,6 +63,19 @@ pip_update(){
     pip list --user | tail -n +3 | awk '{print $1}' | xargs verbose.sh pip install -U --user
 }
 
+pipenv_update(){
+    ! [ -x "$(command -v pip)" ] && echo_red pip is not installed && return
+    if [ $CONDA_DEFAULT_ENV ]; then
+        echo Anaconda environment is activated. Are you sure to update pip\? y\[n\]
+        read ans
+        [ "$ans" = "y" ] || return
+        pip install -U pip
+        pip list | tail -n +3 | awk '{print $1}' | xargs verbose.sh pip install -U
+    else
+        echo Anaconda environment is not activated
+    fi
+}
+
 conda_update(){
     [ -z $CONDA_DEFAULT_ENV ] && echo_red Cannot update conda: anaconda environment is not activated && return
     verbose.sh conda update --all
