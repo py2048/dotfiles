@@ -166,6 +166,7 @@ meh - d: /Applications/GoldenDict.app/Contents/MacOS/GoldenDict &
 meh - s: ~/.local/bin/sidecar.sh &
 # lalt - enter: open ~
 meh - space: ~/.local/bin/app_menu.sh &
+meh - e: /usr/bin/osascript ~/.local/bin/Finder.scpt
 
 meh - h: yabai -m window --focus west || yabai -m display --focus next
 meh - l: yabai -m window --focus east || yabai -m display --focus prev
