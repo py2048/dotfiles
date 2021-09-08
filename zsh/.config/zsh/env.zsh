@@ -37,7 +37,7 @@ export VISUAL="nvim"
 source ~/.config/lf/icons.sh
 
 # ls colors
-export LS_COLORS="$(vivid generate one-dark)"
+export LS_COLORS="$(vivid generate ~/.config/vivid/nord.yml)"
 # Color for suggestions
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
