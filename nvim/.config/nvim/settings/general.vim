@@ -45,8 +45,10 @@ cmap w!! w !sudo tee %
 
 " C auto format
 function! Formatonsave()
-  let l:lines='all'
-  py3f ~/.local/bin/clang-format.py
+    let l:lines='all'
+    if bufname() != "keymap.c"
+        py3f ~/.local/bin/clang-format.py
+    endif
 endfunction
 
 augroup FormatSave
@@ -54,24 +56,6 @@ augroup FormatSave
     autocmd BufWritePre *.c,*.h,*.cc,*.cpp call Formatonsave()
     " autocmd BufWritePre *.c,*.h,*.cc,*.cpp py3f ~/.local/bin/clang-format.py
 augroup END
-
-" ToggleFormat
-" function! ToggleFormat()
-"     if !exists('#FormatSave#BufWritePre')
-"         augroup FormatSave
-"             autocmd BufWritePre *.c,*.h,*.cc,*.cpp call Formatonsave()
-"             autocmd!
-"         augroup END
-"     else
-"         augroup FormatSave
-"             autocmd!
-"         augroup END
-"     endif
-" endfunction
-
-" ToggleFormat for keymap.c file
-" au BufEnter keymap.c call ToggleFormat()
-" au BufLeave keymap.c call ToggleFormat()
 
 " Latex files
 au BufRead,BufNewFile *.tex set filetype=latex
@@ -85,9 +69,9 @@ set number relativenumber
             
 " Number line
 augroup numbertoggle
-  autocmd!
-  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
-  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
+    autocmd!
+    autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
+    autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
 augroup END
 
 " Change cursor when quit
