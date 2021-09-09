@@ -14,6 +14,7 @@
 sudo yabai --load-sa
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
+# Configuration
 # global settings
 yabai -m config mouse_follows_focus          on
 yabai -m config focus_follows_mouse          autofocus
@@ -53,5 +54,15 @@ yabai -m rule --add app="^ColorSlurp$" manage=off
 yabai -m rule --add app="^Free Download Manager$" manage=off
 yabai -m rule --add app="^KeePassXC$" manage=off
 yabai -m rule --add app="choose" manage=off sticky=on layer=above
+
+# Auto refresh icons
+# yabai -m signal --add event=space_changed action="~/.config/spacebar/refresh.sh all"
+yabai -m signal --add event=space_changed action="~/.config/spacebar/refresh.sh space"
+yabai -m signal --add event=application_launched action="~/.config/spacebar/refresh.sh space"
+yabai -m signal --add event=application_terminated action="~/.config/spacebar/refresh.sh all"
+# yabai -m signal --add event=windows_moved action="~/.config/spacebar/refresh.sh all"
+yabai -m signal --add event=window_created action="~/.config/spacebar/refresh.sh space"
+yabai -m signal --add event=window_destroyed action="~/.config/spacebar/refresh.sh space"
+
 
 echo "yabai configuration loaded.."

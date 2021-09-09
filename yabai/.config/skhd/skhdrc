@@ -149,7 +149,8 @@
 #           yabai -m window --toggle pip
 
 :: default
-:: swap @
+:: command
+:: swap
 
 meh - z; swap 
 swap < escape; default
@@ -161,12 +162,14 @@ swap < j: yabai -m window --swap south && skhd -k 'escape'
 swap < k: yabai -m window --swap north && skhd -k 'escape'
 
 # meh - return: /usr/local/bin/zsh -c "/usr/local/bin/kitty @ launch --type=os-window"
-meh - return: cd && /usr/local/bin/kitty &
+# meh - return: cd && /usr/local/bin/kitty &
+# meh - return: /usr/local/bin/zsh -c "kitty" &
+meh - return: /usr/local/bin/zsh -c " cd ~ && [ -S $TMPDIR/mykitty ] && kitty @ --to unix:$TMPDIR/mykitty launch --type=os-window || kitty --listen-on unix:$TMPDIR/mykitty" &
 meh - d: /Applications/GoldenDict.app/Contents/MacOS/GoldenDict &
 meh - s: ~/.local/bin/sidecar.sh &
 # lalt - enter: open ~
 meh - space: ~/.local/bin/app_menu.sh &
-meh - e: /usr/bin/osascript ~/.local/bin/Finder.scpt
+meh - e: /usr/bin/osascript ~/.local/bin/Finder.scpt &
 
 meh - h: yabai -m window --focus west || yabai -m display --focus next
 meh - l: yabai -m window --focus east || yabai -m display --focus prev
@@ -178,8 +181,8 @@ meh - 0x29: yabai -m display --focus next
 
 # meh - m: yabai -m space --focus next
 # meh - n: yabai -m space --focus prev
-meh - m: skhd --key "ctrl - right"
-meh - n: skhd --key "ctrl - left"
+meh - o: skhd --key "ctrl - right"
+meh - i: skhd --key "ctrl - left"
 meh - b: /System/Applications/Mission\ Control.app/Contents/MacOS/Mission\ Control
 meh - a: /System/Applications/Launchpad.app/Contents/MacOS/Launchpad
 meh - 1: yabai -m space --focus 1
@@ -202,6 +205,7 @@ hyper - 0x27: yabai -m window --display prev && yabai -m display --focus prev
 hyper - 0x29: yabai -m window --display next && yabai -m display --focus next
 
 meh + cmd - space: yabai -m space --balance
+meh - r: ~/.config/spacebar/refresh.sh space
 
 # lalt - s : yabai -m space --create && \
 #                   set index "(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
