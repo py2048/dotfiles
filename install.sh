@@ -12,6 +12,7 @@ case $NAME in
     MacOS)
         (cd macscripts && ./install.sh)
         stow yabai
+        stow rc_mac
         ;;
 
     Fedora)

@@ -23,7 +23,8 @@ add_path $HOME/.go/bin
 
 # MANPAGER
 export MANPATH="/usr/local/man:$MANPATH"
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+# export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANPAGER="most"
 
 # Set language environment
 export LANG=en_US.UTF-8
