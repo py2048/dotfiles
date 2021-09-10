@@ -35,5 +35,9 @@ highlight Search guifg=None guibg=#444b69
 " Search
 com! Q :q
 
+" Snippets
 let g:vsnip_snippet_dir = "$HOME/.config/nvcode/snippets/src"
+
+set colorcolumn=99999
+lua require("indent_blankline").setup { char = "│", buftype_exclude = {"terminal"}}
 

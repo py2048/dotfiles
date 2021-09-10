@@ -3,19 +3,19 @@ local condition = require('galaxyline.condition')
 
 -- onedark
 local colors = {
-  bg = '#191E2A',
-  bg_dim = '#262a32',
-  bg_light = '#22262E',
-  black = '#222222',
-  white = '#abb2bf',
-  gray = '#868c96',
-  red = '#e06c75',
-  green = '#98c379',
-  yellow = '#e5c07b',
-  blue = '#61afef',
-  purple = '#7c7cff', -- tweaked to match custom color
-  teal = '#56b6c2',
-  blue2 = '#81A1C1'
+    bg = '#191E2A',
+    bg_dim = '#262a32',
+    bg_light = '#22262E',
+    black = '#222222',
+    white = '#abb2bf',
+    gray = '#868c96',
+    red = '#e06c75',
+    green = '#98c379',
+    yellow = '#e5c07b',
+    blue = '#61afef',
+    purple = '#7c7cff', -- tweaked to match custom color
+    teal = '#56b6c2',
+    blue2 = '#81A1C1'
 }
 
 local function mode_alias(m)

@@ -40,6 +40,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'norcalli/nvim-colorizer.lua'
     " Start screen
     " Plug 'mhinz/vim-startify'
+    " Indent line
+    Plug 'lukas-reineke/indent-blankline.nvim'
     " Terminal
     Plug 'voldikss/vim-floaterm'
     " Tag bar
