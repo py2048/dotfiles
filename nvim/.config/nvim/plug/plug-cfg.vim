@@ -3,16 +3,16 @@ luafile $HOME/.config/nvim/lua/glxline.lua
 luafile $HOME/.config/nvim/lua/comment.lua
 luafile $HOME/.config/nvim/lua/treesitter.lua
 luafile $HOME/.config/nvim/lua/nscroll.lua
-luafile $HOME/.config/nvim/lua/nvcompe.lua
-luafile $HOME/.config/nvim/lua/auto-pairs.lua
+" luafile $HOME/.config/nvim/lua/nvcompe.lua
+" luafile $HOME/.config/nvim/lua/auto-pairs.lua
 luafile $HOME/.config/nvim/lua/plug-colorizer.lua
 
 " Vim plugins config
 source $HOME/.config/nvim/plug/fzf.vim
 source $HOME/.config/nvim/autoload/plugged/vim-sandwich/macros/sandwich/keymap/surround.vim
 source $HOME/.config/nvim/plug/sneak.vim
-source $HOME/.config/nvim/plug/vsnip.vim
-source $HOME/.config/nvim/plug/ipython.vim
+" source $HOME/.config/nvim/plug/vsnip.vim
+" source $HOME/.config/nvim/plug/ipython.vim
 
 
 " Plugins config values

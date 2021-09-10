@@ -14,7 +14,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Auto pairs 
     " Plug 'jiangmiao/auto-pairs'
-    Plug 'windwp/nvim-autopairs'
+    " Plug 'windwp/nvim-autopairs'
     
     " Julia support
     " Plug 'JuliaEditorSupport/julia-vim', { 'for': 'julia' }
@@ -59,12 +59,13 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Scroll
     Plug 'karb94/neoscroll.nvim'
 
-    " Complesion
+    " Completion
     " Plug 'hrsh7th/nvim-compe', { 'on': 'InsertEnter'}
-    Plug 'hrsh7th/nvim-compe'
+    " Plug 'hrsh7th/nvim-compe'
+    Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 
     " Snippet
-    Plug 'hrsh7th/vim-vsnip'
+    " Plug 'hrsh7th/vim-vsnip'
     " Plug 'hrsh7th/vim-vsnip', { 'on': 'InsertEnter'}
     " Plug 'rafamadriz/friendly-snippets'
 
@@ -73,8 +74,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'unblevable/quick-scope'
 
     " Vim ipython
-    Plug 'jpalardy/vim-slime', { 'for': 'python' }
-    Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
+    " Plug 'jpalardy/vim-slime', { 'for': 'python' }
+    " Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
 call plug#end()
 
     
