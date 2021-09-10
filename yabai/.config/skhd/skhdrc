@@ -181,8 +181,8 @@ meh - 0x29: yabai -m display --focus next
 
 # meh - m: yabai -m space --focus next
 # meh - n: yabai -m space --focus prev
-meh - o: skhd --key "ctrl - right"
-meh - i: skhd --key "ctrl - left"
+meh - i: skhd --key "ctrl - right"
+meh - u: skhd --key "ctrl - left"
 meh - b: /System/Applications/Mission\ Control.app/Contents/MacOS/Mission\ Control
 meh - a: /System/Applications/Launchpad.app/Contents/MacOS/Launchpad
 meh - 1: yabai -m space --focus 1

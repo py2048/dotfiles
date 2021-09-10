@@ -1,108 +1,50 @@
 #!/usr/bin/env zsh
 
 #     輪   
+declare -A App_Icon=(
+    alacritty 
+    balenaEtcher 
+    Brave\ Browser 
+    Code ﬏
+    Discord ﭮ
+    Disk\ Utility 
+    Finder 
+    Firefox 
+    Font\ Book 
+    Free\ Download\ Manager 
+    GoldenDict 
+    IINA 輪
+    Inkscape 
+    KeePassXC 
+    Keychain\ Access 
+    kitty 
+    Messenger 
+    Microsoft\ Excel 
+    Microsoft\ PowerPoint 
+    Microsoft\ Teams 
+    Microsoft\ Word 
+    Numbers 
+    Obsidian  
+    Pine  
+    Preview 
+    Skim 
+    Spark 﫯
+    Mail 﫯
+    Spotlight 
+    System\ Preferences 
+    TeamViewer 刺
+    The\ Unarchiver 
+    Transmission 
+    VimR 
+    VMware\ Fusion 
+    VOX 
+)
+
 to_icon() {
     # Return  applications icons from text
-    case "$1" in
-        kitty | alacritty)
-            echo ""
-            ;;
-        Brave\ Browser | Chromium)
-            echo ""
-            ;;
-        Finder)
-            echo ""
-            ;;
-        Free\ Download\ Manager)
-            echo ""
-            ;;
-        Code)
-            echo "﬏"
-            ;;
-        Obsidian | Pine)
-            echo " "
-            ;;
-        GoldenDict)
-            echo ""
-            ;;
-        IINA)
-            echo "輪"
-            ;;
-        Microsoft\ Teams)
-            echo ""
-            ;;
-        Skim)
-            echo ""
-            ;;
-        Spotlight)
-            echo ""
-            ;;
-        Messenger)
-            echo ""
-            ;;
-        Transmission)
-            echo ""
-            ;;
-        KeePassXC | Keychain\ Access)
-            echo ""
-            ;;
-        VimR)
-            echo ""
-            ;;
-        Preview)
-            echo ""
-            ;;
-        VMware\ Fusion)
-            echo ""
-            ;;
-        Spark | Mail)
-            echo "﫯"
-            ;;
-        Discord)
-            echo "ﭮ"
-            ;;
-        Inkscape)
-            echo ""
-            ;;
-        Firefox)
-            echo ""
-            ;;
-        Font\ Book)
-            echo ""
-            ;;
-        System\ Preferences)
-            echo ""
-            ;;
-        TeamViewer)
-            echo "刺"
-            ;;
-        The\ Unarchiver)
-            echo ""
-            ;;
-        Microsoft\ Excel | Numbers)
-            echo ""
-            ;;
-        Microsoft\ Word)
-            echo ""
-            ;;
-        Microsoft\ PowerPoint)
-            echo ""
-            ;;
-        Disk\ Utility)
-            echo ""
-            ;;
-        VOX | Music)
-            echo ""
-            ;;
-        balenaEtcher)
-            echo ""
-            ;;
-        *)
-            # echo "ﬓ"
-            # echo "裡"
-            echo ""
-            ;;
-    esac
+    icon_app=$App_Icon[$1]
+    [ -z "$icon_app" ] && echo "" || echo "$icon_app"
+
 }
 
 refresh_all() {
@@ -168,7 +110,10 @@ refresh_space() {
     done <<< "$apps"  # Iterate through apps
     # Asign icons to current spaces
     space_icons[$space_num]="${s_icon}"
+    # echo $space_icons
     spacebar -m config space_icon_strip "$space_icons[@]"
 }
 
 refresh_"$1"
+# refresh_all
+# refresh_space
