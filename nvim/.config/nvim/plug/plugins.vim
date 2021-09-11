@@ -14,7 +14,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Auto pairs 
     " Plug 'jiangmiao/auto-pairs'
-    " Plug 'windwp/nvim-autopairs'
+    Plug 'windwp/nvim-autopairs'
     
     " Julia support
     " Plug 'JuliaEditorSupport/julia-vim', { 'for': 'julia' }

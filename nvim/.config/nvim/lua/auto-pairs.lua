@@ -1,42 +1,47 @@
+local remap = vim.api.nvim_set_keymap
 local npairs = require('nvim-autopairs')
 local Rule = require('nvim-autopairs.rule')
+
+
+npairs.setup({
+    map_bs = false,
+    check_ts = false
+    -- check_ts = true,
+    -- ts_config = {
+    --     lua = {'string'},-- it will not add pair on that treesitter node
+    --     javascript = {'template_string'},
+    --     java = false,-- don't check treesitter on java
+    -- }
+})
+
 
 -- skip it, if you use another global object
 _G.MUtils= {}
 
-vim.g.completion_confirm_key = ""
-MUtils.completion_confirm=function()
-  if vim.fn.pumvisible() ~= 0  then
-    if vim.fn.complete_info()["selected"] ~= -1 then
-      return vim.fn["compe#confirm"](npairs.esc("<cr>"))
+MUtils.CR = function()
+  if vim.fn.pumvisible() ~= 0 then
+    if vim.fn.complete_info({ 'selected' }).selected ~= -1 then
+      return npairs.esc('<c-y>')
     else
-      return npairs.esc("<cr>")
+      -- you can change <c-g><c-g> to <c-e> if you don't use other i_CTRL-X modes
+      return npairs.esc('<c-g><c-g>') .. npairs.autopairs_cr()
     end
   else
     return npairs.autopairs_cr()
   end
 end
+remap('i', '<cr>', 'v:lua.MUtils.CR()', { expr = true, noremap = true })
 
+MUtils.BS = function()
+  if vim.fn.pumvisible() ~= 0 and vim.fn.complete_info({ 'mode' }).mode == 'eval' then
+    return npairs.esc('<c-e>') .. npairs.autopairs_bs()
+  else
+    return npairs.autopairs_bs()
+  end
+end
+remap('i', '<bs>', 'v:lua.MUtils.BS()', { expr = true, noremap = true })
 
-require("nvim-autopairs.completion.compe").setup({
-  map_cr = true, --  map <CR> on insert mode
-  map_complete = true -- it will auto insert `(` after select function or method item
-})
-
-npairs.setup({
-    check_ts = true,
-    ts_config = {
-        lua = {'string'},-- it will not add pair on that treesitter node
-        javascript = {'template_string'},
-        java = false,-- don't check treesitter on java
-    }
-})
-
-require('nvim-treesitter.configs').setup {
-    autopairs = {enable = true}
-}
-
-local ts_conds = require('nvim-autopairs.ts-conds')
+-- local ts_conds = require('nvim-autopairs.ts-conds')
 
 -- press % => %% is only inside comment or string
 -- npairs.add_rules({
