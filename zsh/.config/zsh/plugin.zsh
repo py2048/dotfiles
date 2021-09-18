@@ -13,7 +13,7 @@ z_plug "skywind3000/z.lua"
 # zsh-autosuggestions bindings
 bindkey '^[[24~' autosuggest-accept
 # Change zlua cache location
-export _ZL_DATA=$HOME/.cache/zlua
+export _ZL_DATA=$XDG_CACHE_HOME/zlua
 
 
 # Set PS1 prompt
