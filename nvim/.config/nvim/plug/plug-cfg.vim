@@ -6,6 +6,7 @@ luafile $HOME/.config/nvim/lua/nscroll.lua
 " luafile $HOME/.config/nvim/lua/nvcompe.lua
 " luafile $HOME/.config/nvim/lua/nvcmp.lua
 luafile $HOME/.config/nvim/lua/nvim_cmp.lua
+luafile $HOME/.config/nvim/lua/lsp_cfg.lua
 " luafile $HOME/.config/nvim/lua/auto-pairs.lua
 luafile $HOME/.config/nvim/lua/pairs_nvcmp.lua
 luafile $HOME/.config/nvim/lua/plug-colorizer.lua
