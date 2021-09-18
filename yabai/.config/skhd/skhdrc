@@ -201,8 +201,8 @@ meh - l: yabai -m window --focus east || yabai -m display --focus prev
 meh - j: yabai -m window --focus south
 meh - k: yabai -m window --focus north
 
-meh - 0x27: yabai -m display --focus prev
-meh - 0x29: yabai -m display --focus next
+meh - o: yabai -m display --focus prev
+meh - y: yabai -m display --focus next
 
 # meh - m: yabai -m space --focus next
 # meh - n: yabai -m space --focus prev
@@ -226,8 +226,8 @@ hyper - l: yabai -m window --swap east
 hyper - j: yabai -m window --swap south
 hyper - k: yabai -m window --swap north
 
-hyper - 0x27: yabai -m window --display prev && yabai -m display --focus prev
-hyper - 0x29: yabai -m window --display next && yabai -m display --focus next
+hyper - y: yabai -m window --display next && yabai -m display --focus next
+hyper - o: yabai -m window --display prev && yabai -m display --focus prev
 
 meh + cmd - space: yabai -m space --balance
 meh - r: ~/.config/spacebar/refresh.sh space
