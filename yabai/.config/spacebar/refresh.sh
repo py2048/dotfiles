@@ -3,6 +3,7 @@
 #     輪   
 declare -A App_Icon=(
     alacritty 
+    Affinity\ Photo  
     balenaEtcher 
     Brave\ Browser 
     Code ﬏
@@ -24,6 +25,7 @@ declare -A App_Icon=(
     Microsoft\ Teams 
     Microsoft\ Word 
     Numbers 
+    Parallels\ Desktop 
     Obsidian  
     Pine  
     Preview 
@@ -84,7 +86,8 @@ refresh_all() {
 
 refresh_space() {
     # Refresh icons for current space
-    space=$(yabai -m query --windows --space)
+    # space=$(yabai -m query --windows --space)
+    space=$(yabai -m query --windows --space "$@")
     # Get current space number
     space_num=$(jq -r '.[0].space' <<< "$space")
     # List current icons
@@ -114,6 +117,8 @@ refresh_space() {
     spacebar -m config space_icon_strip "$space_icons[@]"
 }
 
-refresh_"$1"
+space="$1"
+shift
+refresh_"$space" "$@"
 # refresh_all
 # refresh_space

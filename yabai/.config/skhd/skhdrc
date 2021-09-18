@@ -151,6 +151,8 @@
 :: default
 :: command
 :: swap
+:: app @ : ~/.config/skhd/launcher/app_menu_list.sh &
+:: parallels
 
 meh - z; swap 
 swap < escape; default
@@ -161,6 +163,27 @@ swap < l: yabai -m window --swap east && skhd -k 'escape'
 swap < j: yabai -m window --swap south && skhd -k 'escape'
 swap < k: yabai -m window --swap north && skhd -k 'escape'
 
+meh - a; app
+app < meh - a; default
+app < escape: ps -ex | grep app_menu_list.sh | grep -v grep | awk '{print $1}' | head -1 | xargs pkill -P && skhd -k 'meh -a'
+parallels < meh - a; default
+parallels < escape: ps -ex | grep app_menu_list.sh | grep -v grep | awk '{print $1}' | head -1 | xargs pkill -P && skhd -k 'meh -a'
+
+# app < escape: killall
+app < b: open "/Applications/Brave Browser.app" && skhd -k 'escape'
+app < c: open "/Applications/Visual Studio Code.app" && skhd -k 'escape'
+app < t: open "/Applications/Microsoft Teams.app" && skhd -k 'escape'
+app < o: open "/Applications/Obsidian.app" && skhd -k 'escape'
+app < s: open "/System/Applications/System Preferences.app" && skhd -k 'escape'
+app < k: open "/Applications/KeePassXC.app" && skhd -k 'escape'
+app < m: open "/Applications/Messenger.app" && skhd -k 'escape'
+app < d: open "/Applications/Discord.app" && skhd -k 'escape'
+app < s: open "/Applications/VMware Fusion.app" && skhd -k 'escape'
+
+# app < p: ~/.local/bin/parallels.sh && skhd -k 'escape'
+app < p; parallels
+parallels < w: ~/.local/bin/parallels.sh "Windows 10" ** skhd -k 'escape'
+
 # meh - return: /usr/local/bin/zsh -c "/usr/local/bin/kitty @ launch --type=os-window"
 # meh - return: cd && /usr/local/bin/kitty &
 # meh - return: /usr/local/bin/zsh -c "kitty" &
@@ -170,6 +193,8 @@ meh - s: ~/.local/bin/sidecar.sh &
 # lalt - enter: open ~
 lctrl + alt + cmd - space: ~/.local/bin/app_menu.sh &
 meh - e: /usr/bin/osascript ~/.local/bin/Finder.scpt &
+meh -a: ~/.config/skhd/launcher/menu.sh ~/.config/skhd/launcher/app.sh &
+meh - a: ~/.config/skhd/launcher/menu.sh &
 
 meh - h: yabai -m window --focus west || yabai -m display --focus next
 meh - l: yabai -m window --focus east || yabai -m display --focus prev
@@ -193,7 +218,7 @@ meh - 5: yabai -m space --focus 5
 meh - 6: yabai -m space --focus 6
 meh - 7: yabai -m space --focus 7
 
-meh - f: yabai -m window --toggle zoom-fullscreen
+meh - f: yabai -m window --focus mouse && yabai -m window --toggle zoom-fullscreen
 meh - g: yabai -m window --toggle float
 
 hyper - h: yabai -m window --swap west
