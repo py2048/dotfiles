@@ -27,7 +27,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'kyazdani42/nvim-web-devicons'
     Plug 'romgrk/barbar.nvim'
 
-    Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+    " Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+    Plug 'NTBBloodbath/galaxyline.nvim'
 
     " Commenter
     Plug 'terrortylor/nvim-comment'

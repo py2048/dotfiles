@@ -153,7 +153,7 @@ gl.section.right[1] = {
   FileType = {
     highlight = {colors.gray, colors.bg},
     provider = function()
-      local buf = require('galaxyline.provider_buffer')
+      local buf = require('galaxyline.providers.buffer')
       return string.lower(buf.get_buffer_filetype())
     end,
   }
