@@ -3,6 +3,9 @@ HISTFILE=$XDG_CACHE_HOME/zsh_history
 HISTSIZE=5000
 SAVEHIST=5000
 
+# Export var so clear_hist.sh can see
+export HISTFILE
+
 # Disable error sound
 unsetopt BEEP
 
