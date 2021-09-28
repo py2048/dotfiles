@@ -12,12 +12,12 @@ case $NAME in
     MacOS)
         (cd macscripts && ./install.sh)
         stow yabai
-        stow rc_mac
         ;;
 
     Fedora)
-        stow rc
+        stow linux_other
         stow sway
+        stow fzf
         ;;
 
     *)
@@ -25,4 +25,5 @@ case $NAME in
 
 esac
 
-stow color conda lf nnn nvcode nvim zsh
+(cd scripts && ./install.sh)
+stow color conda lf nnn nvcode nvim rc zsh
