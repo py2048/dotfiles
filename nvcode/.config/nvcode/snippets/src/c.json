@@ -1,12 +1,4 @@
 {
-    "include": {
-        "prefix" : ["inc", "include"],
-        "body": "#include <$1>"
-    },
-    "include1": {
-        "prefix" : ["inc\"", "include\""],
-        "body": "#include \"$1\""
-    },
     "define": {
         "prefix" : ["def", "define"],
         "body": "#define "
