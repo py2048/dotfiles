@@ -144,5 +144,8 @@ case $NAME in
     Ubuntu)
         load_file $ZDOTDIR/linux.zsh
         ;;
+    Fedora)
+        load_file $ZDOTDIR/linux.zsh
+        ;;
 
 esac

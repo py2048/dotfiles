@@ -15,7 +15,6 @@ export I_MPI_FC=ifort
 export I_MPI_CC=icc
 export I_MPI_CXX=icpc
 
-
 # Plugins
 
 # If not running interactively, don't do anything
