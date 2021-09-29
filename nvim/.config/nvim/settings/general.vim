@@ -65,7 +65,7 @@ au BufRead,BufNewFile *.tex set filetype=latex
 " autocmd FileType jsonc setlocal shiftwidth=2 softtabstop=2 expandtab
 
 " Fixed form fortran
-au BufRead,BufNewFile *.f setlocal shiftwidth=3 softtabstop=3 expandtab
+au BufRead,BufNewFile *.f setlocal shiftwidth=2 softtabstop=2 expandtab
 
 
 " Set numberline
