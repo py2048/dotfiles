@@ -3,7 +3,7 @@ start=$(date +%s.%N)
 
 CC=${CC:-gcc-11}
 CXX=${CXX:-g++-11}
-FF=${FF:-gfortran}
+FF=${FF:-ifort}
 F90=${FF:-gfortran}
 PY=${PY:-python3}
 SH=${SH:-zsh}
@@ -18,7 +18,8 @@ for item in "$@"; do
     [ "$CD" = true ] && DIRN=$(dirname "$src") cd "$DIRN" && CD=false
 
     shebang=$(head -1 "$src")
-    [ $(echo $shebang | cut -c 1-2) = "#!" ] && eval "${shebang##*!} \"$src\"" && continue
+    sb=$(cut -c 1-2 <<< "$shebang")
+    [ -z "$sb" ] && [ "$sb" = "#!" ] && eval "${shebang##*!} \"$src\"" && continue
 
     case $ext in
         c)
