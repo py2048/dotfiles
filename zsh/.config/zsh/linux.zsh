@@ -2,6 +2,9 @@
 # Open in linux
 alias open='xdg-open'
 
+# FEAP alias
+alias feap=~/FEAP/ver84/main/feap
+alias clean_feap='find . -type f ! -name "*.f" ! -name "*.sh" | xargs rm -r && rm -r E* FE*'
 
 # Set env for intel compilers
 export FEAPHOME8_4=$HOME/FEAP/ver84
