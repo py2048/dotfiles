@@ -34,7 +34,8 @@ export EDITOR='nvim'
 export VISUAL="nvim"
 
 
-# lf icons
+# lf
+source ~/.config/lf/lfcd.sh
 source ~/.config/lf/icons.sh
 
 # ls colors
