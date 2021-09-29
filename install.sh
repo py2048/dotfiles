@@ -18,6 +18,7 @@ case $NAME in
         stow linux_other
         stow sway
         stow fzf
+        sudo /usr/bin/stow logitech -t /etc
         ;;
 
     *)
