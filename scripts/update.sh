@@ -55,8 +55,16 @@ os_update(){
 # Other Packages Manager
 
 cargo_update(){
-    ! [ -x "$(command -v cargo)" ] && echo_red cargo is not installed && return
+    ! [ -x "$(command -v cargo)" ] && echo_red rust is not installed && return
     cargo install --list | sed -n 'p;n' | awk '{print $1}' | xargs verbose.sh cargo install
+}
+
+go_update(){
+    ! [ -x "$(command -v go)" ] && echo_red go is not installed && return
+    echo_green Upgrading go packages
+    env CGO_ENABLED=0 GO111MODULE=on go get -u -ldflags="-s -w" github.com/gokcehan/lf
+    env GO111MODULE=on go get -u github.com/doronbehar/pistol/cmd/pistol
+    go get github.com/rclone/rclone
 }
 
 pip_update(){
@@ -96,6 +104,7 @@ all_update(){
     os_update
     zsh_update
     cargo_update
+    go_update
     pip_update
     conda_update
     [ "$RANDOM" -lt "10000" ] && echo_green Cleanning history && clear_hist.sh
