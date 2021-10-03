@@ -100,10 +100,12 @@ nnoremap c* *<c-o>cgn
 nnoremap c# #<C-o>cgn
 
 " Turn off highlight until next search
-nmap <leader>h :noh<CR>
+nmap <silent> <buffer> <leader>h :noh<CR>
 
 " Replace arrow in insert mode
 imap <c-h> <Left>
 imap <c-j> <Down>
 imap <c-k> <Up>
 imap <c-l> <Right>
+
+nmap <buffer> <silent> <leader>l :LspStart<CR>
