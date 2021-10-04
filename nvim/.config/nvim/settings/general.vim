@@ -67,6 +67,8 @@ au BufRead,BufNewFile *.tex set filetype=latex
 " Fixed form fortran
 au BufRead,BufNewFile *.f setlocal shiftwidth=2 softtabstop=2 expandtab
 
+"Makefile tab
+autocmd FileType make setlocal noexpandtab softtabstop=0
 
 " Set numberline
 set number relativenumber
