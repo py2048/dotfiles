@@ -19,7 +19,7 @@ for item in "$@"; do
 
     shebang=$(head -1 "$src")
     sb=$(cut -c 1-2 <<< "$shebang")
-    [ -z "$sb" ] && [ "$sb" = "#!" ] && eval "${shebang##*!} \"$src\"" && continue
+    ! [ -z "$sb" ] && [ "$sb" = "#!" ] && eval "${shebang##*!} \"$src\"" && continue
 
     case $ext in
         c)
