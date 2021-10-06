@@ -9,6 +9,9 @@ add_path /usr/local/opt/coreutils/libexec/gnubin
 # Add path for llvm
 add_path /usr/local/opt/llvm/bin
 
+# Paraview PATH
+add_path /Applications/ParaView-5.9.1.app/Contents/bin
+
 
 
 # Aliases
