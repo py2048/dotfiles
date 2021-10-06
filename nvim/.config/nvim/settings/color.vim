@@ -1,14 +1,7 @@
-" configure nvcode-color-schemes
-" let g:nvcode_termcolors=256
-
 syntax on
 
-" colorscheme onedark 
-" colorscheme lunar
-
-let g:ayu_mirage=1
-colorscheme ayu
-
+# Color theme
+colorscheme ayu-mirage
 
 " Set 24-bit color support
 set termguicolors

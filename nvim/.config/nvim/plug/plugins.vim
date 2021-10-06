@@ -52,6 +52,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " nnn
     Plug 'mcchrish/nnn.vim'
     
+    " Markdown  
+    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+    
     " Color scheme
     " Plug 'christianchiarulli/nvcode-color-schemes.vim'
     Plug 'Shatur/neovim-ayu'
