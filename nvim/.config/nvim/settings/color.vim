@@ -1,6 +1,6 @@
 syntax on
 
-# Color theme
+" Color theme
 colorscheme ayu-mirage
 
 " Set 24-bit color support
