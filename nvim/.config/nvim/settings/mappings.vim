@@ -108,4 +108,5 @@ imap <c-j> <Down>
 imap <c-k> <Up>
 imap <c-l> <Right>
 
+" Turn on lsp
 nmap <buffer> <silent> <leader>l :LspStart<CR>

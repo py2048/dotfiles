@@ -64,8 +64,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'karb94/neoscroll.nvim'
 
     " Completion
-    " Plug 'hrsh7th/nvim-compe', { 'on': 'InsertEnter'}
-    " Plug 'hrsh7th/nvim-compe'
     Plug 'neovim/nvim-lspconfig'
 
     Plug 'hrsh7th/nvim-cmp'

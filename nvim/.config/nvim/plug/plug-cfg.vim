@@ -14,6 +14,7 @@ source $HOME/.config/nvim/autoload/plugged/vim-sandwich/macros/sandwich/keymap/s
 source $HOME/.config/nvim/plug/sneak.vim
 source $HOME/.config/nvim/plug/vsnip.vim
 source $HOME/.config/nvim/plug/ipython.vim
+source $HOME/.config/nvim/plug/md_preview.vim
 
 
 " Plugins config values
@@ -39,6 +40,7 @@ com! Q :q
 " Snippets
 let g:vsnip_snippet_dir = "$HOME/.config/nvcode/snippets/src"
 
+" nvim indent
 set colorcolumn=99999
 lua require("indent_blankline").setup { char = "│", buftype_exclude = {"terminal"}}
 
