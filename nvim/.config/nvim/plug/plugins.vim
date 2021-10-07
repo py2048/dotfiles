@@ -54,6 +54,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     
     " Markdown  
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+    Plug 'dhruvasagar/vim-table-mode'
     
     " Color scheme
     " Plug 'christianchiarulli/nvcode-color-schemes.vim'

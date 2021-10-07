@@ -14,7 +14,8 @@ source $HOME/.config/nvim/autoload/plugged/vim-sandwich/macros/sandwich/keymap/s
 source $HOME/.config/nvim/plug/sneak.vim
 source $HOME/.config/nvim/plug/vsnip.vim
 source $HOME/.config/nvim/plug/ipython.vim
-source $HOME/.config/nvim/plug/md_preview.vim
+source $HOME/.config/nvim/plug/table-md.vim
+" source $HOME/.config/nvim/plug/md_preview.vim
 
 
 " Plugins config values
