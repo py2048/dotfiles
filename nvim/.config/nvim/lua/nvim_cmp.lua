@@ -64,8 +64,8 @@ cmp.setup {
                 cmp.select_next_item()
             -- elseif check_back_space() then
             --     vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Tab>', true, true, true), 'n', true)
-            elseif has_words_before() then
-                cmp.complete()
+            -- elseif has_words_before() then
+            --     cmp.complete()
             -- elseif vim.fn['vsnip#available']() == 1 then
             --     vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Plug>(vsnip-expand-or-jump)', true, true, true), '', true)
             else
