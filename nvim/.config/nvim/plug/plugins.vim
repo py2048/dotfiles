@@ -13,7 +13,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     
 
     " Auto pairs 
-    " Plug 'jiangmiao/auto-pairs'
     Plug 'windwp/nvim-autopairs'
     
     " Julia support
@@ -31,7 +30,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'NTBBloodbath/galaxyline.nvim'
 
     " Commenter
-    Plug 'terrortylor/nvim-comment'
+    Plug 'b3nj5m1n/kommentary'
     " FZF
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
@@ -39,8 +38,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
     " Color
     Plug 'norcalli/nvim-colorizer.lua'
-    " Start screen
-    " Plug 'mhinz/vim-startify'
     " Indent line
     Plug 'lukas-reineke/indent-blankline.nvim'
     " Terminal

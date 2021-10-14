@@ -47,9 +47,6 @@ nnoremap <C-l> <C-w>l
 " nnoremap <Leader>o o<Esc>^Da
 " nnoremap <Leader>O O<Esc>^Da
 
-" Comment
-nmap <silent> <leader>/ :CommentToggle<CR>
-vmap <silent> <leader>/ :CommentToggle<CR>
 
 " Which vim keys
 nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
@@ -77,7 +74,7 @@ map <leader>d "_d
 nmap <leader>p "_ddkp
 vmap <leader>p "_P
 
-" Selece lines
+" Select lines
 nmap <leader>v 0v$h
 vmap <leader>v <Esc>0v$h
 
