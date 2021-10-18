@@ -2,6 +2,8 @@
 
 alias stow="stow -R -t ../.."
 
+! [ -z "$1" ] && stow "$@" && exit
+
 if [ $(uname) = "Darwin" ]; then
     NAME="MacOS"
 elif [ $(uname) = "Linux" ]; then
