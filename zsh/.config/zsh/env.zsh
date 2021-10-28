@@ -39,7 +39,8 @@ source ~/.config/lf/lfcd.sh
 source ~/.config/lf/icons.sh
 
 # ls colors
-export LS_COLORS="$(vivid generate ~/.config/vivid/iceberg-dark.yml)"
+
+command -v vivid > /dev/null && export LS_COLORS="$(vivid generate ~/.config/vivid/iceberg-dark.yml)"
 # Color for suggestions
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 

@@ -3,13 +3,14 @@
 read -d '' AppleScript <<EOF
 tell application "System Preferences"
 activate
-reveal pane id "com.apple.preference.sidecar"
-delay 0.5
+# reveal pane id "com.apple.preference.sidecar"
+reveal pane id "com.apple.preference.displays"
+# delay 0.5
 
-tell application "System Events" to click first menu button of first window of application process "System Preferences" of application "System Events"
-tell application "System Events" to click first menu item of first menu of first menu button of first window of application process "System Preferences" of application "System Events"
+# tell application "System Events" to click first menu button of first window of application process "System Preferences" of application "System Events"
+# tell application "System Events" to click first menu item of first menu of first menu button of first window of application process "System Preferences" of application "System Events"
 
-quit
+# quit
 end tell
 EOF
 osascript -e "$AppleScript"

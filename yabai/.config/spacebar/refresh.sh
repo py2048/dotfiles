@@ -15,6 +15,7 @@ declare -A App_Icon=(
     Free\ Download\ Manager 
     GoldenDict 
     IINA 輪
+    mpv 輪
     Inkscape 
     KeePassXC 
     Keychain\ Access 
@@ -22,7 +23,7 @@ declare -A App_Icon=(
     Messenger 
     Microsoft\ Excel 
     Microsoft\ PowerPoint 
-    Microsoft\ Teams 
+    Microsoft\ Teams ' '
     Microsoft\ Word 
     Numbers 
     Parallels\ Desktop 

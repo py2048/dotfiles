@@ -218,8 +218,8 @@ meh - 5: yabai -m space --focus 5
 meh - 6: yabai -m space --focus 6
 meh - 7: yabai -m space --focus 7
 
-meh - f: yabai -m window --focus mouse && yabai -m window --toggle zoom-fullscreen
-meh - g: yabai -m window --toggle float
+# meh - f: yabai -m window --focus mouse && yabai -m window --toggle zoom-fullscreen
+# meh - g: yabai -m window --toggle float
 
 hyper - h: yabai -m window --swap west
 hyper - l: yabai -m window --swap east
@@ -255,5 +255,6 @@ hyper - 7: yabai -m window --space 7 && yabai -m space --focus 7
 
 f12 [
     "IINA": yabai -m display --focus prev || yabai -m display --focus next
+    "mpv": yabai -m display --focus prev || yabai -m display --focus next
     "GoldenDict": yabai -m display --focus prev || yabai -m display --focus next
 ]

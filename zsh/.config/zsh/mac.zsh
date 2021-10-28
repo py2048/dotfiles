@@ -13,11 +13,21 @@ add_path /usr/local/opt/coreutils/libexec/gnubin
 add_path /Applications/ParaView-5.9.1.app/Contents/bin
 
 
+# ifort PATH
+if [ -d "/opt/intel/oneapi" ]; then
+    source /opt/intel/oneapi/compiler/latest/env/vars.sh
+    alias ifort='ifort -L/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib'
+fi
 
 # Aliases
 # Drag and drop in MacOS
 alias dr="open -a /Applications/Dropover.app/Contents/MacOS/Dropover"
 
+#
+# Recent mpv
+mpv_rc() {
+    tac ~/.cache/mpv_history | fzf | awk '{split($0,a,"] /"); print "/" a[2]}' | xargs -I {} open '{}'
+}
 
 # Plugins
 
