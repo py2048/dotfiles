@@ -137,13 +137,13 @@ if [ $(uname) = "Darwin" ]; then
 elif [ $(uname) = "Linux" ]; then
     . /etc/os-release 
 fi
-case $NAME in
+case "$NAME" in
 
     MacOS)
         load_file $ZDOTDIR/mac.zsh
         ;;
 
-    Ubuntu)
+    Ubuntu | Ferora | "Linux Mint")
         load_file $ZDOTDIR/linux.zsh
         ;;
     Fedora)
