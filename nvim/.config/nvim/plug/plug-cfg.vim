@@ -4,8 +4,8 @@ luafile $HOME/.config/nvim/lua/comment.lua
 luafile $HOME/.config/nvim/lua/treesitter.lua
 luafile $HOME/.config/nvim/lua/nscroll.lua
 luafile $HOME/.config/nvim/lua/nvim_cmp.lua
-luafile $HOME/.config/nvim/lua/lsp_cfg.lua
 luafile $HOME/.config/nvim/lua/auto-pairs.lua
+luafile $HOME/.config/nvim/lua/lsp_cfg.lua
 luafile $HOME/.config/nvim/lua/plug-colorizer.lua
 
 " Vim plugins config
