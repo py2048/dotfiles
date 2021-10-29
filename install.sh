@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-alias stow="stow -R -t ../.."
+alias stow="stow -t ../.."
 
 ! [ -z "$1" ] && stow "$@" && exit
 
@@ -9,18 +9,18 @@ if [ $(uname) = "Darwin" ]; then
 elif [ $(uname) = "Linux" ]; then
     . /etc/os-release 
 fi
-case $NAME in
+case "$NAME" in
 
     MacOS)
         (cd macscripts && ./install.sh)
         stow yabai
         ;;
 
-    Fedora)
+    Fedora | Ubuntu | "Linux Mint")
         stow linux_other
         stow sway
         stow fzf
-        sudo /usr/bin/stow logitech -t /etc
+        command -v logid > /dev/null && sudo /usr/bin/stow logitech -t /etc
         ;;
 
     *)
