@@ -28,6 +28,7 @@ export MANPAGER="most"
 
 # Set language environment
 export LANG=en_US.UTF-8
+export LC_NUMERIC=en_US.UTF-8
 
 # Set editor
 export EDITOR='nvim'
