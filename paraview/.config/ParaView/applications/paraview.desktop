@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=ParaView
+GenericName=Data Viewer
+Comment=ParaView allows viewing of large data sets
+Type=Application
+Terminal=false
+MimeType=application/x-paraview;
+Categories=Education;Math;Science;
+Exec=/usr/local/bin/paraview %U
