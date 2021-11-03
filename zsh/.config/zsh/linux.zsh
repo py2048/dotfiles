@@ -4,7 +4,7 @@ alias open='xdg-open'
 
 # FEAP alias
 alias feap=~/FEAP/ver84/main/feap
-alias clean_feap='find . -type f ! -name "*.f" ! -name "*.sh" | xargs rm -r && rm -r E* FE*'
+# alias clean_feap='find . -type f ! -name "*.f" ! -name "*.sh" | xargs rm -r && rm -r E* FE*'
 
 # Set env for intel compilers
 export FEAPHOME8_4=$HOME/FEAP/ver84
@@ -17,6 +17,9 @@ export I_MPI_F77=ifort
 export I_MPI_FC=ifort
 export I_MPI_CC=icc
 export I_MPI_CXX=icpc
+
+# Set PATH for paraview
+add_path ~/Apps/ParaView*/bin
 
 # Plugins
 

@@ -147,8 +147,5 @@ case "$NAME" in
     Ubuntu | Ferora | "Linux Mint")
         load_file $ZDOTDIR/linux.zsh
         ;;
-    Fedora)
-        load_file $ZDOTDIR/linux.zsh
-        ;;
 
 esac
