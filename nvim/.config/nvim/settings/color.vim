@@ -1,7 +1,11 @@
 syntax on
 
 " Color theme
-colorscheme ayu-mirage
+if $OS_NAME == "Linux Mint"
+    colorscheme nord
+else
+    colorscheme ayu-mirage
+endif
 
 " Set 24-bit color support
 set termguicolors

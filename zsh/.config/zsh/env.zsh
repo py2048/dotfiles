@@ -138,7 +138,8 @@ if [ $(uname) = "Darwin" ]; then
 elif [ $(uname) = "Linux" ]; then
     . /etc/os-release 
 fi
-case "$NAME" in
+export OS_NAME="$NAME"
+case "$OS_NAME" in
 
     MacOS)
         load_file $ZDOTDIR/mac.zsh
