@@ -1,4 +1,19 @@
-set hidden true
+# Appearance
 set drawbox true
 set icons true
-set previewer ~/.go/bin/pistol
+
+# Set hidden file
+map . set hidden!
+# Size of file/directory
+map zd %du -sh "$f"
+# Escape
+map zz cmd-escape
+
+# Trash-cli
+cmd trash %trash-put "$fx"
+map x trash
+
+# Sort 
+map sa :set sortby atime; set info atime; set reverse!
+
+map z<space> &pv "$f"
