@@ -8,17 +8,12 @@ load_file(){
     [ -f "$1" ] && source "$1"
 }
 
-# Set go env
-export GOPATH=$HOME/.go
-
 # Local executable
 add_path $HOME/.local/bin
 # Rust
 add_path $HOME/.cargo/bin
 # Node js
 add_path $HOME/.npm-global/bin
-# Go
-add_path $HOME/.go/bin
 
 
 # MANPAGER
