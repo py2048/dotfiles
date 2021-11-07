@@ -2,18 +2,49 @@
 set drawbox true
 set icons true
 
+# Sort
 # Set hidden file
 map . set hidden!
 # Size of file/directory
-map zd %du -sh "$f"
+map gd %du -sh "$f"
+# Sort by add time
+map sa :set sortby atime; set info atime; set reverse
+# Sort normal
+map sn :set noreverse; set sortby natural; set info
 # Escape
-map zz cmd-escape
+map z<esc> cmd-escape
 
+# Util
 # Trash-cli
 cmd trash %trash-put "$fx"
 map x trash
+# Preview
+map g<space> &pv "$f"
 
-# Sort 
-map sa :set sortby atime; set info atime; set reverse!
+# new file and dir
+cmd new-file %{{
+        printf 'New file: '
+        read nfile
+        touch "$nfile"
+    }}
 
-map z<space> &pv "$f"
+cmd new-dir %{{
+        printf 'New directory: '
+        read ndir
+        mkdir -p "$ndir"
+    }}
+
+map n
+map nf :new-file
+map nd :new-dir
+
+# Navigation
+# cd
+map ~ :cd
+# zlua
+cmd zlua ${{
+        res=$(lua $ZDOTDIR/plugins/z.lua/z.lua -l | tac | fzf | cut -f 2- -d ' ' | xargs)
+        lf -remote "send $id cd \"$res\""
+    }}
+
+map zl :zlua

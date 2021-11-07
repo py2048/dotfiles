@@ -6,9 +6,6 @@ add_path $HOME/Library/Python/3.9/bin
 # Mac OS coreutils
 add_path /usr/local/opt/coreutils/libexec/gnubin
 
-# Add path for llvm
-# add_path /usr/local/opt/llvm/bin
-
 # Paraview PATH
 add_path /Applications/ParaView-5.9.1.app/Contents/bin
 
@@ -23,7 +20,6 @@ fi
 # Drag and drop in MacOS
 alias dr="open -a /Applications/Dropover.app/Contents/MacOS/Dropover"
 
-#
 # Recent mpv
 mpv_rc() {
     tac ~/.cache/mpv_history | fzf | awk '{split($0,a,"] /"); print "/" a[2]}' | xargs -I {} open '{}'
@@ -33,9 +29,6 @@ mpv_rc() {
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-
-# fzf
-load_file ~/.fzf.zsh
 
 # Activate conda environment
 conda()

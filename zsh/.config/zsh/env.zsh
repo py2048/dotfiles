@@ -8,8 +8,6 @@ load_file(){
     [ -f "$1" ] && source "$1"
 }
 
-# Local executable
-add_path $HOME/.local/bin
 # Rust
 add_path $HOME/.cargo/bin
 # Node js
@@ -145,3 +143,6 @@ case "$OS_NAME" in
         ;;
 
 esac
+
+# Local executable
+add_path $HOME/.local/bin

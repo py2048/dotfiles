@@ -4,6 +4,17 @@
 # nnn config
 source ~/.config/nnn/nnn.zsh
 
+# fzf
+load_file ~/.config/fzf/completion.zsh
+load_file ~/.config/fzf/key-bindings.zsh
+
+# fzf theme
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+ --color=fg:#cbccc6,hl:#707a8c
+ --color=fg+:#707a8c,bg+:#191e2a,hl+:#ffcc66
+ --color=info:#73d0ff,prompt:#707a8c,pointer:#cbccc6
+ --color=marker:#73d0ff,spinner:#73d0ff,header:#d4bfff'
+
 # zsh plugins
 z_plug "zsh-users/zsh-autosuggestions"
 z_plug "zsh-users/zsh-syntax-highlighting"
