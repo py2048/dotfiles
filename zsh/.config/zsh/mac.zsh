@@ -11,10 +11,10 @@ add_path /Applications/ParaView-5.9.1.app/Contents/bin
 
 
 # ifort PATH
-if [ -d "/opt/intel/oneapi" ]; then
-    source /opt/intel/oneapi/compiler/latest/env/vars.sh
-    alias ifort='ifort -L/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib'
-fi
+# if [ -d "/opt/intel/oneapi" ]; then
+#     source /opt/intel/oneapi/compiler/latest/env/vars.sh
+#     alias ifort='ifort -L/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib'
+# fi
 
 # Aliases
 # Drag and drop in MacOS
