@@ -139,7 +139,7 @@ case "$OS_NAME" in
         load_file $ZDOTDIR/mac.zsh
         ;;
 
-    Ubuntu | Ferora | "Linux Mint")
+    Ubuntu | Fedora | "Linux Mint")
         load_file $ZDOTDIR/linux.zsh
         ;;
 
