@@ -12,6 +12,7 @@ curl --fail --show-error --location "$uri_to_download" |
 mv --force /tmp/lf "${HOME}/.local/bin/lf" && 
   chmod a+x "${HOME}/.local/bin/lf"
 
+mkdir -p ~/.local/share/man/man1
 curl --fail --show-error --location https://raw.githubusercontent.com/gokcehan/lf/master/lf.1 --output "$HOME"/.local/share/man/man1/lf.1
 
 if [ ! -x "${HOME}/.local/bin/lf" ]; then
