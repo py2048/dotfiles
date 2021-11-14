@@ -20,5 +20,8 @@ while IFS= read -r line; do
     else
         id=$line
     fi
-    gdown --id "$id" 
+    until gdown --id "$id" ; do
+        echo Download failed, retry in 10 sec
+        sleep 10
+    done
 done < <(tr , '\n' < "$gdlf" | grep .) # Replace , with \n, then remove all blank space
