@@ -112,15 +112,14 @@ compdef _path_commands vwhich
 function z_plug() {
     PLUGIN_NAME=$(echo $1 | cut -d "/" -f 2)
     if [ -d "$ZDOTDIR/plugins/$PLUGIN_NAME" ]; then 
-        # For plugins
+        # source plugins
         source "$ZDOTDIR/plugins/$PLUGIN_NAME/$PLUGIN_NAME.plugin.zsh" || \
-        source "$ZDOTDIR/plugins/$PLUGIN_NAME/$PLUGIN_NAME.zsh" || \
-        eval "$(lua $ZDOTDIR/plugins/$PLUGIN_NAME/z.lua --init zsh enhanced once echo)"
+        source "$ZDOTDIR/plugins/$PLUGIN_NAME/$PLUGIN_NAME.zsh"
     else
+        # install plugins
         git clone "https://github.com/$1.git" "$ZDOTDIR/plugins/$PLUGIN_NAME"
         source "$ZDOTDIR/plugins/$PLUGIN_NAME/$PLUGIN_NAME.plugin.zsh" || \
-        source "$ZDOTDIR/plugins/$PLUGIN_NAME/$PLUGIN_NAME.zsh" || \
-        eval "$(lua $ZDOTDIR/plugins/$PLUGIN_NAME/z.lua --init zsh enhanced once echo)"
+        source "$ZDOTDIR/plugins/$PLUGIN_NAME/$PLUGIN_NAME.zsh"
 
     fi
 }
