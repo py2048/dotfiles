@@ -48,7 +48,7 @@ alias nv='cd ~/.config/nvim && nvim ~/.config/nvim/init.vim'
 alias vim='nvim -u ~/.config/nvcode/init.vim'
 
 # Lsd replace for ls
-alias ls='lsd'
+command -v lsd > /dev/null && alias ls='lsd'
 alias la='ls -a'
 alias l='ls -laF'
 # Vim bindings
