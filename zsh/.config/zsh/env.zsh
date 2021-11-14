@@ -50,6 +50,7 @@ alias vim='nvim -u ~/.config/nvcode/init.vim'
 # Lsd replace for ls
 command -v lsd > /dev/null && alias ls='lsd'
 alias la='ls -a'
+alias l1='ls -1'
 alias l='ls -laF'
 # Vim bindings
 alias :q='exit'
