@@ -59,6 +59,9 @@ alias :q='exit'
 alias p="nvim $ZDOTDIR/.zshrc"
 alias d="cd ~/repo/dotfiles"
 
+# ipython
+alias ipy="ipython"
+
 # Tree
 alias tree='tree -C'
 
