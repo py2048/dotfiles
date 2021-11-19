@@ -48,3 +48,6 @@ cmd zlua ${{
     }}
 
 map zl :zlua
+
+# Open
+map o &open "$f"
