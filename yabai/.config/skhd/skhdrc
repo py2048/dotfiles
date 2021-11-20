@@ -193,8 +193,8 @@ meh - s: ~/.local/bin/sidecar.sh &
 # lalt - enter: open ~
 lctrl + alt + cmd - space: ~/.local/bin/app_menu.sh &
 meh - e: /usr/bin/osascript ~/.local/bin/Finder.scpt &
-meh -a: ~/.config/skhd/launcher/menu.sh ~/.config/skhd/launcher/app.sh &
-meh - a: ~/.config/skhd/launcher/menu.sh &
+meh - a: ~/.config/skhd/launcher/menu.sh ~/.config/skhd/launcher/app.sh &
+# meh - a: ~/.config/skhd/launcher/menu.sh &
 
 meh - h: yabai -m window --focus west || yabai -m display --focus next
 meh - l: yabai -m window --focus east || yabai -m display --focus prev
@@ -226,11 +226,16 @@ hyper - l: yabai -m window --swap east
 hyper - j: yabai -m window --swap south
 hyper - k: yabai -m window --swap north
 
-hyper - y: yabai -m window --display next && yabai -m display --focus next
-hyper - o: yabai -m window --display prev && yabai -m display --focus prev
+hyper - y: yabai -m window --display next && ~/.config/sketchybar/plugins/space.sh && yabai -m display --focus next && ~/.config/sketchybar/plugins/space.sh
+hyper - o: yabai -m window --display prev && ~/.config/sketchybar/plugins/space.sh && yabai -m display --focus prev && ~/.config/sketchybar/plugins/space.sh
+
+hyper - i: yabai -m window --space next && ~/.config/sketchybar/plugins/space.sh && skhd --key "ctrl - right" && ~/.config/sketchybar/plugins/space.sh
+hyper - u: yabai -m window --space prev && ~/.config/sketchybar/plugins/space.sh && skhd --key "ctrl - left" && ~/.config/sketchybar/plugins/space.sh
+# hyper - i: yabai -m window --space next && yabai -m space --focus next
+# hyper - u: yabai -m window --space prev && yabai -m space --focus prev
 
 meh + cmd - space: yabai -m space --balance
-meh - r: ~/.config/spacebar/refresh.sh space
+meh - r: ~/.config/sketchybar/plugins/space.sh all
 
 # lalt - s : yabai -m space --create && \
 #                   set index "(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
@@ -242,8 +247,6 @@ meh - r: ~/.config/spacebar/refresh.sh space
 # lcmd + lalt - j: yabai -m window --warp south
 # lcmd + lalt - k: yabai -m window --warp north
 
-hyper - i: yabai -m window --space next && yabai -m space --focus next
-hyper - u: yabai -m window --space prev && yabai -m space --focus prev
 
 hyper - 1: yabai -m window --space 1 && yabai -m space --focus 1
 hyper - 2: yabai -m window --space 2 && yabai -m space --focus 2

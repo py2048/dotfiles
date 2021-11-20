@@ -44,7 +44,7 @@ yabai -m config bottom_padding               20
 yabai -m config left_padding                 20
 yabai -m config right_padding                20
 yabai -m config window_gap                   20
-yabai -m config external_bar                 all:28:0
+yabai -m config external_bar                 all:30:0
 
 # Floating Apps
 yabai -m rule --add app="^IINA$" manage=off
@@ -60,13 +60,23 @@ yabai -m rule --add title='CustomSelectionMenu' manage=off sticky=on layer=above
 yabai -m rule --add title='CustomConvert' manage=off layer=above
 
 # Auto refresh icons
-# yabai -m signal --add event=space_changed action="~/.config/spacebar/refresh.sh all"
-yabai -m signal --add event=space_changed action="~/.config/spacebar/refresh.sh space"
-yabai -m signal --add event=application_launched action="~/.config/spacebar/refresh.sh space"
-yabai -m signal --add event=application_terminated action="~/.config/spacebar/refresh.sh all"
-# yabai -m signal --add event=windows_moved action="~/.config/spacebar/refresh.sh all"
-yabai -m signal --add event=window_created action="~/.config/spacebar/refresh.sh space"
-yabai -m signal --add event=window_destroyed action="~/.config/spacebar/refresh.sh space"
+# # yabai -m signal --add event=space_changed action="~/.config/spacebar/refresh.sh all"
+# yabai -m signal --add event=space_changed action="~/.config/spacebar/refresh.sh space"
+# yabai -m signal --add event=application_launched action="~/.config/spacebar/refresh.sh space"
+# yabai -m signal --add event=application_terminated action="~/.config/spacebar/refresh.sh all"
+# # yabai -m signal --add event=windows_moved action="~/.config/spacebar/refresh.sh all"
+# yabai -m signal --add event=window_created action="~/.config/spacebar/refresh.sh space"
+# yabai -m signal --add event=window_destroyed action="~/.config/spacebar/refresh.sh space"
+
+# yabai -m signal --add event=space_changed action="~/.config/sketchybar/plugins/space.sh"
+yabai -m signal --add event=application_launched action="~/.config/sketchybar/plugins/space.sh"
+yabai -m signal --add event=application_terminated action="~/.config/sketchybar/plugins/space.sh all"
+yabai -m signal --add event=window_created action="~/.config/sketchybar/plugins/space.sh"
+yabai -m signal --add event=window_destroyed action="~/.config/sketchybar/plugins/space.sh"
+
+# sketchybar  events
+yabai -m signal --add event=window_focused action="sketchybar -m --trigger window_focus &> /dev/null"
+yabai -m signal --add event=window_title_changed action="sketchybar -m --trigger title_change &> /dev/null"
 
 
 echo "yabai configuration loaded.."
