@@ -10,12 +10,12 @@ sketchybar -m --bar height=30        \
                     color=0xff1b222c
 
 ############## GLOBAL DEFAULTS ############## 
-sketchybar -m --default updates=when_shown                    \
-                        drawing=on                            \
-                        cache_scripts=on                      \
-                        icon.font="Hack Nerd Font:Bold:17.0"  \
-                        icon.color=0xffffffff                 \
-                        label.font="JetBrains Mono:Regular:15.0" \
+sketchybar -m --default updates=when_shown                          \
+                        drawing=on                                  \
+                        cache_scripts=on                            \
+                        icon.font="Hack Nerd Font:Bold:17.0"        \
+                        icon.color=0xffffffff                       \
+                        label.font="JetBrains Mono:Regular:15.0"    \
                         label.color=0xffffffff
 
 ############## SPACE DEFAULTS ############## 
@@ -33,120 +33,139 @@ B_PR=3
 B_H=23
 
 ############## PRIMARY DISPLAY SPACES ############## 
-sketchybar -m --add space one left                                \
-              --set one  associated_display=1                    \
-                         associated_space=1                      \
-                         icon.highlight_color=$H_COLOR         \
-                         label.highlight_color=$H_COLOR        \
-                         label.highlight=on                      \
-                         label=1                                 \
-                         background.drawing=on   \
-                         background.color=$B_COLOR     \
-                         background.corner_radius=$B_RADIUS     \
-                         background.padding_left=$B_PL      \
-                         background.padding_right=$B_PR      \
-                         background.height=$B_H             \
-                         script='zsh ~/.config/sketchybar/plugins/space.sh' \
-                         click_script="yabai -m space --focus 1" \
-                                                                 \
-              --add space two left                                 \
-              --set two  associated_display=1                    \
-                         associated_space=2                      \
-                         icon.highlight_color=$H_COLOR         \
-                         label.highlight_color=$H_COLOR        \
-                         label.highlight=on                      \
-                         label=2                                 \
-                         background.drawing=on   \
-                         background.color=$B_COLOR     \
-                         background.corner_radius=$B_RADIUS     \
-                         background.padding_left=$B_PL      \
-                         background.padding_right=$B_PR      \
-                         background.height=$B_H             \
-                         script='zsh ~/.config/sketchybar/plugins/space.sh' \
-                         click_script="yabai -m space --focus 2" \
-                                                                 \
-              --add space three left                                 \
-              --set three  associated_display=1                    \
-                         associated_space=3                      \
-                         icon.highlight_color=$H_COLOR         \
-                         label.highlight_color=$H_COLOR        \
-                         label.highlight=on                      \
-                         label=3                                 \
-                         background.drawing=on   \
-                         background.color=$B_COLOR     \
-                         background.corner_radius=$B_RADIUS     \
-                         background.padding_left=$B_PL      \
-                         background.padding_right=$B_PR      \
-                         background.height=$B_H             \
-                         script='zsh ~/.config/sketchybar/plugins/space.sh' \
-                         click_script="yabai -m space --focus 3" \
-                                                                 \
-              --add space four left                                 \
-              --set four  associated_display=1                    \
-                         associated_space=4                      \
-                         icon.highlight_color=$H_COLOR         \
-                         label.highlight_color=$H_COLOR        \
-                         label.highlight=on                      \
-                         label=4                                 \
-                         background.drawing=on   \
-                         background.color=$B_COLOR     \
-                         background.corner_radius=$B_RADIUS     \
-                         background.padding_left=$B_PL      \
-                         background.padding_right=$B_PR      \
-                         background.height=$B_H             \
-                         script='zsh ~/.config/sketchybar/plugins/space.sh' \
-                         click_script="yabai -m space --focus 4" \
-                                                                 \
-              --add space five left                                 \
-              --set five  associated_display=1                    \
-                         associated_space=5                      \
-                         icon.highlight_color=$H_COLOR         \
-                         label.highlight_color=$H_COLOR        \
-                         label.highlight=on                      \
-                         label=5                                 \
-                         background.drawing=on   \
-                         background.color=$B_COLOR     \
-                         background.corner_radius=$B_RADIUS     \
-                         background.padding_left=$B_PL      \
-                         background.padding_right=$B_PR      \
-                         background.height=$B_H             \
-                         script='zsh ~/.config/sketchybar/plugins/space.sh' \
-                         click_script="yabai -m space --focus 5" \
-                                                                 \
+sketchybar -m --add space one left                                              \
+              --set one associated_display=1                                    \
+                        associated_space=1                                      \
+                        icon.highlight_color=$H_COLOR                           \
+                        label.highlight_color=$H_COLOR                          \
+                        label.highlight=on                                      \
+                        label=1                                                 \
+                        background.drawing=on                                   \
+                        background.color=$B_COLOR                               \
+                        background.corner_radius=$B_RADIUS                      \
+                        background.padding_left=$B_PL                           \
+                        background.padding_right=$B_PR                          \
+                        background.height=$B_H                                  \
+                        script="zsh ~/.config/sketchybar/plugins/space.sh"      \
+                        click_script="yabai -m space --focus 1"                 \
+                                                                                \
+              --add space two left                                              \
+              --set two associated_display=1                                    \
+                        associated_space=2                                      \
+                        icon.highlight_color=$H_COLOR                           \
+                        label.highlight_color=$H_COLOR                          \
+                        label.highlight=on                                      \
+                        label=2                                                 \
+                        background.drawing=on                                   \
+                        background.color=$B_COLOR                               \
+                        background.corner_radius=$B_RADIUS                      \
+                        background.padding_left=$B_PL                           \
+                        background.padding_right=$B_PR                          \
+                        background.height=$B_H                                  \
+                        script="zsh ~/.config/sketchybar/plugins/space.sh"      \
+                        click_script="yabai -m space --focus 2"                 \
+                                                                                \
+              --add space three left                                            \
+              --set three associated_display=1                                  \
+                        associated_space=3                                      \
+                        icon.highlight_color=$H_COLOR                           \
+                        label.highlight_color=$H_COLOR                          \
+                        label.highlight=on                                      \
+                        label=3                                                 \
+                        background.drawing=on                                   \
+                        background.color=$B_COLOR                               \
+                        background.corner_radius=$B_RADIUS                      \
+                        background.padding_left=$B_PL                           \
+                        background.padding_right=$B_PR                          \
+                        background.height=$B_H                                  \
+                        script="zsh ~/.config/sketchybar/plugins/space.sh"      \
+                        click_script="yabai -m space --focus 3"                 \
+                                                                                \
+              --add space four left                                             \
+              --set four associated_display=1                                   \
+                        associated_space=4                                      \
+                        icon.highlight_color=$H_COLOR                           \
+                        label.highlight_color=$H_COLOR                          \
+                        label.highlight=on                                      \
+                        label=4                                                 \
+                        background.drawing=on                                   \
+                        background.color=$B_COLOR                               \
+                        background.corner_radius=$B_RADIUS                      \
+                        background.padding_left=$B_PL                           \
+                        background.padding_right=$B_PR                          \
+                        background.height=$B_H                                  \
+                        script="zsh ~/.config/sketchybar/plugins/space.sh"      \
+                        click_script="yabai -m space --focus 4"                 \
+                                                                                \
+              --add space five left                                             \
+              --set five associated_display=1                                   \
+                        associated_space=5                                      \
+                        icon.highlight_color=$H_COLOR                           \
+                        label.highlight_color=$H_COLOR                          \
+                        label.highlight=on                                      \
+                        label=5                                                 \
+                        background.drawing=on                                   \
+                        background.color=$B_COLOR                               \
+                        background.corner_radius=$B_RADIUS                      \
+                        background.padding_left=$B_PL                           \
+                        background.padding_right=$B_PR                          \
+                        background.height=$B_H                                  \
+                        script="zsh ~/.config/sketchybar/plugins/space.sh"      \
+                        click_script="yabai -m space --focus 5"                 \
 
 
 ############## SECONDARY DISPLAY SPACES ############## 
-sketchybar -m --add space six left                                \
-              --set six  associated_display=2                    \
-                         associated_space=6                      \
-                         icon.highlight_color=$H_COLOR         \
-                         label.highlight_color=$H_COLOR        \
-                         label.highlight=on                      \
-                         label=6                               \
-                         background.drawing=on   \
-                         background.color=$B_COLOR     \
-                         background.corner_radius=$B_RADIUS     \
-                         background.padding_left=$B_PL      \
-                         background.padding_right=$B_PR      \
-                         background.height=$B_H             \
-                         script='zsh ~/.config/sketchybar/plugins/space.sh' \
-                         click_script="yabai -m space --focus 6"  \
-                                                                 \
-              --add space seven left                                 \
-              --set seven  associated_display=2                    \
-                         associated_space=7                      \
-                         icon.highlight_color=$H_COLOR         \
-                         label.highlight_color=$H_COLOR        \
-                         label.highlight=on                      \
-                         label=7                               \
-                         background.drawing=on   \
-                         background.color=$B_COLOR     \
-                         background.corner_radius=$B_RADIUS     \
-                         background.padding_left=$B_PL      \
-                         background.padding_right=$B_PR      \
-                         background.height=$B_H             \
-                         script='zsh ~/.config/sketchybar/plugins/space.sh' \
-                         click_script="yabai -m space --focus 7"
+sketchybar -m --add space six left                                              \
+              --set six associated_display=2                                    \
+                        associated_space=6                                      \
+                        icon.highlight_color=$H_COLOR                           \
+                        label.highlight_color=$H_COLOR                          \
+                        label.highlight=on                                      \
+                        label=6                                                 \
+                        background.drawing=on                                   \
+                        background.color=$B_COLOR                               \
+                        background.corner_radius=$B_RADIUS                      \
+                        background.padding_left=$B_PL                           \
+                        background.padding_right=$B_PR                          \
+                        background.height=$B_H                                  \
+                        script="zsh ~/.config/sketchybar/plugins/space.sh"      \
+                        click_script="yabai -m space --focus 6"                 \
+                                                                                \
+              --add space seven left                                            \
+              --set seven associated_display=2                                  \
+                        associated_space=7                                      \
+                        icon.highlight_color=$H_COLOR                           \
+                        label.highlight_color=$H_COLOR                          \
+                        label.highlight=on                                      \
+                        label=7                                                 \
+                        background.drawing=on                                   \
+                        background.color=$B_COLOR                               \
+                        background.corner_radius=$B_RADIUS                      \
+                        background.padding_left=$B_PL                           \
+                        background.padding_right=$B_PR                          \
+                        background.height=$B_H                                  \
+                        script="zsh ~/.config/sketchybar/plugins/space.sh"      \
+                        click_script="yabai -m space --focus 7"                 \
+                                                                                \
+              --add space eight left                                            \
+              --set eight associated_display=2                                  \
+                        associated_space=8                                      \
+                        icon.highlight_color=$H_COLOR                           \
+                        label.highlight_color=$H_COLOR                          \
+                        label.highlight=on                                      \
+                        label=8                                                 \
+                        background.drawing=on                                   \
+                        background.color=$B_COLOR                               \
+                        background.corner_radius=$B_RADIUS                      \
+                        background.padding_left=$B_PL                           \
+                        background.padding_right=$B_PR                          \
+                        background.height=$B_H                                  \
+                        script="zsh ~/.config/sketchybar/plugins/space.sh"      \
+                        click_script="yabai -m space --focus 8"                 \
+                                                                                \
+
+# refresh space
+~/.config/sketchybar/plugins/space.sh all
 
 
 ############## ITEM DEFAULTS ###############
@@ -157,55 +176,79 @@ sketchybar -m --default label.padding_left=2  \
 
 
 ############## LEFT ITEMS ############## 
-# sketchybar -m --add item space_separator left                                                  \
-#               --set space_separator  icon=                                                    \
-#                                      associated_space=1                                        \
-#                                      associated_space=3                                        \
-#                                      icon.padding_left=15                                      \
-#                                      label.padding_right=15                                    \
-#                                      icon.font="Hack Nerd Font:Bold:15.0"                      \
-#                                                                                                \
-#               --add item topmem left                                                           \
-#               --set topmem           associated_space=1                                        \
-#                                      icon.padding_left=10                                      \
-#                                      update_freq=15                                            \
-#                                      script="~/.config/sketchybar/plugins/topmem.sh"
+
+
+
+
 
 ############## RIGHT ITEMS ############## 
-sketchybar -m --add item clock right                                                              \
-              --set clock update_freq=10                                                      \
-                                  script="~/.config/sketchybar/plugins/clock.sh"                  \
-              --add item date right                                                       \
-              --set date update_freq=60                                                   \
-                            background.color=0xffe8e8e9                                   \
-                            label.color=0xff000000                                        \
-                            label.font="SF Pro:Semibold:14"                               \
-                            icon.padding_right=0                                          \
-                            background.padding_left=5                                          \
-                            label.padding_left=0                                          \
-                            background.height=15                                          \
-                            background.corner_radius=4                                    \
-                            script="~/.config/sketchybar/plugins/date.sh"                 \
-              --add item battery right                                                                \
-              --set battery update_freq=30                                                            \
-              --set battery script="~/.config/sketchybar/plugins/power.sh"                            \
+sketchybar -m   --add item clock right                                                  \
+                --set clock update_freq=10                                              \
+                        script="~/.config/sketchybar/plugins/clock.sh"                  \
+                --add item date right                                                   \
+                --set date update_freq=60                                               \
+                        background.color=0xffe8e8e9                                     \
+                        label.color=0xff000000                                          \
+                        label.font="SF Pro:Semibold:14"                                 \
+                        icon.padding_right=0                                            \
+                        background.padding_left=5                                       \
+                        label.padding_left=0                                            \
+                        background.height=15                                            \
+                        background.corner_radius=4                                      \
+                        script="~/.config/sketchybar/plugins/date.sh"                   \
+                --add item battery right                                                \
+                --set battery update_freq=30                                            \
+                --set battery script="~/.config/sketchybar/plugins/power.sh"            \
+                        icon.padding_right=5                                            \
+                        icon.font="Hack Nerd Font:Bold:20"                              \
+                                                                                        \
+                --add item lang right                                                   \
+                --set lang label=E                                                      \
+                        label.color=$H_COLOR                                            \
+                        label.font="Nunito:Bold:15.0"                                   \
+                        icon.padding_right=0                                            \
+                        label.padding_right=5                                           \
+                        icon.padding_left=5                                             \
+                        label.padding_left=0                                            \
+                        background.padding_left=5                                       \
+                        background.padding_right=15                                     \
+                        background.color=$B_COLOR_H                                     \
+                        background.height=18                                            \
+                        background.corner_radius=4                                      \
+                        click_script="~/.config/sketchybar/plugins/lang.sh"             \
+                                                                                        \
+                --add item mic right                                                    \
+                --set mic click_script="~/.config/sketchybar/plugins/mic.sh"            \
+                                                                                        \
+                --add item caffeinate right                                             \
+                --set caffeinate click_script="~/.config/sketchybar/plugins/caffeinate.sh" \
+                        icon.font="Hack Nerd Font:Bold:20"                              \
+                                                                                        \
+                --add item weather right                                                \
+                --set weather                                                           \
+                        update_freq=600                                                 \
+                        script="zsh ~/.config/sketchybar/plugins/weather.sh"            \
+                        icon.font="Hack Nerd Font:Regular:23"                           \
+
+# Get language
+~/.config/sketchybar/plugins/mic.sh re
+~/.config/sketchybar/plugins/caffeinate.sh re
+~/.config/sketchybar/plugins/lang.sh re
 
 
 ###################### CENTER ITEMS ###################
 
 # Adding custom events which can listen on distributed notifications from other running processes
 
-# E V E N T S
+# window title 
+# events
 sketchybar -m --add event window_focus \
               --add event title_change
-
-# W I N D O W  T I T L E 
+# item
 sketchybar -m --add item title center \
               --set title script="$HOME/.config/sketchybar/plugins/window_title.sh" \
               --subscribe title window_focus front_app_switched space_change title_change
 
-# refresh space
-~/.config/sketchybar/plugins/space.sh all
 
 ############## FINALIZING THE SETUP ##############
 sketchybar -m --update

@@ -229,13 +229,16 @@ hyper - k: yabai -m window --swap north
 hyper - y: yabai -m window --display next && ~/.config/sketchybar/plugins/space.sh && yabai -m display --focus next && ~/.config/sketchybar/plugins/space.sh
 hyper - o: yabai -m window --display prev && ~/.config/sketchybar/plugins/space.sh && yabai -m display --focus prev && ~/.config/sketchybar/plugins/space.sh
 
-hyper - i: yabai -m window --space next && ~/.config/sketchybar/plugins/space.sh && skhd --key "ctrl - right" && ~/.config/sketchybar/plugins/space.sh
-hyper - u: yabai -m window --space prev && ~/.config/sketchybar/plugins/space.sh && skhd --key "ctrl - left" && ~/.config/sketchybar/plugins/space.sh
+hyper - i: yabai -m window --space next && ~/.config/sketchybar/plugins/space.sh && skhd --key "ctrl - right"
+hyper - u: yabai -m window --space prev && ~/.config/sketchybar/plugins/space.sh && skhd --key "ctrl - left"
 # hyper - i: yabai -m window --space next && yabai -m space --focus next
 # hyper - u: yabai -m window --space prev && yabai -m space --focus prev
 
 meh + cmd - space: yabai -m space --balance
 meh - r: ~/.config/sketchybar/plugins/space.sh all
+
+# input source
+meh - space: ~/.config/sketchybar/plugins/lang.sh
 
 # lalt - s : yabai -m space --create && \
 #                   set index "(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
@@ -248,13 +251,13 @@ meh - r: ~/.config/sketchybar/plugins/space.sh all
 # lcmd + lalt - k: yabai -m window --warp north
 
 
-hyper - 1: yabai -m window --space 1 && yabai -m space --focus 1
-hyper - 2: yabai -m window --space 2 && yabai -m space --focus 2
-hyper - 3: yabai -m window --space 3 && yabai -m space --focus 3
-hyper - 4: yabai -m window --space 4 && yabai -m space --focus 4
-hyper - 5: yabai -m window --space 5 && yabai -m space --focus 5
-hyper - 6: yabai -m window --space 6 && yabai -m space --focus 6
-hyper - 7: yabai -m window --space 7 && yabai -m space --focus 7
+hyper - 1: yabai -m window --space 1 && ~/.config/sketchybar/plugins/space.sh && yabai -m space --focus 1
+hyper - 2: yabai -m window --space 2 && ~/.config/sketchybar/plugins/space.sh && yabai -m space --focus 2
+hyper - 3: yabai -m window --space 3 && ~/.config/sketchybar/plugins/space.sh && yabai -m space --focus 3
+hyper - 4: yabai -m window --space 4 && ~/.config/sketchybar/plugins/space.sh && yabai -m space --focus 4
+hyper - 5: yabai -m window --space 5 && ~/.config/sketchybar/plugins/space.sh && yabai -m space --focus 5
+hyper - 6: yabai -m window --space 6 && ~/.config/sketchybar/plugins/space.sh && yabai -m space --focus 6
+hyper - 7: yabai -m window --space 7 && ~/.config/sketchybar/plugins/space.sh && yabai -m space --focus 7
 
 f12 [
     "IINA": yabai -m display --focus prev || yabai -m display --focus next

@@ -5,18 +5,8 @@ B_COLOR_H='0xFFFEFEFE'
 
 [ "$SELECTED" = "false" ] && sketchybar -m --set $NAME label.highlight=off icon.highlight=off background.color=$B_COLOR && exit 0
 
-if [ "$SID" = '' ]; then
-    # Get current space
-    space=$(yabai -m query --windows --space)
-    # Get current space number
-    if [ "$space" = "[]" ]; then
-        SID=$(yabai -m query --spaces | sed 's/is-visible/isvis/g' | jq -r '.[] | select(.isvis == true) | .index')
-        echo $SID
-    else
-        SID=$(jq -r '.[0].space' <<< "$space")
-    fi
-
-    case ${SID} in
+num2a() {
+    case ${1} in
         1) NAME="one" ;;
         2) NAME="two" ;;
         3) NAME="three" ;;
@@ -24,7 +14,23 @@ if [ "$SID" = '' ]; then
         5) NAME="five" ;;
         6) NAME="six" ;;
         7) NAME="seven" ;;
+        8) NAME="eight" ;;
+        9) NAME="nine" ;;
     esac
+}
+
+
+if [ "$SID" = '' ]; then
+    # Get current space
+    space=$(yabai -m query --windows --space)
+    # Get current space number
+    if [ "$space" = "[]" ]; then
+        SID=$(yabai -m query --spaces | sed 's/is-visible/isvis/g' | jq -r '.[] | select(.isvis == true) | .index')
+    else
+        SID=$(jq -r '.[0].space' <<< "$space")
+    fi
+
+    num2a $SID
 fi
 
 #     輪   
@@ -120,18 +126,19 @@ refresh_space() {
                               background.color=$B_COLOR_H  
 }
 
-if [ "$1" = "all" ]; then
+refresh_all() {
     SID_0=$SID
-    a_sid=(1 2 3 4 5 6 7)
-    a_name=(one two three four five six seven)
-    for i in "${a_sid[@]}"; do
-        SID="${a_sid[i]}"
-        NAME="${a_name[i]}"
+    max_space=$(yabai -m query --spaces | jq -r '.[].index' | tail -1) 
+    for SID in $(seq 1 $max_space); do
+        num2a $SID
         space=''
         [ "$SID" = "$SID_0" ] || SELECTED=false
         refresh_space
-        # [ "$SID" = "$SID_0" ] || sketchybar -m --set $NAME label.highlight=off icon.highlight=off background.color=$B_COLOR
     done
+}
+
+if [ "$1" = "all" ]; then
+    refresh_all
 else
     refresh_space
 fi
