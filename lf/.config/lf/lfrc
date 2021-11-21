@@ -20,6 +20,8 @@ cmd trash %trash-put "$fx"
 map x trash
 # Preview
 map g<space> &pv "$f"
+# open
+map <enter> :open "$f"
 
 # new file and dir
 cmd new-file %{{
