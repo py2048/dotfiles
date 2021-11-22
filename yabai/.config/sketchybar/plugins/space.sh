@@ -152,6 +152,7 @@ if [ "$1" = "all" ]; then
     refresh_all
 else
     refresh_space
+    exit 0
 fi
 
 
