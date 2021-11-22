@@ -47,7 +47,7 @@ sketchybar -m --add space one left                                              
                         background.padding_right=$B_PR                          \
                         background.height=$B_H                                  \
                         script="zsh ~/.config/sketchybar/plugins/space.sh"      \
-                        click_script="yabai -m space --focus 1"                 \
+                        click_script="skhd --key \"meh - 1\""                   \
                                                                                 \
               --add space two left                                              \
               --set two associated_display=1                                    \
@@ -63,7 +63,7 @@ sketchybar -m --add space one left                                              
                         background.padding_right=$B_PR                          \
                         background.height=$B_H                                  \
                         script="zsh ~/.config/sketchybar/plugins/space.sh"      \
-                        click_script="yabai -m space --focus 2"                 \
+                        click_script="skhd --key \"meh - 2\""                   \
                                                                                 \
               --add space three left                                            \
               --set three associated_display=1                                  \
@@ -79,7 +79,7 @@ sketchybar -m --add space one left                                              
                         background.padding_right=$B_PR                          \
                         background.height=$B_H                                  \
                         script="zsh ~/.config/sketchybar/plugins/space.sh"      \
-                        click_script="yabai -m space --focus 3"                 \
+                        click_script="skhd --key \"meh - 3\""                   \
                                                                                 \
               --add space four left                                             \
               --set four associated_display=1                                   \
@@ -95,7 +95,7 @@ sketchybar -m --add space one left                                              
                         background.padding_right=$B_PR                          \
                         background.height=$B_H                                  \
                         script="zsh ~/.config/sketchybar/plugins/space.sh"      \
-                        click_script="yabai -m space --focus 4"                 \
+                        click_script="skhd --key \"meh - 4\""                   \
                                                                                 \
               --add space five left                                             \
               --set five associated_display=1                                   \
@@ -111,7 +111,7 @@ sketchybar -m --add space one left                                              
                         background.padding_right=$B_PR                          \
                         background.height=$B_H                                  \
                         script="zsh ~/.config/sketchybar/plugins/space.sh"      \
-                        click_script="yabai -m space --focus 5"                 \
+                        click_script="skhd --key \"meh - 5\""                   \
 
 
 ############## SECONDARY DISPLAY SPACES ############## 
@@ -129,7 +129,7 @@ sketchybar -m --add space six left                                              
                         background.padding_right=$B_PR                          \
                         background.height=$B_H                                  \
                         script="zsh ~/.config/sketchybar/plugins/space.sh"      \
-                        click_script="yabai -m space --focus 6"                 \
+                        click_script="skhd --key \"meh - 6\""                   \
                                                                                 \
               --add space seven left                                            \
               --set seven associated_display=2                                  \
@@ -145,7 +145,7 @@ sketchybar -m --add space six left                                              
                         background.padding_right=$B_PR                          \
                         background.height=$B_H                                  \
                         script="zsh ~/.config/sketchybar/plugins/space.sh"      \
-                        click_script="yabai -m space --focus 7"                 \
+                        click_script="skhd --key \"meh - 7\""                   \
                                                                                 \
               --add space eight left                                            \
               --set eight associated_display=2                                  \
@@ -161,7 +161,7 @@ sketchybar -m --add space six left                                              
                         background.padding_right=$B_PR                          \
                         background.height=$B_H                                  \
                         script="zsh ~/.config/sketchybar/plugins/space.sh"      \
-                        click_script="yabai -m space --focus 8"                 \
+                        click_script="skhd --key \"meh - 8\""                   \
                                                                                 \
 
 # refresh space

@@ -89,7 +89,7 @@ refresh_space() {
     
     # If there is no app, change icon to space number
     if [ "$space" = "[]" ]; then 
-        sketchybar -m --set $NAME icon=""                 \
+        sketchybar -m --set $NAME icon=""    \
                   label.padding_left=2  \
                   label.padding_right=8 \
                   icon.padding_left=2   \
@@ -98,6 +98,11 @@ refresh_space() {
         [ "$SELECTED" = false ] || sketchybar -m --set $NAME label.highlight=on \
                               icon.highlight=on  \
                               background.color=$B_COLOR_H  
+
+        [ "$SELECTED" = false ] && sketchybar -m --set $NAME label.highlight=off \
+                              icon.highlight=off  \
+                              background.color=$B_COLOR  
+
         return
     fi
 
@@ -119,22 +124,28 @@ refresh_space() {
                               label.padding_left=2  \
                               label.padding_right=8 \
                               icon.padding_left=8   \
-                              icon.padding_right=2   
+                              icon.padding_right=2   \
 
     [ "$SELECTED" = false ] || sketchybar -m --set $NAME label.highlight=on  \
                               icon.highlight=on  \
                               background.color=$B_COLOR_H  
+    [ "$SELECTED" = false ] && sketchybar -m --set $NAME label.highlight=off \
+                          icon.highlight=off  \
+                          background.color=$B_COLOR  
+
 }
 
 refresh_all() {
-    SID_0=$SID
-    max_space=$(yabai -m query --spaces | jq -r '.[].index' | tail -1) 
-    for SID in $(seq 1 $max_space); do
+    spaces=$(yabai -m query --spaces)
+    visibles=$(sed 's/has-focus/hfc/g' <<< "$spaces" | jq -r '.[] | select(.hfc == true) | .index')
+    space_nums=$(jq -r '.[].index' <<< "$spaces") 
+    while read -r SID; do
         num2a $SID
         space=''
-        [ "$SID" = "$SID_0" ] || SELECTED=false
+        SELECTED=''
+        [[ "${visibles[*]}" =~ "$SID" ]] || SELECTED=false
         refresh_space
-    done
+    done <<< "$space_nums"
 }
 
 if [ "$1" = "all" ]; then
