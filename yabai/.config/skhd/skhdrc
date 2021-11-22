@@ -189,7 +189,7 @@ parallels < w: ~/.local/bin/parallels.sh "Windows 10" ** skhd -k 'escape'
 # meh - return: /usr/local/bin/zsh -c "kitty" &
 meh - return: /usr/local/bin/zsh -c " cd ~ && [ -S $TMPDIR/mykitty ] && kitty @ --to unix:$TMPDIR/mykitty launch --type=os-window || kitty --listen-on unix:$TMPDIR/mykitty" &
 meh - d: /Applications/GoldenDict.app/Contents/MacOS/GoldenDict &
-meh - s: ~/.local/bin/sidecar.sh &
+meh - s: /usr/bin/osascript ~/.local/bin/sidecar.scpt &
 # lalt - enter: open ~
 lctrl + alt + cmd - space: ~/.local/bin/app_menu.sh &
 meh - e: /usr/bin/osascript ~/.local/bin/Finder.scpt &
