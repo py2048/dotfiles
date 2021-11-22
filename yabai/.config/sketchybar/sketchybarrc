@@ -182,57 +182,71 @@ sketchybar -m --default label.padding_left=2  \
 
 
 ############## RIGHT ITEMS ############## 
-sketchybar -m   --add item clock right                                                  \
-                --set clock update_freq=10                                              \
-                        script="~/.config/sketchybar/plugins/clock.sh"                  \
-                --add item date right                                                   \
-                --set date update_freq=60                                               \
-                        background.color=0xffe8e8e9                                     \
-                        label.color=0xff000000                                          \
-                        label.font="SF Pro:Semibold:14"                                 \
-                        icon.padding_right=0                                            \
-                        background.padding_left=5                                       \
-                        label.padding_left=0                                            \
-                        background.height=15                                            \
-                        background.corner_radius=4                                      \
-                        script="~/.config/sketchybar/plugins/date.sh"                   \
-                --add item battery right                                                \
-                --set battery update_freq=30                                            \
-                --set battery script="~/.config/sketchybar/plugins/power.sh"            \
-                        icon.padding_right=5                                            \
-                        icon.font="Hack Nerd Font:Bold:20"                              \
-                                                                                        \
-                --add item lang right                                                   \
-                --set lang label=E                                                      \
-                        label.color=$H_COLOR                                            \
-                        label.font="Nunito:Bold:15.0"                                   \
-                        icon.padding_right=0                                            \
-                        label.padding_right=5                                           \
-                        icon.padding_left=5                                             \
-                        label.padding_left=0                                            \
-                        background.padding_left=5                                       \
-                        background.padding_right=15                                     \
-                        background.color=$B_COLOR_H                                     \
-                        background.height=18                                            \
-                        background.corner_radius=4                                      \
-                        click_script="~/.config/sketchybar/plugins/lang.sh"             \
-                                                                                        \
-                --add item mic right                                                    \
-                --set mic click_script="~/.config/sketchybar/plugins/mic.sh"            \
-                                                                                        \
-                --add item caffeinate right                                             \
-                --set caffeinate click_script="~/.config/sketchybar/plugins/caffeinate.sh" \
-                        icon.font="Hack Nerd Font:Bold:20"                              \
-                                                                                        \
-                --add item weather right                                                \
-                --set weather                                                           \
-                        update_freq=600                                                 \
-                        script="zsh ~/.config/sketchybar/plugins/weather.sh"            \
-                        icon.font="Hack Nerd Font:Regular:23"                           \
+sketchybar -m   --add item clock right                                                      \
+                --set clock update_freq=10                                                  \
+                        script="~/.config/sketchybar/plugins/clock.sh"                      \
+                --add item date right                                                       \
+                --set date update_freq=60                                                   \
+                        background.color=0xffe8e8e9                                         \
+                        label.color=0xff000000                                              \
+                        label.font="SF Pro:Semibold:14"                                     \
+                        icon.padding_right=0                                                \
+                        background.padding_left=5                                           \
+                        label.padding_left=0                                                \
+                        background.height=15                                                \
+                        background.corner_radius=4                                          \
+                        script="~/.config/sketchybar/plugins/date.sh"                       \
+                --add item battery right                                                    \
+                --set battery update_freq=30                                                \
+                --set battery script="~/.config/sketchybar/plugins/power.sh"                \
+                        icon.padding_right=5                                                \
+                        icon.font="Hack Nerd Font:Bold:20"                                  \
+                                                                                            \
+                --add item lang right                                                       \
+                --set lang label=E                                                          \
+                        label.color=$H_COLOR                                                \
+                        label.font="Nunito:Bold:15.0"                                       \
+                        icon.padding_right=0                                                \
+                        label.padding_right=5                                               \
+                        icon.padding_left=5                                                 \
+                        label.padding_left=0                                                \
+                        background.padding_left=5                                           \
+                        background.padding_right=15                                         \
+                        background.color=$B_COLOR_H                                         \
+                        background.height=18                                                \
+                        background.corner_radius=4                                          \
+                        click_script="~/.config/sketchybar/plugins/lang.sh"                 \
+                                                                                            \
+                --add item mic right                                                        \
+                --set mic click_script="~/.config/sketchybar/plugins/mic.sh"                \
+                                                                                            \
+                --add item caffeinate right                                                 \
+                --set caffeinate click_script="~/.config/sketchybar/plugins/caffeinate.sh"  \
+                        icon.font="Hack Nerd Font:Bold:20"                                  \
+                                                                                            \
+                --add item weather right                                                    \
+                --set weather                                                               \
+                        update_freq=600                                                     \
+                        script="zsh ~/.config/sketchybar/plugins/weather.sh"                \
+                        icon.font="Hack Nerd Font:Regular:23"                               \
+                        background.padding_left=3                                           \
+                                                                                            \
+                --add item cpu_label right                                                  \
+                --set cpu_label label.font="SF Pro:Semibold:9"                              \
+                        label=CPU                                                           \
+                        y_offset=6                                                          \
+                        width=0                                                             \
+                --add item cpu_percent right                                                \
+                --set cpu_percent label.font="SF Pro:Heavy:12"                              \
+                        y_offset=-4                                                         \
+                        update_freq=2                                                       \
+                        script="~/.config/sketchybar/plugins/cpu.sh"                        \
 
-# Get language
+# Get mic status
 ~/.config/sketchybar/plugins/mic.sh re
+# Get current caffeinate
 ~/.config/sketchybar/plugins/caffeinate.sh re
+# Get language
 ~/.config/sketchybar/plugins/lang.sh re
 
 

@@ -22,6 +22,8 @@ map x trash
 map g<space> &pv "$f"
 # open
 map <enter> :open "$f"
+# permission
+map gx %chmod +x "$f"
 
 # new file and dir
 cmd new-file %{{
