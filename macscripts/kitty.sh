@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-dp=$(tr -d '\n' < ~/.cache/last_display)
+# dp=$(tr -d '\n' < ~/.cache/last_display)
+dp=$(sed -n '1p' ~/.cache/last_display)
+
 
 cd ~
 if [ -S $TMPDIR/mykitty${dp} ]; then
