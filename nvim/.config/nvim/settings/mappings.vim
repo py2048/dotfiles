@@ -97,7 +97,7 @@ nnoremap c* *<c-o>cgn
 nnoremap c# #<C-o>cgn
 
 " Turn off highlight until next search
-nmap <silent> <buffer> <leader>h :noh<CR>
+nmap <silent> <leader>h :noh<CR>
 
 " Replace arrow in insert mode
 imap <c-h> <Left>
@@ -106,4 +106,4 @@ imap <c-k> <Up>
 imap <c-l> <Right>
 
 " Turn on lsp
-nmap <buffer> <silent> <leader>l :LspStart<CR>
+nmap <silent> <leader>l :LspStart<CR>

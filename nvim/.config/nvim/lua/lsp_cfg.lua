@@ -55,7 +55,6 @@ if vim.fn.has("mac") == 1 then
         capabilities = capabilities,
         autostart = false
       },
-    single_file_support = true
     }
 
 end
