@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 echo
 
@@ -16,5 +16,23 @@ column <<< $(cat <<-END
 END
 )
 
-sleep 5
-skhd -k 'meh -a'
+read -rsn1 key
+# /usr/bin/read -p "sdfsdf" key
+
+case $key in
+    b|B) 
+        echo "Brave"
+        ;;
+    c|C) 
+        echo "Visual Studio Code"
+        ;;
+    d|D) 
+        echo "Discord"
+        ;;
+    *)
+        echo "None"
+        ;;
+esac
+# read
+# sleep 5
+# skhd -k 'meh -a'
