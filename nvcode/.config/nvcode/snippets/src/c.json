@@ -1,6 +1,10 @@
 {
+    "include": {
+        "prefix" : ["#inc", "#include"],
+        "body": "#include "
+    },
     "define": {
-        "prefix" : ["def", "define"],
+        "prefix" : ["#def", "#define"],
         "body": "#define "
     },
     "main": {
