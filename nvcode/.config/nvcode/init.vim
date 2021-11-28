@@ -72,6 +72,9 @@ vmap <c-j> :move '>+1<CR>gv-gv
 " Search
 com! -nargs=1 Search :let @/='\V'.escape(<q-args>, '\/')| normal! n
 
+" Highlight
+nmap <silent> <space>h :noh<CR>
+
 " run code
 nmap <silent> <space>r :call VSCodeCall('code-runner.run')<CR>
 autocmd FileType python nmap <buffer> <silent> <space>r :call VSCodeCall('python.execInTerminal')<CR>
