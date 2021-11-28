@@ -1,0 +1,5 @@
+all: $(BIN)
+	@@./$(BIN)
+
+$(BIN): $(SRC)
+	@@$(CPL) $(FLAGS) $(SRC) -o $(BIN)
