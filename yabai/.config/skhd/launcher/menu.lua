@@ -8,7 +8,7 @@ ut = dofile(pdir .. '/util_func.lua')
 function app_menu()
     local apps = {
         { key = 'b', app = "Brave Browser", icon = " " },
-        { key = 'c', app = "Visual Studio Code", icon = "﬏ " },
+        { key = 'c', app = "Visual Studio Code", icon = "﬏ ", cmd="code" },
         { key = 'd', app = "Discord", icon = "ﭮ " },
         { key = 'k', app = "KeePassXC", icon = " " },
         { key = 'm', app = "Messenger", icon = " " },
@@ -29,9 +29,14 @@ function app_menu()
 
     local key = ut.readkey()
     local app_index = ut.has_key(apps, key)
+    local cmd = apps[app_index].cmd
 
     if app_index then
-        os.execute('open -a \"'..apps[app_index].app..'\"')
+        if cmd then
+            io.popen('zsh -c "'..cmd..'"')
+        else
+            os.execute('open -a \"'..apps[app_index].app..'\"')
+        end
     else
         os.exit()
     end

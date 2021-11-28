@@ -56,5 +56,5 @@ alacritty -t "${TITLE}" \
     -o window.dimensions.lines=$LINES \
     -o window.dimensions.columns=$COLUMNS \
     --config-file ~/.config/skhd/launcher/alacritty.yml \
-    -e luajit ~/.config/skhd/test/menu.lua $1
+    -e luajit ~/.config/skhd/launcher/menu.lua $1
     # --command ~/.config/skhd/test/menu.py

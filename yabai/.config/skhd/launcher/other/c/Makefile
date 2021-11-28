@@ -4,7 +4,7 @@ FLAGS := -O3 -Wall
 SRCS := $(wildcard *.c)
 OBJS := ${SRCS:c=o} 
 
-all : menu
+all: menu
 
 menu: $(OBJS)
 	$(CC) $(OBJS) -o menu

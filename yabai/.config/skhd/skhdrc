@@ -193,8 +193,8 @@ meh - z: /usr/bin/osascript ~/.local/bin/sidecar.scpt &
 # lctrl + alt + cmd - space: ~/.local/bin/app_menu.sh &
 meh - e: /usr/bin/osascript ~/.local/bin/Finder.scpt &
 # meh - a: ~/.config/skhd/launcher/menu.sh ~/.config/skhd/launcher/app.sh &
-meh - a: ~/.config/skhd/test/menu.sh apps &
-meh - s: ~/.config/skhd/test/menu.sh actions &
+meh - a: ~/.config/skhd/launcher/menu.sh apps &
+meh - s: ~/.config/skhd/launcher/menu.sh actions &
 
 meh - h: yabai -m window --focus west || yabai -m display --focus next
 meh - l: yabai -m window --focus east || yabai -m display --focus prev
