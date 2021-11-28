@@ -21,13 +21,19 @@ compiler = {
     ['f08'] = {FX, true},
 }
 
+local function f_exists(name)
+   local f=io.open(name,"r")
+   if f~=nil then io.close(f) return true else return false end
+end
+
 src = arg[1]
 ext = src:match("[^.]+$")
 ft = compiler[ext]
 
 -- Makefile
-if src == "Makefile" or src == "makefile" then
-    os.execute(MAKE)
+if f_exists('Makefile') or src == "Makefile" or src == "makefile" then
+    os.execute('make')
+    os.exit()
 end
 
 -- Shebang
