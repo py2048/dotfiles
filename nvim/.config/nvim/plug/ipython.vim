@@ -56,5 +56,5 @@ function! IPyRestart(slime_target_mode)
     call IPyInit()
 endfunction
 
-nmap <silent> <S-CR> :call IPyRun()<CR>
-nmap <silent> <C-CR> :call IPyRunVerbose()<CR>
+au BufRead,BufNewFile *.py,*.ipy nmap <silent> <S-CR> :call IPyRun()<CR>
+au BufRead,BufNewFile *.py,*.ipy nmap <silent> <C-CR> :call IPyRunVerbose()<CR>
