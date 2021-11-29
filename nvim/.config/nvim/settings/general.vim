@@ -51,14 +51,14 @@ function! ClangFormat()
     endif
 endfunction
 
-augroup FormatSave
+augroup CFormatSave
     autocmd!
     autocmd BufWritePre *.c,*.h,*.cc,*.cpp call ClangFormat()
 augroup END
 
 
 " python auto format
-augroup FormatSave
+augroup PyFormatSave
     autocmd!
     autocmd BufWritePre *.py,*.ipy call YapfFullFormat()
 augroup END
