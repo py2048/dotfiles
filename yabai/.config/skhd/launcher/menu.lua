@@ -7,13 +7,13 @@ ut = dofile(pdir .. '/util_func.lua')
 
 function app_menu()
     local apps = {
+        { key = 'a', app = "AnyDesk", icon = "ﲾ " },
         { key = 'b', app = "Brave Browser", icon = " " },
         { key = 'c', app = "Visual Studio Code", icon = "﬏ ", cmd="code" },
         { key = 'd', app = "Discord", icon = "ﭮ " },
         { key = 'k', app = "KeePassXC", icon = " " },
         { key = 'm', app = "Messenger", icon = " " },
         { key = 'o', app = "Obsidian", icon = " " },
-        { key = 'p', app = "Parallels Desktop", icon = " " },
         { key = 's', app = "System Preferences", icon = " " },
         { key = 't', app = "Microsoft Teams", icon = " " },
         { key = 'v', app = "VMware Fusion", icon = " " }

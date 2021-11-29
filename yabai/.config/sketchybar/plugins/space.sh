@@ -37,6 +37,8 @@ fi
 declare -A App_Icon=(
     alacritty 
     Affinity\ Photo  
+    Alfred\ 4 
+    AnyDesk ﲾ 
     balenaEtcher 
     Brave\ Browser 
     Code ﬏
