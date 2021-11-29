@@ -76,6 +76,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'hrsh7th/cmp-nvim-lsp'
     " Plug 'hrsh7th/cmp-nvim-lua'
 
+    " Yapf format
+    Plug 'pignacio/vim-yapf-format'
 
     " Snippet
     Plug 'hrsh7th/vim-vsnip'

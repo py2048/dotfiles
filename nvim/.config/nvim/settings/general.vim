@@ -44,7 +44,7 @@ cmap w!! w !sudo tee %
 " au BufWritePost *.f90 silent! execute "!fprettify -i 4 <afile>" | e!
 
 " C auto format
-function! Formatonsave()
+function! ClangFormat()
     let l:lines='all'
     if bufname() != "keymap.c"
         py3f ~/.local/bin/clang-format.py
@@ -53,9 +53,16 @@ endfunction
 
 augroup FormatSave
     autocmd!
-    autocmd BufWritePre *.c,*.h,*.cc,*.cpp call Formatonsave()
-    " autocmd BufWritePre *.c,*.h,*.cc,*.cpp py3f ~/.local/bin/clang-format.py
+    autocmd BufWritePre *.c,*.h,*.cc,*.cpp call ClangFormat()
 augroup END
+
+
+" python auto format
+augroup FormatSave
+    autocmd!
+    autocmd BufWritePre *.py,*.ipy call YapfFullFormat()
+augroup END
+
 
 " Latex files
 au BufRead,BufNewFile *.tex set filetype=latex
