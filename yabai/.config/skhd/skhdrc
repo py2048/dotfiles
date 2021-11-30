@@ -189,7 +189,7 @@
 # meh - return: /usr/local/bin/zsh -c "kitty" &
 meh - return: /usr/local/bin/bash ~/.local/bin/kitty.sh &
 meh - d: /Applications/GoldenDict.app/Contents/MacOS/GoldenDict &
-meh - z: /usr/bin/osascript ~/.local/bin/sidecar.scpt &
+meh - z: /usr/local/bin/bash ~/.local/bin/sidecar.sh &
 # lctrl + alt + cmd - space: ~/.local/bin/app_menu.sh &
 meh - e: /usr/bin/osascript ~/.local/bin/Finder.scpt &
 # meh - a: ~/.config/skhd/launcher/menu.sh ~/.config/skhd/launcher/app.sh &
