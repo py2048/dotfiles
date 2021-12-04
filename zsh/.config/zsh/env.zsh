@@ -55,6 +55,9 @@ alias l='ls -laF'
 # Vim bindings
 alias :q='exit'
 
+# grep
+alias grep="grep --color"
+
 # profile
 alias p="nvim $ZDOTDIR/.zshrc"
 alias d="cd ~/repo/dotfiles"
