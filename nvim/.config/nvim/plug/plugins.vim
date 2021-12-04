@@ -26,7 +26,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'kyazdani42/nvim-web-devicons'
     Plug 'romgrk/barbar.nvim'
 
-    " Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
     Plug 'NTBBloodbath/galaxyline.nvim'
 
     " Commenter
@@ -46,10 +45,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Plug 'preservim/tagbar'
     " Surround
     Plug 'machakann/vim-sandwich'
-    " nnn
-    Plug 'mcchrish/nnn.vim'
     " lf
-    " Plug 'ptzz/lf.vim'
+    Plug 'py2048/vim-lf'
     
     " Markdown  
     " Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }

@@ -45,3 +45,5 @@ let g:vsnip_snippet_dir = "$HOME/.config/nvcode/snippets/src"
 set colorcolumn=99999
 lua require("indent_blankline").setup { char = "│", buftype_exclude = {"terminal"}}
 
+" lf
+nmap <silent> <leader>l <Plug>LfEdit

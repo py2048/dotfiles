@@ -116,3 +116,10 @@ imap <c-l> <Right>
 
 " Turn on lsp
 nmap <silent> <leader>l :LspStart<CR>
+
+
+" Vim RegEx
+nnoremap / /\v
+nnoremap ? ?\v
+cnoremap %s/ %s/\v
+cnoremap s/ s/\v
