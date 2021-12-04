@@ -1,25 +1,35 @@
 #!/usr/bin/env python
 import sys
 import os
+import json
 import copy
 import PyPDF2
 import numpy as np
 
-CROP = [
+CROP_0 = [
     {
-        'lowleft': [0, 0],
-        'upright': [1, 0.5]
+        "lowleft": [0, 0],
+        "upright": [0.5, 1]
     },
     {
-        'lowleft': [0, 0.5],
-        'upright': [1, 1]
+        "lowleft": [0.5, 0],
+        "upright": [1, 1]
     },
 ]
 
 
-def main(item_pdf, CROP):
+def crops(js):
+    if not os.path.exists(js):
+        return CROP_0
+    with open(js) as f:
+        crop = json.load(f)
+    return crop
+
+
+def main(item_pdf, js):
     # input_pdf = os.path.basename(item_pdf)
-    output_pdf = os.path.splitext(input_pdf)[0] + '_edited.pdf'
+    input_pdf = item_pdf
+    output_pdf = os.path.splitext(input_pdf)[0] + '_cropped.pdf'
     with open(input_pdf, 'rb') as src:
         with open(output_pdf, 'wb') as dst:
             r_input = PyPDF2.PdfFileReader(src)
@@ -27,9 +37,9 @@ def main(item_pdf, CROP):
 
             for p in range(0, r_input.getNumPages()):
                 p_0 = r_input.getPage(p)
-                pdim = np.array(p_0.mediaBox)[[2, 3]]
+                pdim = np.array(p_0.mediaBox, dtype=np.float64)[[2, 3]]
 
-                for c in CROP:
+                for c in crops(js):
                     p_new = copy.copy(p_0)
                     p_new.mediaBox = copy.copy(p_0.mediaBox)
                     p_new.mediaBox.lowerLeft = np.array(c['lowleft']) * pdim
@@ -44,4 +54,6 @@ if __name__ == "__main__":
     # dirpath = os.path.dirname(os.path.abspath(sys.argv[1]))
     # os.chdir(dirpath)
     item_pdf = sys.argv[1]
-    main(item_pdf, CROP)
+    js = sys.argv[2] if len(sys.argv) > 2 else 'crop.json'
+
+    main(item_pdf, js)
