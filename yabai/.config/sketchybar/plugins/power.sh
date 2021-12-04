@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-BATT_PERCENT=$(pmset -g batt | grep -Eo "\d+%" | cut -d% -f1)
+BATT_PERCENT=$(pmset -g batt | grep -Eo "[0-9]+%" | cut -d% -f1)
 CHARGING=$(pmset -g batt | grep 'AC Power')
 
 COLOR=0xffcd950c
