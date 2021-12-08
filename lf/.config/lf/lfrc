@@ -6,7 +6,7 @@ set icons true
 # Set hidden file
 map . set hidden!
 # Size of file/directory
-map gd %du -sh "$f"
+map gs %du -sh "$f"
 # Sort by add time
 map sa :set sortby atime; set info atime; set reverse
 # Sort normal
@@ -23,7 +23,12 @@ map g<space> &pv "$f"
 # open
 map <enter> :open "$f"
 # permission
-map gx %chmod +x "$f"
+cmd premission %{{
+        chmod +x "$f"
+        lf -remote "send $id reload"
+    }}
+
+map gx :premission
 
 # new file and dir
 cmd new-file %{{
@@ -55,3 +60,5 @@ map zl :zlua
 
 # Open
 map o &open "$f"
+
+map R $batch_rename.sh
