@@ -1,7 +1,7 @@
 #!/usr/bin/env luajit
 
 CC = os.getenv('CC') or 'cc'
-CXX = os.getenv('CXX') or 'cpp'
+CXX = os.getenv('CXX') or 'c++'
 FFX = os.getenv('FF') or 'ifort'
 FF = os.getenv('FX') or 'gfortran'
 PY = os.getenv('PY') or 'python3'
@@ -13,10 +13,10 @@ compiler = {
     ['cpp'] = {CXX, true},
     ['c++'] = {CXX, true},
     ['f'] = {FFX, true},
-    ['f90'] = {F, true},
-    ['f95'] = {F, true},
-    ['f03'] = {F, true},
-    ['f08'] = {F, true},
+    ['f90'] = {FF, true},
+    ['f95'] = {FF, true},
+    ['f03'] = {FF, true},
+    ['f08'] = {FF, true},
     ['py'] = {PY, false},
     ['f08'] = {FX, true},
 }
@@ -51,14 +51,8 @@ if not ft then
     os.exit()
 elseif ft[2] then
     bin = src:match("(.+)%..+")
-    -- local f = io.popen("date +%s -r "..src)
-    -- local src_time = f:read()
-    -- f:close()
-    -- local f = io.popen("date +%s -r "..bin)
-    -- local bin_time = f:read()
-    -- f:close()
-    -- print(src_time-bin_time)
-    os.execute(string.format("TIMEFMT='[Finished in %%*E]' zsh -c 'time CPL=%s SRC=%s BIN=%s make -f ~/.local/bin/BuildRunMakefile'", ft[1], src, bin))
+    -- os.execute(string.format("TIMEFMT='[Finished in %%*E]' zsh -c 'time CPL=%s SRC=%s BIN=%s make -f ~/.local/bin/BuildRunMakefile'", ft[1], src, bin))
+    os.execute(string.format("TIMEFMT='[Finished in %%*E]' zsh -c 'time (if check_src_bin %s %s; then %s %s -o %s && ./%s; else ./%s; fi)'", src, bin, ft[1], src, bin, bin, bin)) 
 -- Interpreter
 elseif not ft[2]then
     os.execute(string.format("TIMEFMT='[Finished in %%*E]' zsh -c 'time %s %s'", ft[1], src))
