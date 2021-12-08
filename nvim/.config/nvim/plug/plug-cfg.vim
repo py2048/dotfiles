@@ -24,9 +24,6 @@ source $HOME/.config/nvim/plug/table-md.vim
 hi FloatermBorder guibg=NONE guifg=#5e81ac
 autocmd TermOpen * setlocal nonumber norelativenumber
 
-" Set NNN layout
-let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
-
 " Quick scope
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 highlight QuickScopePrimary guifg='#1EFFFF' gui=underline ctermfg=155 cterm=underline

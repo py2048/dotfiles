@@ -75,9 +75,6 @@ tnoremap <silent> <S-TAB> <C-\><C-n>:FloatermNext<CR>
 " nmap <silent> <leader>r :w<CR>:call FRunInit()<CR>:FloatermSend! --name=float_run run.lua %<CR>:FloatermShow! float_run<CR>
 nmap <silent> <leader>r :up<CR>:FloatermNew --autoclose=1 run.lua % ; read<CR>
 
-" map <leader>n :FloatermNew nnn<CR>
-nnoremap <leader>n :NnnPicker %:p:h<CR>
-
 " Delete without copy to clipboard
 map <leader>d "_d
 nmap <leader>p "_ddkp
@@ -119,7 +116,7 @@ nmap <silent> <leader>l :LspStart<CR>
 
 
 " Vim RegEx
-nnoremap / /\v
-nnoremap ? ?\v
-cnoremap %s/ %s/\v
-cnoremap s/ s/\v
+" nnoremap / /\v
+" nnoremap ? ?\v
+" cnoremap %s/ %s/\v
+" cnoremap s/ s/\v
