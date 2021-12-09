@@ -79,6 +79,8 @@ nmap <silent> <space>h :noh<CR>
 nmap <silent> <space>r :call VSCodeCall('code-runner.run')<CR>
 autocmd FileType python nmap <buffer> <silent> <space>r :call VSCodeCall('python.execInTerminal')<CR>
 
+nmap <silent> <space>b :call VSCodeCall('workbench.action.tasks.build')<CR>
+
 " Code cell
 " autocmd FileType python nmap <buffer> <silent> J :call VSCodeCall('jupyter.gotoNextCellInFile')<CR>
 " autocmd FileType python nmap <buffer> <silent> K :call VSCodeCall('jupyter.gotoPrevCellInFile')<CR>
