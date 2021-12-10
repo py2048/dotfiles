@@ -19,7 +19,7 @@ export I_MPI_CC=icc
 export I_MPI_CXX=icpc
 
 # Set PATH for paraview
-[ "$OS_NAME" != "Fedora" ] && add_path ~/Apps/ParaView*/bin
+add_path ~/Apps/paraview_exec/bin
 
 # Plugins
 
