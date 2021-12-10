@@ -27,6 +27,9 @@ export LC_NUMERIC=en_US.UTF-8
 export EDITOR='nvim'
 export VISUAL="nvim"
 
+# ffmpeg
+alias ffmpeg='ffmpeg -hide_banner'
+alias ffprobe='ffprobe -hide_banner'
 
 # lf
 source ~/.config/lf/lfcd.sh
