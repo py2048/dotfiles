@@ -1,8 +1,5 @@
 " Set F12 key
 set <F12>=<c-v><F12>
-" Better nav for omnicomplete
-" inoremap <expr> <c-j> ("\<C-n>")
-" inoremap <expr> <c-k> ("\<C-p>")
 
 " Use alt + hjkl to resize windows
 nnoremap <M-j>    :resize -2<CR>
@@ -11,29 +8,15 @@ nnoremap <M-h>    :vertical resize -2<CR>
 nnoremap <M-l>    :vertical resize +2<CR>
 
 " I hate escape more than anything else
-inoremap kj <Esc>
+" inoremap kj <Esc>
 " inoremap jk <Esc>
 
-" Easy CAPS
-" inoremap <c-u> <ESC>viwUi
-" nnoremap <c-s-u> viwU<Esc>
-
-" nnoremap <TAB> :bnext<CR>
-" nnoremap <S-TAB> :bprevious<CR>
 
 " TAB in general mode will move to text buffer
 nnoremap <silent> <TAB> :BufferNext<CR>
 " SHIFT-TAB will go back
 nnoremap <silent> <S-TAB> :BufferPrevious<CR>
 
-" Alternate way to save
-" nnoremap <C-s> :w<CR>
-" Alternate way to quit
-" nnoremap <C-Q> :wq!<CR>
-" Use control-c instead of escape
-" nnoremap <C-c> <Esc>
-" <TAB>: completion.
-" inoremap <expr><TAB> pumvisible() ? '\<C-n>' : '\<TAB>'
 
 " Better tabbing
 vnoremap < <gv
@@ -96,7 +79,7 @@ vmap <c-j> :move '>+1<CR>gv-gv
 com! -nargs=1 Search :let @/='\V'.escape(<q-args>, '\/')| normal! n
 
 " Close Buffer
-nnoremap <leader>b :BufferClose<CR>
+nnoremap <leader>w :BufferClose<CR>
 
 " Change word and occurrences
 nnoremap c* *<c-o>cgn
@@ -112,7 +95,7 @@ imap <c-k> <Up>
 imap <c-l> <Right>
 
 " Turn on lsp
-nmap <silent> <leader>l :LspStart<CR>
+nmap <silent> <leader>s :LspStart<CR>
 
 
 " Vim RegEx

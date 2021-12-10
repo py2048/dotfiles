@@ -6,7 +6,7 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 " Set filetype
-au BufRead,BufNewFile *.jl set filetype=julia
+" au BufRead,BufNewFile *.jl set filetype=julia
 
 
 call plug#begin('~/.config/nvim/autoload/plugged')
@@ -16,7 +16,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'windwp/nvim-autopairs'
     
     " Julia support
-    " Plug 'JuliaEditorSupport/julia-vim', { 'for': 'julia' }
+    " Plug 'JuliaEditorSupport/julia-vim'
 
     " Subtitle Alpha support
     " Plug 'joeky888/Ass.vim', { 'for': 'ass' }
@@ -50,7 +50,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     
     " Markdown  
     " Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-    Plug 'dhruvasagar/vim-table-mode'
+    Plug 'dhruvasagar/vim-table-mode', {'for': 'markdown'}
     
     " Color scheme
     " Plug 'christianchiarulli/nvcode-color-schemes.vim'
@@ -74,7 +74,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Plug 'hrsh7th/cmp-nvim-lua'
 
     " Yapf format
-    Plug 'pignacio/vim-yapf-format'
+    Plug 'pignacio/vim-yapf-format', {'for': 'python'}
 
     " Snippet
     Plug 'hrsh7th/vim-vsnip'
@@ -86,8 +86,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'unblevable/quick-scope'
 
     " Vim ipython
-    Plug 'jpalardy/vim-slime', { 'for': 'python' }
-    Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
+    " Plug 'jpalardy/vim-slime', { 'for': 'python' }
+    " Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
 call plug#end()
 
     
