@@ -60,8 +60,9 @@ nmap <silent> <leader>r :up<CR>:FloatermNew --autoclose=1 run.lua % ; read<CR>
 
 " Delete without copy to clipboard
 map <leader>d "_d
-nmap <leader>p "_ddkp
-vmap <leader>p "_P
+" Paste without copy to clipboard
+nmap <silent> <expr> <leader>p (line('.') == line('$')) ? '"_ddp' : '"_ddP'
+vmap <silent> <expr> <leader>p (col('.') == col('$')-1) ? '<leader>dp' : '<leader>dP'
 
 " Select lines
 nmap <leader>v 0v$h
