@@ -33,7 +33,12 @@ load_file ~/.config/fzf/key-bindings.zsh
 # Activate conda environment
 conda()
 {
-    load_file ~/.miniconda3/etc/profile.d/conda.sh
+    if [ -f "~/.miniconda3/etc/profile.d/conda.sh" ]; then
+        source ~/.miniconda3/etc/profile.d/conda.sh
+    elif [ -f "/opt/intel/oneapi/intelpython/latest/env/vars.sh" ]; then
+        source /opt/intel/oneapi/intelpython/latest/env/vars.sh
+    fi
+  
     conda activate base
     [ -z "$1" ] || conda $@
 }
