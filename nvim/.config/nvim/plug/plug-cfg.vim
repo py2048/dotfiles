@@ -1,5 +1,6 @@
 " Lua plugins config
 luafile $HOME/.config/nvim/lua/glxline.lua
+" luafile $HOME/.config/nvim/lua/l_line.lua
 luafile $HOME/.config/nvim/lua/comment.lua
 luafile $HOME/.config/nvim/lua/treesitter.lua
 luafile $HOME/.config/nvim/lua/nscroll.lua
