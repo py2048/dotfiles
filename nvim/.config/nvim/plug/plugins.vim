@@ -26,8 +26,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'kyazdani42/nvim-web-devicons'
     Plug 'romgrk/barbar.nvim'
 
-    Plug 'NTBBloodbath/galaxyline.nvim'
-    " Plug 'nvim-lualine/lualine.nvim'
+    Plug 'nvim-lualine/lualine.nvim'
 
     " Commenter
     Plug 'b3nj5m1n/kommentary'
