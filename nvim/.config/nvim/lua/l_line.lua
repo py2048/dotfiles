@@ -3,31 +3,19 @@
 -- MIT license, see LICENSE for more details.
 
 -- stylua: ignore
-local colors0 = {
-  -- blue   = '#80a0ff',
-  blue   = '#61afef',
-  blue2  = '#81A1C1',
-  cyan   = '#79dac8',
-  black  = '#191e2a',
-  white  = '#c6c6c6',
-  red    = '#ff5189',
-  violet = '#d183e8',
-  grey   = '#262a32',
-}
 
 local colors = {
     bg = '#191E2A',
     bg_dim = '#262a32',
     bg_light = '#22262E',
+    bg_dark = '#101521',
     black = '#222222',
     white = '#abb2bf',
     grey = '#868c96',
     red = '#e06c75',
     green = '#98c379',
-    yellow = '#e5c07b',
     blue = '#61afef',
     purple = '#7c7cff',
-    teal = '#56b6c2',
     blue2 = '#81A1C1'
 }
 
