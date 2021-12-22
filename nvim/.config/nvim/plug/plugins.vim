@@ -55,8 +55,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Color scheme
     " Plug 'christianchiarulli/nvcode-color-schemes.vim'
     Plug 'Shatur/neovim-ayu'
-    Plug 'navarasu/onedark.nvim'
-    Plug 'shaunsingh/nord.nvim'
+    " Plug 'navarasu/onedark.nvim'
+    " Plug 'shaunsingh/nord.nvim'
     Plug 'nvim-treesitter/nvim-treesitter'
 
     " Scroll
