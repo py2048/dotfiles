@@ -68,7 +68,6 @@ yabai -m rule --add title='CustomConvert' manage=off layer=above
 # yabai -m signal --add event=window_created action="~/.config/spacebar/refresh.sh space"
 # yabai -m signal --add event=window_destroyed action="~/.config/spacebar/refresh.sh space"
 
-yabai -m signal --add event=display_changed action="~/.local/bin/display_changed.sh"
 
 # yabai -m signal --add event=space_changed action="~/.config/sketchybar/plugins/space.sh"
 yabai -m signal --add event=application_launched action="~/.config/sketchybar/plugins/space.sh"
@@ -80,6 +79,10 @@ yabai -m signal --add event=window_destroyed action="~/.config/sketchybar/plugin
 # sketchybar  events
 yabai -m signal --add event=window_focused action="sketchybar -m --trigger window_focus &> /dev/null"
 yabai -m signal --add event=window_title_changed action="sketchybar -m --trigger title_change &> /dev/null"
+
+# yabai -m signal --add event=display_changed action="~/.local/bin/display_changed.sh"
+yabai -m signal --add event=display_changed action="echo \$YABAI_DISPLAY_ID > ~/.cache/last_display"
+# yabai -m signal --add event=space_changed action="echo \$YABAI_SPACE_ID"
 
 
 echo "yabai configuration loaded.."

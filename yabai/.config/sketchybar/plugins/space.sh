@@ -22,10 +22,11 @@ num2a() {
 
 if [ "$SID" = '' ]; then
     # Get current space
-    space=$(yabai -m query --windows --space)
+    space=$(yabai -m query --windows --space | jq -r '[ .[] | select(.["is-sticky"] == false) ]')
+    # space=$(yabai -m query --windows --space)
     # Get current space number
     if [ "$space" = "[]" ]; then
-        SID=$(yabai -m query --spaces | sed 's/is-visible/isvis/g' | jq -r '.[] | select(.isvis == true) | .index')
+        SID=$(yabai -m query --spaces | jq -r '.[] | select(.["is-visible"] == true) | .index')
     else
         SID=$(jq -r '.[0].space' <<< "$space")
     fi
@@ -58,7 +59,7 @@ declare -A App_Icon=(
     Messenger 
     Microsoft\ Excel 
     Microsoft\ PowerPoint 
-    Microsoft\ Teams 'T'
+    Microsoft\ Teams 
     Microsoft\ Word 
     Numbers 
     Parallels\ Desktop 
@@ -81,13 +82,15 @@ declare -A App_Icon=(
 to_icon() {
     # Return  applications icons from text
     icon_app=$App_Icon[$1]
-    [ -z "$icon_app" ] && echo "" || echo "${icon_app//T}"
+    # [ -z "$icon_app" ] && echo "" || echo "${icon_app//T}"
+    [ -z "$icon_app" ] && echo "" || echo "$icon_app"
 
 }
 
 refresh_space() {
     # Refresh icons for current space
-    [ -z "$space" ] && space=$(yabai -m query --windows --space $SID)
+    # [ -z "$space" ] && space=$(yabai -m query --windows --space $SID | jq -r '[ .[] | select(.["is-sticky"] == false) ]')
+    [ -z "$space" ] && space=$(yabai -m query --windows --space $SID | jq -r '[ .[] | select(.["is-sticky"] == false) ]')
     
     # If there is no app, change icon to space number
     if [ "$space" = "[]" ]; then 
