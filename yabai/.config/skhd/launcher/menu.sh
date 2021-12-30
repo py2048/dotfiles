@@ -1,36 +1,38 @@
 TITLE="CustomSelectionMenu"
 
-ID=$(sed -n '2p' ~/.cache/last_display)
+# ID=$(sed -n '2p' ~/.cache/last_display)
 
-if [ "$ID" = '724045389' ]; then
-    SCREEN_WIDTH=2560
-    SCREEN_HEIGHT=1440
+# if [ "$ID" = '724045389' ]; then
+#     SCREEN_WIDTH=2560
+#     SCREEN_HEIGHT=1440
 
-    LINES=7
-    COLUMNS=66
+#     LINES=7
+#     COLUMNS=66
 
-    FONT_S=30
-    FONT_W=17
-    FONT_H=42
-else
-    SCREEN_WIDTH=1920
-    SCREEN_HEIGHT=1600
-    LINES=7
-    COLUMNS=50
-    # COLUMNS=70
-    FONT_S=20
-    FONT_W=17
-    FONT_H=42
-fi
+#     FONT_S=30
+#     FONT_W=17
+#     FONT_H=42
+# else
+#     SCREEN_WIDTH=1920
+#     SCREEN_HEIGHT=1600
+#     LINES=7
+#     COLUMNS=50
+#     # COLUMNS=70
+#     FONT_S=20
+#     FONT_W=17
+#     FONT_H=42
+# fi
 
 
-# font_size 19
-# FONT_W=11
-# FONT_H=27
+SCREEN_WIDTH=2560
+SCREEN_HEIGHT=1440
 
-# font_size 30
-# FONT_W=17
-# FONT_H=42
+LINES=7
+COLUMNS=66
+
+FONT_S=30
+FONT_W=17
+FONT_H=42
 
 
 TERM_WIDTH=$((COLUMNS*FONT_W + 14))
