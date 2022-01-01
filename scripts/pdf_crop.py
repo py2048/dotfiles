@@ -26,7 +26,7 @@ def crops(js):
     return crop
 
 
-def main(item_pdf, js):
+def main(item_pdf, js, rdim=None):
     # input_pdf = os.path.basename(item_pdf)
     input_pdf = item_pdf
     output_pdf = os.path.splitext(input_pdf)[0] + '_cropped.pdf'
@@ -38,12 +38,20 @@ def main(item_pdf, js):
             for p in range(0, r_input.getNumPages()):
                 p_0 = r_input.getPage(p)
                 pdim = np.array(p_0.mediaBox, dtype=np.float64)[[2, 3]]
+                if rdim:
+                    r = pdim / np.array(rdim)
+                else:
+                    r = 1
+                print(pdim)
 
-                for c in crops(js):
+                for i, c in enumerate(crops(js)):
+
                     p_new = copy.copy(p_0)
                     p_new.mediaBox = copy.copy(p_0.mediaBox)
-                    p_new.mediaBox.lowerLeft = np.array(c['lowleft']) * pdim
-                    p_new.mediaBox.upperRight = np.array(c['upright']) * pdim
+                    p_new.mediaBox.lowerLeft = np.array(
+                        c['lowleft']) * pdim * r
+                    p_new.mediaBox.upperRight = np.array(
+                        c['upright']) * pdim * r
 
                     w_output.addPage(p_new)
             w_output.write(dst)
@@ -55,5 +63,12 @@ if __name__ == "__main__":
     # os.chdir(dirpath)
     item_pdf = sys.argv[1]
     js = sys.argv[2] if len(sys.argv) > 2 else 'crop.json'
+    if len(sys.argv) > 2:
+        if sys.argv[2] == '--dim':
+            w = int(sys.argv[3])
+            h = int(sys.argv[4])
+            rdim = [w, h]
+    else:
+        rdim = None
 
-    main(item_pdf, js)
+    main(item_pdf, js, rdim)
