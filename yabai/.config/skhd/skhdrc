@@ -195,6 +195,7 @@ meh - e: /usr/bin/osascript ~/.local/bin/Finder.scpt &
 # meh - a: ~/.config/skhd/launcher/menu.sh ~/.config/skhd/launcher/app.sh &
 meh - a: ~/.config/skhd/launcher/menu.sh apps &
 meh - s: ~/.config/skhd/launcher/menu.sh actions &
+meh - m: ~/.config/skhd/launcher/mpv.sh
 
 meh - h: yabai -m window --focus west || yabai -m display --focus next
 meh - l: yabai -m window --focus east || yabai -m display --focus prev

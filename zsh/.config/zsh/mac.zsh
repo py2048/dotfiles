@@ -20,11 +20,6 @@ alias dr="open -a /Applications/Dropover.app/Contents/MacOS/Dropover"
 # rclonbe exclude .DS_Store
 alias rclone='rclone --exclude ".DS_Store"'
 
-# Recent mpv
-mpv_rc() {
-    tac ~/.cache/mpv_history | fzf | grep -oP '^\[\d{2}/\w{3}/\d{2}\s\d{2}:\d{2}:\d{2}\]\s\K.+' | xargs -I {} open '{}'
-}
-
 # Plugins
 
 # If not running interactively, don't do anything

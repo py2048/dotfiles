@@ -6,12 +6,9 @@
 local HISTFILE = os.getenv('HOME')..'/.cache/mpv_history';
 
 mp.register_event('file-loaded', function()
-    local title, logfile;
-
-    title = mp.get_property('media-title');  
-    title = (title == mp.get_property('filename') and '' or ('(%s)'):format(title));
+    local logfile;
 
     logfile = io.open(HISTFILE, 'a+');
-    logfile:write(('[%s] %s %s\n'):format(os.date('%d/%b/%y %X'), mp.get_property('path'), title));    
+    logfile:write(('[%s] %s\n'):format(os.date('%d/%b/%y %X'), mp.get_property('path')));    
     logfile:close();
 end)

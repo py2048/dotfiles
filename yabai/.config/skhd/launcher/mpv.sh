@@ -15,10 +15,12 @@ if [ "DISPLAY" = 'out' ]; then
     FONT_W=17
     FONT_H=42
 else
-    SCREEN_WIDTH=1675
-    SCREEN_HEIGHT=1550
-    LINES=7
-    COLUMNS=66
+    # SCREEN_WIDTH=1920
+    # SCREEN_HEIGHT=1600
+    SCREEN_WIDTH=2140
+    SCREEN_HEIGHT=1500
+    LINES=16
+    COLUMNS=120
     # COLUMNS=70
     FONT_S=20
     FONT_W=17
@@ -37,6 +39,5 @@ alacritty -t "${TITLE}" \
     -o window.position.y="${Y}" \
     -o window.dimensions.lines=$LINES \
     -o window.dimensions.columns=$COLUMNS \
-    --config-file ~/.config/skhd/launcher/alacritty.yml \
-    -e luajit ~/.config/skhd/launcher/menu.lua $1
-    # --command ~/.config/skhd/test/menu.py
+    --config-file ~/.config/skhd/launcher/alacritty_mpv.yml \
+    -e zsh -c "~/.local/bin/mpvhist.sh"
