@@ -49,7 +49,7 @@ yabai -m config external_bar                 all:30:0
 # Floating Apps
 yabai -m rule --add app="^IINA$" manage=off
 yabai -m rule --add app="^System Preferences$" manage=off
-yabai -m rule --add app="^Transmission$" manage=off
+yabai -m rule --add app="^Transmission Remote GUI$" manage=off
 yabai -m rule --add app="^ColorSlurp$" manage=off
 yabai -m rule --add app="^Free Download Manager$" manage=off
 yabai -m rule --add app="^KeePassXC$" manage=off
