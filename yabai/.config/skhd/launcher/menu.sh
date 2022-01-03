@@ -2,9 +2,9 @@ TITLE="CustomSelectionMenu"
 
 # ID=$(sed -n '2p' ~/.cache/last_display)
 
-DISPLAY='in'
+DISPLAY='out'
 
-if [ "DISPLAY" = 'out' ]; then
+if [ "$DISPLAY" = 'out' ]; then
     SCREEN_WIDTH=2560
     SCREEN_HEIGHT=1440
 

@@ -19,6 +19,7 @@
     https://github.com/TheAMM/mpv_thumbnail_script
     Built on 2022-01-01 10:47:04
 ]]--
+
 local assdraw = require 'mp.assdraw'
 local msg = require 'mp.msg'
 local opt = require 'mp.options'

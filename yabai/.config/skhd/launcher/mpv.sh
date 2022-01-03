@@ -2,18 +2,18 @@ TITLE="CustomSelectionMenu"
 
 # ID=$(sed -n '2p' ~/.cache/last_display)
 
-DISPLAY='in'
+DISPLAY='out'
 
-if [ "DISPLAY" = 'out' ]; then
+if [ "$DISPLAY" = 'out' ]; then
     SCREEN_WIDTH=2560
     SCREEN_HEIGHT=1440
 
-    LINES=7
-    COLUMNS=66
+    LINES=25
+    COLUMNS=150
 
-    FONT_S=30
-    FONT_W=17
-    FONT_H=42
+    FONT_S=25
+    FONT_W=14
+    FONT_H=35
 else
     # SCREEN_WIDTH=1920
     # SCREEN_HEIGHT=1600
@@ -37,6 +37,7 @@ Y=$((SCREEN_HEIGHT/2-TERM_HEIGHT/2))
 alacritty -t "${TITLE}" \
     -o window.position.x="${X}" \
     -o window.position.y="${Y}" \
+    -o font.size=${FONT_S}  \
     -o window.dimensions.lines=$LINES \
     -o window.dimensions.columns=$COLUMNS \
     --config-file ~/.config/skhd/launcher/alacritty_mpv.yml \
