@@ -7,9 +7,7 @@ local HISTFILE = os.getenv('HOME')..'/.cache/mpv_history';
 
 mp.register_event('file-loaded', function()
     local logfile;
-    local filepath = mp.get_property('working-directory') .. '/' .. mp.get_property('filename')
-
     logfile = io.open(HISTFILE, 'a+');
-    logfile:write(('[%s] %s\n'):format(os.date('%d/%b/%y %X'), filepath));    
+    logfile:write(('[%s] %s\n'):format(os.date('%d/%b/%y %X'), mp.get_property('path')));    
     logfile:close();
 end)
