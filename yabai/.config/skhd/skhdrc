@@ -230,13 +230,13 @@ hyper - k: yabai -m window --swap north
 hyper - y: yabai -m window --display next && ~/.config/sketchybar/plugins/space.sh && yabai -m display --focus next && ~/.config/sketchybar/plugins/space.sh
 hyper - o: yabai -m window --display prev && ~/.config/sketchybar/plugins/space.sh && yabai -m display --focus next && yabai -m display --focus prev && ~/.config/sketchybar/plugins/space.sh
 
-hyper - i: yabai -m window --space next && ~/.config/sketchybar/plugins/space.sh && yabai -m space --focus next
-hyper - u: yabai -m window --space prev && ~/.config/sketchybar/plugins/space.sh && yabai -m space --focus prev
-# hyper - i: yabai -m window --space next && yabai -m space --focus next
-# hyper - u: yabai -m window --space prev && yabai -m space --focus prev
+# hyper - i: yabai -m window --space next && ~/.config/sketchybar/plugins/space.sh && yabai -m space --focus next
+# hyper - u: yabai -m window --space prev && ~/.config/sketchybar/plugins/space.sh && yabai -m space --focus prev
+hyper - i: yabai -m window --space next && yabai -m space --focus next
+hyper - u: yabai -m window --space prev && yabai -m space --focus prev
 
 meh + cmd - space: yabai -m space --balance
-meh - r: ~/.config/sketchybar/plugins/space.sh all
+meh - r: ~/.config/sketchybar/plugins/spaceic.sh all
 
 # input source
 meh - space: ~/.config/sketchybar/plugins/lang.sh

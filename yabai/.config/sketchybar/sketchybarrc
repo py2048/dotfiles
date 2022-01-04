@@ -6,7 +6,7 @@
 sketchybar -m --bar height=30        \
                     position=top     \
                     padding_left=10  \
-                    padding_right=10 \
+    padding_right=10 \
                     color=0xff1b222c
 
 ############## GLOBAL DEFAULTS ############## 
@@ -46,8 +46,8 @@ sketchybar -m --add space one left                                              
                         background.padding_left=$B_PL                           \
                         background.padding_right=$B_PR                          \
                         background.height=$B_H                                  \
-                        script="zsh ~/.config/sketchybar/plugins/space.sh"      \
-                        click_script="yabai -m space --focus 1"                   \
+                        script="~/.config/sketchybar/plugins/spacehi.sh"        \
+                        click_script="yabai -m space --focus 1"                 \
                                                                                 \
               --add space two left                                              \
               --set two associated_display=1                                    \
@@ -62,8 +62,8 @@ sketchybar -m --add space one left                                              
                         background.padding_left=$B_PL                           \
                         background.padding_right=$B_PR                          \
                         background.height=$B_H                                  \
-                        script="zsh ~/.config/sketchybar/plugins/space.sh"      \
-                        click_script="yabai -m space --focus 2"                   \
+                        script="~/.config/sketchybar/plugins/spacehi.sh"        \
+                        click_script="yabai -m space --focus 2"                 \
                                                                                 \
               --add space three left                                            \
               --set three associated_display=1                                  \
@@ -78,8 +78,8 @@ sketchybar -m --add space one left                                              
                         background.padding_left=$B_PL                           \
                         background.padding_right=$B_PR                          \
                         background.height=$B_H                                  \
-                        script="zsh ~/.config/sketchybar/plugins/space.sh"      \
-                        click_script="yabai -m space --focus 3"                   \
+                        script="~/.config/sketchybar/plugins/spacehi.sh"        \
+                        click_script="yabai -m space --focus 3"                 \
                                                                                 \
               --add space four left                                             \
               --set four associated_display=1                                   \
@@ -94,8 +94,8 @@ sketchybar -m --add space one left                                              
                         background.padding_left=$B_PL                           \
                         background.padding_right=$B_PR                          \
                         background.height=$B_H                                  \
-                        script="zsh ~/.config/sketchybar/plugins/space.sh"      \
-                        click_script="yabai -m space --focus 4"                   \
+                        script="~/.config/sketchybar/plugins/spacehi.sh"        \
+                        click_script="yabai -m space --focus 4"                 \
                                                                                 \
               --add space five left                                             \
               --set five associated_display=1                                   \
@@ -110,8 +110,8 @@ sketchybar -m --add space one left                                              
                         background.padding_left=$B_PL                           \
                         background.padding_right=$B_PR                          \
                         background.height=$B_H                                  \
-                        script="zsh ~/.config/sketchybar/plugins/space.sh"      \
-                        click_script="yabai -m space --focus 5"                   \
+                        script="~/.config/sketchybar/plugins/spacehi.sh"        \
+                        click_script="yabai -m space --focus 5"                 \
 
 
 ############## SECONDARY DISPLAY SPACES ############## 
@@ -128,8 +128,8 @@ sketchybar -m --add space six left                                              
                         background.padding_left=$B_PL                           \
                         background.padding_right=$B_PR                          \
                         background.height=$B_H                                  \
-                        script="zsh ~/.config/sketchybar/plugins/space.sh"      \
-                        click_script="yabai -m space --focus 6"                   \
+                        script="~/.config/sketchybar/plugins/spacehi.sh"        \
+                        click_script="yabai -m space --focus 6"                 \
                                                                                 \
               --add space seven left                                            \
               --set seven associated_display=2                                  \
@@ -144,8 +144,8 @@ sketchybar -m --add space six left                                              
                         background.padding_left=$B_PL                           \
                         background.padding_right=$B_PR                          \
                         background.height=$B_H                                  \
-                        script="zsh ~/.config/sketchybar/plugins/space.sh"      \
-                        click_script="yabai -m space --focus 7"                   \
+                        script="~/.config/sketchybar/plugins/spacehi.sh"        \
+                        click_script="yabai -m space --focus 7"                 \
                                                                                 \
               --add space eight left                                            \
               --set eight associated_display=2                                  \
@@ -160,12 +160,12 @@ sketchybar -m --add space six left                                              
                         background.padding_left=$B_PL                           \
                         background.padding_right=$B_PR                          \
                         background.height=$B_H                                  \
-                        script="zsh ~/.config/sketchybar/plugins/space.sh"      \
-                        click_script="yabai -m space --focus 8"                   \
+                        script="~/.config/sketchybar/plugins/spacehi.sh"        \
+                        click_script="yabai -m space --focus 8"                 \
                                                                                 \
 
 # refresh space
-~/.config/sketchybar/plugins/space.sh all
+~/.config/sketchybar/plugins/spaceic.sh all
 
 
 ############## ITEM DEFAULTS ###############
