@@ -74,6 +74,7 @@ def skbar_icon(si, s_icon):
 
 def refresh_space(sid, current=False):
     '''Refresh sketchybar icons for current space'''
+    si = None
     if current:
         for s in spaces:
             if s['has-focus']:
@@ -82,7 +83,8 @@ def refresh_space(sid, current=False):
         for s in spaces:
             if s['id'] == sid:
                 si = s['index']
-
+    if not si:
+        return
     s_icon = ''
     s_app = []
     for w in windows:
