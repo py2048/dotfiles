@@ -27,6 +27,7 @@ local utils = require 'mp.utils'
 
 -- Determine platform --
 ON_WINDOWS = (package.config:sub(1,1) ~= '/')
+ON_MAC = (os.getenv('OS_NAME') == 'MacOS')
 
 -- Some helper functions needed to parse the options --
 function isempty(v) return (v == false) or (v == nil) or (v == "") or (v == 0) or (type(v) == "table" and next(v) == nil) end
@@ -271,6 +272,9 @@ end
 
 
 function get_processor_count()
+  if ON_MAC then
+    return 8
+  end  
   local proc_count
 
   if ON_WINDOWS then
