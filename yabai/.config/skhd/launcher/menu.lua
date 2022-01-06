@@ -9,7 +9,8 @@ function app_menu()
     local apps = {
         { key = 'a', app = "AnyDesk", icon = "ﲾ " },
         { key = 'b', app = "Brave Browser", icon = " " },
-        { key = 'c', app = "Visual Studio Code", icon = "﬏ ", cmd="code" },
+        -- { key = 'c', app = "Visual Studio Code", icon = "﬏ ", cmd="code" },
+        { key = 'c', app = "Visual Studio Code", icon = "﬏ " },
         { key = 'd', app = "Discord", icon = "ﭮ " },
         { key = 'k', app = "KeePassXC", icon = " " },
         { key = 'm', app = "Messenger", icon = " " },
