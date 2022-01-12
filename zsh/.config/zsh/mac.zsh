@@ -20,6 +20,9 @@ alias dr="open -a /Applications/Dropover.app/Contents/MacOS/Dropover"
 # rclonbe exclude .DS_Store
 alias rclone='rclone --exclude ".DS_Store"'
 
+# Julia
+alias julia="julia -J$HOME/.local/lib/jlplots -O1"
+
 # Plugins
 
 # If not running interactively, don't do anything
