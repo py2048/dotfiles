@@ -54,6 +54,10 @@ yabai -m rule --add app="^ColorSlurp$" manage=off
 yabai -m rule --add app="^Free Download Manager$" manage=off
 yabai -m rule --add app="^KeePassXC$" manage=off
 yabai -m rule --add app="^mpv$" manage=off
+yabai -m rule --add app="^Intel Power Gadget$" manage=off
+yabai -m rule --add app="^Python$" manage=off
+yabai -m rule --add app="^gnuplot_qt$" manage=off
+yabai -m rule --add app="^gksqt$" manage=off
 yabai -m rule --add app="choose" manage=off sticky=on layer=above
 yabai -m rule --add title='CustomSelectionMenu' manage=off sticky=on layer=above
 # yabai -m rule --add title='CustomConvert' manage=off sticky=on layer=above
