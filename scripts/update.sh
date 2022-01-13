@@ -96,8 +96,8 @@ all_update(){
     os_update
     zsh_update
     cargo_update
-    pip_update
     conda_update
+    pip_update
     # [ "$RANDOM" -lt "10000" ] && echo_green Cleanning history && clear_hist.sh
 }
 
