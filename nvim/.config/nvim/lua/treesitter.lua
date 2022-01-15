@@ -6,6 +6,7 @@ require'nvim-treesitter.configs'.setup {
     disable = {
         "fortran",
         "vim",
+        "html"
         },  -- list of language that will be disabled
   },
 }
