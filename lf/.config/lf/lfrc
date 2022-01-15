@@ -6,7 +6,7 @@ set icons true
 # Set hidden file
 map . set hidden!
 # Size of file/directory
-map gs %du -sh "$f"
+map gs %du -s --si "$f"
 # Sort by add time
 map sa :set sortby atime; set info atime; set reverse
 # Sort normal

@@ -23,6 +23,9 @@ alias rclone='rclone --exclude ".DS_Store"'
 # Julia
 alias julia="julia -J$HOME/.local/lib/jlplots -O1"
 
+# Dust
+alias dust='dust -H'
+
 # Plugins
 
 # If not running interactively, don't do anything
