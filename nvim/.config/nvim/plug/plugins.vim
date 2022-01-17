@@ -16,7 +16,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'windwp/nvim-autopairs'
     
     " Julia support
-    " Plug 'JuliaEditorSupport/julia-vim'
+    Plug 'JuliaEditorSupport/julia-vim'
 
     " Subtitle Alpha support
     " Plug 'joeky888/Ass.vim', { 'for': 'ass' }

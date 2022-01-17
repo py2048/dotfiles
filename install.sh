@@ -29,4 +29,4 @@ case "$NAME" in
 esac
 
 (cd scripts && ./install.sh)
-stow color conda fzf lf goldendict mpv nnn nvcode nvim paraview rc tmux zsh
+stow color goldendict mpv nvim paraview productivity rc zsh

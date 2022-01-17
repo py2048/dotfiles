@@ -18,6 +18,11 @@ require'lspconfig'.pyright.setup {
   autostart = false
 }
 
+require'lspconfig'.julials.setup{
+  capabilities = capabilities,
+  autostart = false
+}
+
 -- require'lspconfig'.bashls.setup {
 --   capabilities = capabilities,
 -- }

@@ -57,7 +57,7 @@ yabai -m rule --add app="^mpv$" manage=off
 yabai -m rule --add app="^Intel Power Gadget$" manage=off
 yabai -m rule --add app="^XDM$" manage=off
 yabai -m rule --add app="^Finder$" title='^.*Info$' manage=off layer=above
-yabai -m rule --add app="^Julia$" manage=off layer=above
+yabai -m rule --add app="^[Jj]ulia$" manage=off layer=above
 yabai -m rule --add app="^Python$" manage=off layer=above
 yabai -m rule --add app="^gnuplot_qt$" manage=off layer=above
 yabai -m rule --add app="^gksqt$" manage=off layer=above
