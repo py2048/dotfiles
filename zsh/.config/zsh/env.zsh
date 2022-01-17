@@ -86,6 +86,7 @@ alias gm='git commit -m'
 alias gl='git log'
 alias gst='git status'
 alias gd='git diff'
+alias gt='gitui'
 
 # Add, commit then push
 gg(){
