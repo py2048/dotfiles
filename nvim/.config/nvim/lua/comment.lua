@@ -1,12 +1,14 @@
--- require('nvim_comment').setup({
---     marker_padding = true,
---     comment_empty = false,
---     create_mappings = false,
--- })
+local kmt = require('kommentary.config')
 
-require('kommentary.config').configure_language("default", {
+kmt.configure_language("default", {
     prefer_single_line_comments = true,
 })
+
+kmt.configure_language("julia", {
+    single_line_comment_string = "#",
+    multi_line_comment_strings = {"#=", "=#"},
+})
+
 vim.g.kommentary_create_default_mappings = false
 
 vim.api.nvim_set_keymap("n", "<leader>/", "<Plug>kommentary_line_default", {})
