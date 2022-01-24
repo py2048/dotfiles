@@ -26,10 +26,6 @@ add_path ~/Apps/paraview_exec/bin
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# fzf
-load_file ~/.config/fzf/general.zsh
-load_file ~/.config/fzf/key-bindings.zsh
-
 # Activate conda environment
 conda()
 {
