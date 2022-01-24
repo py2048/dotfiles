@@ -77,7 +77,7 @@ nmap <silent> <space>h :noh<CR>
 
 " run code
 nmap <silent> <space>r :call VSCodeCall('code-runner.run')<CR>
-autocmd FileType python nmap <buffer> <silent> <space>r :call VSCodeCall('python.execInTerminal')<CR>
+" autocmd FileType python nmap <buffer> <silent> <space>r :call VSCodeCall('python.execInTerminal')<CR>
 
 nmap <silent> <space>b :call VSCodeCall('workbench.action.tasks.build')<CR>
 
