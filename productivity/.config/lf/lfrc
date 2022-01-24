@@ -20,8 +20,18 @@ cmd trash %trash-put "$fx"
 map x trash
 # Preview
 map g<space> &pv "$f"
+
 # open
-map <enter> :open "$f"
+cmd open ${{
+    test -L $f && f=$(readlink -f $f)
+    case $(file --mime-type $f -b) in
+        text/*) nvim $fx;;
+        inode/x-empty) nvim $fx;;
+        *) for f in $fx; do open $f > /dev/null 2> /dev/null & done;;
+    esac
+}}
+map <enter> :open "$fx"
+
 # permission
 cmd premission %{{
         chmod +x "$f"
@@ -59,6 +69,6 @@ cmd zlua ${{
 map zl :zlua
 
 # Open
-map o &open "$f"
+map o &open "$fx"
 
 map R $batch_rename.sh
