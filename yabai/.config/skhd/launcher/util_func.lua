@@ -9,7 +9,7 @@ function util_func.has_key (tab, val)
     return false
 end
 
-function util_func.shell(cmd)
+function util_func.readf(cmd)
     local fileHandle = io.popen(cmd)
     local output = fileHandle:read('*a')
     fileHandle:close()
@@ -18,7 +18,7 @@ end
 
 function util_func.readkey()
     local readkey_f = os.getenv('HOME') .. '/.local/bin/readkey.sh'
-    return util_func.shell(readkey_f):sub(1, 1)
+    return util_func.readf(readkey_f):sub(1, 1)
 end
 
 return util_func
