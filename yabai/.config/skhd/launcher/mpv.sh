@@ -1,10 +1,6 @@
 TITLE="CustomSelectionMenu"
 
-# ID=$(sed -n '2p' ~/.cache/last_display)
-
-DISPLAY='out'
-
-if [ "$DISPLAY" = 'out' ]; then
+if [ -f "$HOME/.cache/ex_display" ]; then
     SCREEN_WIDTH=2560
     SCREEN_HEIGHT=1440
 
