@@ -50,6 +50,8 @@ App_Icons = {
     "VMware Fusion": "",
     "VOX": "",
     "Xcode": "",
+    "YACReaderLibrary": "",
+    "YACReader": "",
 }
 
 num2a = [
