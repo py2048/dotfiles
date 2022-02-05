@@ -10,7 +10,7 @@ pg.setConfigOptions(useOpenGL=True)
 pg.setConfigOptions(enableExperimental=True)
 
 cmds = sys.argv[1].split('&')
-func = cmds[0]
+func = cmds[0].replace('^', '**')
 
 if len(cmds) > 1:
     xmin, xmax = cmds[1].strip().split(' ')
