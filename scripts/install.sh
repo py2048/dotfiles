@@ -9,5 +9,6 @@ done
 for f in $(ls | grep -v 'install.sh' | grep -Pv '\w+\.[c|cpp]'); do
     chmod 755 $f
     f_rp=$(realpath $f)
-    ln -sfn "$f_rp" ~/.local/bin && echo Symlinked: "$HOME/.local/bin/$f"
+    ln -sfn "$f_rp" ~/.local/bin
 done
+echo Symlinked scripts to "$HOME/.local/bin"
