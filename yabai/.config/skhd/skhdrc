@@ -266,5 +266,6 @@ hyper - 7: yabai -m window --space 7 && yabai -m space --focus 7
 f12 [
     "IINA": yabai -m display --focus prev || yabai -m display --focus next
     "mpv": yabai -m display --focus prev || yabai -m display --focus next
+    "YACReader": yabai -m display --focus prev || yabai -m display --focus next
     "GoldenDict": yabai -m display --focus prev || yabai -m display --focus next
 ]
