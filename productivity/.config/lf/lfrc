@@ -25,8 +25,7 @@ map g<space> &pv "$f"
 cmd open ${{
     test -L $f && f=$(readlink -f $f)
     case $(file --mime-type $f -b) in
-        text/*) nvim $fx;;
-        inode/x-empty) nvim $fx;;
+        text/* | inode/x-empty | application/json) nvim $fx;;
         *) for f in $fx; do open $f > /dev/null 2> /dev/null & done;;
     esac
 }}
