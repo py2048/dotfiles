@@ -15,7 +15,7 @@ add_path $HOME/.npm-global/bin
 
 
 # MANPAGER
-export MANPATH="/usr/local/man:$MANPATH"
+# export MANPATH="/usr/local/man:$HOME/.local/man:$MANPATH"
 # export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANPAGER="most"
 
