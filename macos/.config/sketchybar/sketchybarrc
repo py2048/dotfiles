@@ -163,6 +163,22 @@ sketchybar -m --add space six left                                              
                         script="~/.config/sketchybar/plugins/spacehi.sh"        \
                         click_script="yabai -m space --focus 8"                 \
                                                                                 \
+              --add space nine left                                            \
+              --set eight associated_display=2                                  \
+                        associated_space=9                                      \
+                        icon.highlight_color=$H_COLOR                           \
+                        label.highlight_color=$H_COLOR                          \
+                        label.highlight=on                                      \
+                        label=8                                                 \
+                        background.drawing=on                                   \
+                        background.color=$B_COLOR                               \
+                        background.corner_radius=$B_RADIUS                      \
+                        background.padding_left=$B_PL                           \
+                        background.padding_right=$B_PR                          \
+                        background.height=$B_H                                  \
+                        script="~/.config/sketchybar/plugins/spacehi.sh"        \
+                        click_script="yabai -m space --focus 9"                 \
+
 
 # refresh space
 ~/.config/sketchybar/plugins/spaceic.sh all

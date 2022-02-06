@@ -1,6 +1,7 @@
 #!/usr/local/bin/python3
 
 import sys
+import os
 import json
 
 App_Icons = {
@@ -59,6 +60,8 @@ num2a = [
     'nine'
 ]
 
+HOME = os.environ['HOME']
+
 datajson = sys.stdin.read().split('\n\n')
 
 cmd = datajson[0]
@@ -68,15 +71,49 @@ spaces = json.loads(datajson[2])
 windows = [i for i in json.loads(datajson[3]) if not i['is-sticky']]
 
 
+def refresh_display():
+    """Determine of space is belong to which display"""
+    with open(f'{HOME}/.cache/total_spaces') as f:
+        si0_str = f.read()
+        si0 = int(si0_str) if si0_str else None
+    with open(f'{HOME}/.cache/total_spaces', 'w') as f:
+        f.write(str(len(spaces)))
+        f.write('\n')
+
+    print('sketchybar -m', end=' ')
+    si = 1
+    for s in spaces:
+        print(f"--set {num2a[s['index']]}",
+              "drawing=on",
+              f"associated_display={s['display']}",
+              end=' ')
+        si += 1
+    for i in range(si, 10):
+        print(f"--set {num2a[i]} drawing=off ", end=' ')
+    print()
+    return False if si0 == si - 1 else True
+
+
 def skbar_icon(si, s_icon):
+    """Change icon of a space"""
     if not s_icon:
-        print(f'sketchybar -m --set {num2a[si]} icon=""', f'label="{si}"',
-              'label.padding_left=2', 'label.padding_right=8',
-              'icon.padding_left=2', 'icon.padding_right=3')
+        print(
+            f'sketchybar -m --set {num2a[si]} icon=""',
+            f'label="{si}"',
+            'label.padding_left=2',
+            'label.padding_right=8',
+            'icon.padding_left=2',
+            'icon.padding_right=3',
+        )
     else:
-        print(f'sketchybar -m --set {num2a[si]} icon="{s_icon}"',
-              f'label="{si}"', 'label.padding_left=2', 'label.padding_right=8',
-              'icon.padding_left=8', 'icon.padding_right=2')
+        print(
+            f'sketchybar -m --set {num2a[si]} icon="{s_icon}"',
+            f'label="{si}"',
+            'label.padding_left=2',
+            'label.padding_right=8',
+            'icon.padding_left=8',
+            'icon.padding_right=2',
+        )
 
 
 def refresh_space(sid, current=False):
@@ -106,14 +143,28 @@ def refresh_space(sid, current=False):
     skbar_icon(si, s_icon)
 
 
+def refresh_display2():
+    '''Refresh sketchybar icons for secondary display'''
+    # print('sketchybar -m', end=' ')
+    for s in spaces:
+        if not s['display'] == 1:
+            refresh_space(s['id'])
+
+
 def refresh_cspace(sid0, sid):
     '''Refresh sketchybar icons when changing space'''
+    if refresh_display():
+        # print('\nTrue\n')
+        refresh_display2()
+    # print('sketchybar -m', end=' ')
     refresh_space(sid0)
     refresh_space(sid)
 
 
 def refresh_all():
     '''Refresh sketchybar icons for all space'''
+    refresh_display()
+    # print('sketchybar -m', end=' ')
     for s in spaces:
         refresh_space(s['id'])
 

@@ -3,7 +3,7 @@
 # Remove .DS_Store
 find . -name ".DS_Store" -print -delete
 # stow to HOME
-alias stow="stow -t ../.."
+alias stow="stow -t ~"
 
 ! [ -z "$1" ] && stow "$@" && exit
 
