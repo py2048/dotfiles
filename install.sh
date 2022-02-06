@@ -16,7 +16,7 @@ case "$NAME" in
 
     MacOS)
         (cd macscripts && ./install.sh)
-        verbose.sh stow yabai
+        verbose.sh stow macos
         ;;
 
     Fedora | Ubuntu | "Linux Mint")
