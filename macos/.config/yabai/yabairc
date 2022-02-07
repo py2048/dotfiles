@@ -79,6 +79,7 @@ yabai -m rule --add title='CustomConvert' manage=off layer=above
 
 yabai -m signal --add event=space_changed action="~/.config/sketchybar/plugins/spaceic.sh cspace \$YABAI_RECENT_SPACE_ID \$YABAI_SPACE_ID"
 yabai -m signal --add event=application_terminated action="~/.config/sketchybar/plugins/spaceic.sh all"
+yabai -m signal --add event=display_added action="~/.config/sketchybar/plugins/spaceic.sh all"
 yabai -m signal --add event=mission_control_exit action="~/.config/sketchybar/plugins/spaceic.sh all"
 yabai -m signal --add event=window_created action="~/.config/sketchybar/plugins/spaceic.sh space 0"
 yabai -m signal --add event=window_destroyed action="~/.config/sketchybar/plugins/spaceic.sh space 0"
