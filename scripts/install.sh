@@ -3,10 +3,11 @@
 ! [ -d ~/.local/bin ] && mkdir -p ~/.local/bin && chmod 755 ~/.local/bin
 
 for f in $(ls *.c); do
-    cc $f -o ${f%.*}
+    exec=${f%.*}
+    echo cc $f -o ${exec:1}
 done
 
-for f in $(ls | grep -v 'install.sh' | grep -Pv '\w+\.[c|cpp]'); do
+for f in $(ls | grep -v 'install.sh' | grep -Pv '^_'); do
     chmod 755 $f
     f_rp=$(realpath $f)
     ln -sfn "$f_rp" ~/.local/bin
