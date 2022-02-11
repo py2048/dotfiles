@@ -241,9 +241,6 @@ hyper - u: yabai -m window --space prev && yabai -m space --focus prev
 meh + cmd - space: yabai -m space --balance
 meh - r: ~/.config/sketchybar/plugins/spaceic.sh all
 
-# input source
-meh - space: ~/.config/sketchybar/plugins/lang.sh
-
 # lalt - s : yabai -m space --create && \
 #                   set index "(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
 #                   yabai -m window --space $index && \

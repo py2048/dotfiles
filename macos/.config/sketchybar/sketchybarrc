@@ -216,25 +216,17 @@ sketchybar -m   --add item clock right                                          
                 --set battery update_freq=30                                                \
                 --set battery script="~/.config/sketchybar/plugins/power.sh"                \
                         icon.padding_right=5                                                \
+                        icon.padding_left=0                                                 \
                         icon.font="Hack Nerd Font:Bold:20"                                  \
                                                                                             \
-                --add item lang right                                                       \
-                --set lang label=E                                                          \
-                        label.color=$H_COLOR                                                \
-                        label.font="Nunito:Bold:15.0"                                       \
-                        icon.padding_right=0                                                \
-                        label.padding_right=5                                               \
-                        icon.padding_left=5                                                 \
-                        label.padding_left=0                                                \
-                        background.padding_left=5                                           \
-                        background.padding_right=15                                         \
-                        background.color=$B_COLOR_H                                         \
-                        background.height=18                                                \
-                        background.corner_radius=4                                          \
-                        click_script="~/.config/sketchybar/plugins/lang.sh"                 \
+                --add alias EVKey,Item-0 right                                              \
+                --set EVKey,Item-0 icon.padding_right=0                                     \
+                        icon.padding_left=0                                                 \
+                        click_script="/usr/local/bin/skhd --key 'meh - space'"              \
                                                                                             \
                 --add item mic right                                                        \
                 --set mic click_script="~/.config/sketchybar/plugins/mic.sh"                \
+                        icon.padding_right=0                                                \
                                                                                             \
                 --add item caffeinate right                                                 \
                 --set caffeinate click_script="~/.config/sketchybar/plugins/caffeinate.sh"  \
@@ -262,8 +254,6 @@ sketchybar -m   --add item clock right                                          
 ~/.config/sketchybar/plugins/mic.sh re
 # Get current caffeinate
 ~/.config/sketchybar/plugins/caffeinate.sh re
-# Get language
-~/.config/sketchybar/plugins/lang.sh re
 
 
 ###################### CENTER ITEMS ###################
