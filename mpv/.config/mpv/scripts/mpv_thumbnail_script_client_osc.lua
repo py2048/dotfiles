@@ -15,11 +15,10 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]--
 --[[
-    mpv_thumbnail_script.lua 0.4.4 - commit ddb8b1d (branch master)
+    mpv_thumbnail_script.lua 0.4.7 - commit 6282073 (branch master)
     https://github.com/TheAMM/mpv_thumbnail_script
-    Built on 2022-01-01 10:47:04
+    Built on 2022-02-11 07:56:29
 ]]--
-
 local assdraw = require 'mp.assdraw'
 local msg = require 'mp.msg'
 local opt = require 'mp.options'
@@ -272,9 +271,7 @@ end
 
 
 function get_processor_count()
-  if ON_MAC then
-    return 8
-  end  
+if ON_MAC then return 8 end
   local proc_count
 
   if ON_WINDOWS then
@@ -1127,6 +1124,7 @@ function Thumbnailer:prepare_source_path()
         -- This skips ytdl on the sub-calls, making the thumbnailing faster
         -- Works well on YouTube, rest not really tested
         file_path = mp.get_property_native("stream-path")
+        file_path = file_path:gsub(",ytdl_description.+", "")
 
         -- edl:// urls can get LONG. In which case, save the path (URL)
         -- to a temporary file and use that instead.
