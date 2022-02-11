@@ -39,7 +39,7 @@ App_Icons = {
     "Pine": " ",
     "Preview": "",
     "Skim": "",
-    "Spark": "﫯",
+    "Mailspring": "﫯",
     "Mail": "﫯",
     "Spotlight": "",
     "System Preferences": "",
