@@ -1,7 +1,8 @@
 atreplinit() do repl
     try
-        OhMyREPL.colorscheme!("TomorrowNightBright")
+        @eval using OhMyREPL
+        @eval OhMyREPL.colorscheme!("TomorrowNightBright")
     catch e
-        # @warn "error while importing OhMyREPL" e
+        @warn "error while importing OhMyREPL" e
     end
 end
