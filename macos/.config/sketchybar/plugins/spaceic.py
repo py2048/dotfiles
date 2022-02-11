@@ -62,16 +62,16 @@ num2a = [
 
 HOME = os.environ['HOME']
 
-datajson = sys.stdin.read().split('\n\n')
+datajson = json.loads(sys.stdin.read())
 
 cmd = datajson[0]
 sidstr = datajson[1]
 
-spaces = json.loads(datajson[2])
-windows = [i for i in json.loads(datajson[3]) if not i['is-sticky']]
+spaces = datajson[2]
+windows = [i for i in datajson[3] if not i['is-sticky']]
 
 
-def refresh_display():
+def refresh_displays():
     """Determine of space is belong to which display"""
     with open(f'{HOME}/.cache/total_spaces') as f:
         si0_str = f.read()
@@ -143,7 +143,7 @@ def refresh_space(sid, current=False):
     skbar_icon(si, s_icon)
 
 
-def refresh_display2():
+def refresh_space_display2():
     '''Refresh sketchybar icons for secondary display'''
     # print('sketchybar -m', end=' ')
     for s in spaces:
@@ -153,9 +153,9 @@ def refresh_display2():
 
 def refresh_cspace(sid0, sid):
     '''Refresh sketchybar icons when changing space'''
-    if refresh_display():
+    if refresh_displays():
         # print('\nTrue\n')
-        refresh_display2()
+        refresh_space_display2()
     # print('sketchybar -m', end=' ')
     refresh_space(sid0)
     refresh_space(sid)
@@ -163,7 +163,7 @@ def refresh_cspace(sid0, sid):
 
 def refresh_all():
     '''Refresh sketchybar icons for all space'''
-    refresh_display()
+    refresh_displays()
     # print('sketchybar -m', end=' ')
     for s in spaces:
         refresh_space(s['id'])
