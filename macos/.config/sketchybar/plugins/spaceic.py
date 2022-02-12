@@ -29,6 +29,7 @@ App_Icons = {
     "Keychain Access": "",
     "kitty": "",
     "Messenger": "",
+    "Messages": "",
     "Microsoft Excel": "",
     "Microsoft PowerPoint": "",
     "Microsoft Teams": "",

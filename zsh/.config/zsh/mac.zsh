@@ -21,7 +21,7 @@ alias dr="open -a /Applications/Dropover.app/Contents/MacOS/Dropover"
 alias rclone='rclone --exclude ".DS_Store"'
 
 # Julia
-alias jl="julia -J$HOME/.local/lib/jlmakie -J$HOME/.local/lib/jlplots -J$HOME/.local/lib/jlrepl -O1"
+alias jl="julia -J$HOME/.local/lib/jlrepl -J$HOME/.local/lib/jlmakie -J$HOME/.local/lib/jlplots"
 
 # Dust
 alias dust='dust -H'
