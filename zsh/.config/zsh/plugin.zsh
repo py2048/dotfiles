@@ -1,9 +1,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# nnn config
-source ~/.config/nnn/nnn.zsh
-
 # fzf
 load_file ~/.config/fzf/completion.zsh
 load_file ~/.config/fzf/key-bindings.zsh
