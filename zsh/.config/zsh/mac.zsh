@@ -1,8 +1,6 @@
 # Set PATH
 # Homebrew sbin
 add_path /usr/local/sbin
-# pip
-add_path $HOME/Library/Python/3.9/bin
 # Mac OS coreutils
 add_path /usr/local/opt/coreutils/libexec/gnubin
 
@@ -25,6 +23,9 @@ alias jl="julia -J$HOME/.local/lib/jlrepl -J$HOME/.local/lib/jlplots"
 
 # Dust
 alias dust='dust -H'
+
+# Python installed dir
+export PYTHONUSERBASE="$HOME/.local"
 
 # Plugins
 

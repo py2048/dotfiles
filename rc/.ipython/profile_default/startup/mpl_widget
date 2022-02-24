@@ -1,0 +1,2 @@
+if get_ipython().__class__.__name__ == 'ZMQInteractiveShell':
+    %matplotlib widget

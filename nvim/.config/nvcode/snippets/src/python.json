@@ -33,6 +33,11 @@
         "prefix": "def",
         "body": ["def ${1:func}($2):", "\t$3", "$4"],
         "description": "create function"
+    },
+    "main": {
+        "prefix": "__name__",
+        "body": ["if __name__ == '__main__':", "\t$1"],
+        "description": "if __main__ == '__main__'"
     }
 
 }

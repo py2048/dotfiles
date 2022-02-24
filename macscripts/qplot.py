@@ -33,4 +33,4 @@ win.showGrid(x=True, y=True)
 win.setBackground('#2D2B2C')
 win.resize(1000, 600)
 
-pg.QtGui.QApplication.exec_()
+pg.QtGui.QApplication.exec()
