@@ -8,7 +8,7 @@ add_path /usr/local/opt/coreutils/libexec/gnubin
 add_path /usr/local/opt/curl/bin
 
 # Paraview PATH
-add_path /Applications/ParaView-5.9.1.app/Contents/bin
+add_path /Applications/ParaView*.app/Contents/bin
 
 
 # Aliases
