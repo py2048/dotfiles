@@ -139,20 +139,22 @@ function z_plug() {
 
 
 # Os specific
-if [ $(uname) = "Darwin" ]; then
-    NAME="MacOS"
-elif [ $(uname) = "Linux" ]; then
-    . /etc/os-release 
-fi
-export OS_NAME="$NAME"
-case "$OS_NAME" in
+# if [ $(uname) = "Darwin" ]; then
+#     NAME="MacOS"
+# elif [ $(uname) = "Linux" ]; then
+#     . /etc/os-release 
+# fi
+# export OS_NAME="$NAME"
+case "$OSTYPE" in
 
-    MacOS)
+    darwin*)
         load_file $ZDOTDIR/mac.zsh
+        export OS_NAME="MacOS"
         ;;
 
-    Ubuntu | Fedora | "Linux Mint")
+    [Ll]inux*)
         load_file $ZDOTDIR/linux.zsh
+        export OS_NAME="Linux"
         ;;
 
 esac
