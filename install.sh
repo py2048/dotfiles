@@ -7,19 +7,14 @@ alias stow="stow -t ~"
 
 ! [ -z "$1" ] && stow "$@" && exit
 
-if [ $(uname) = "Darwin" ]; then
-    NAME="MacOS"
-elif [ $(uname) = "Linux" ]; then
-    . /etc/os-release 
-fi
-case "$NAME" in
+case "$OSTYPE" in
 
-    MacOS)
+    darwin*)
         (cd macscripts && ./install.sh)
         verbose.sh stow macos
         ;;
 
-    Fedora | Ubuntu | "Linux Mint")
+    [Ll]inux*)
         verbose.sh stow linux_other sway
         command -v logid > /dev/null && sudo /usr/bin/stow logitech -t /etc
         ;;
