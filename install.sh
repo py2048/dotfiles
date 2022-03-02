@@ -1,7 +1,5 @@
 #!/usr/bin/env zsh
 
-# Remove .DS_Store
-find . -name ".DS_Store" -print -delete
 # stow to HOME
 alias stow="stow -t ~"
 
@@ -10,6 +8,8 @@ alias stow="stow -t ~"
 case "$OSTYPE" in
 
     darwin*)
+        # Remove .DS_Store
+        find . -name ".DS_Store" -print -delete
         (cd macscripts && ./install.sh)
         verbose.sh stow macos
         ;;
