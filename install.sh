@@ -1,9 +1,16 @@
 #!/usr/bin/env zsh
 
-# stow to HOME
-alias stow="stow -t ~"
+cmd_green(){
+    bold=$(tput bold)
+    green=$(tput setaf 2)
+    reset=$(tput sgr0)
+    echo "\n${bold}${green}❯ ${@}${reset}\n"
+}
 
-! [ -z "$1" ] && stow "$@" && exit
+# stow to HOME
+# alias stow="stow -t ~"
+
+! [ -z "$1" ] && stow -t ~ "$@" && exit
 
 case "$OSTYPE" in
 
@@ -15,7 +22,8 @@ case "$OSTYPE" in
         ;;
 
     [Ll]inux*)
-        verbose.sh stow linux_other sway
+        cmd_green stow linux_other sway
+        stow -t ~ linux_other sway
         command -v logid > /dev/null && sudo /usr/bin/stow logitech -t /etc
         ;;
 
@@ -25,4 +33,5 @@ case "$OSTYPE" in
 esac
 
 (cd scripts && ./install.sh)
-verbose.sh stow color goldendict mpv nvim paraview productivity rc zsh
+cmd_green stow color goldendict mpv nvim paraview productivity rc zsh
+stow -t ~ color goldendict mpv nvim paraview productivity rc zsh

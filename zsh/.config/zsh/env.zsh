@@ -12,6 +12,9 @@ load_file(){
 add_path $HOME/.cargo/bin
 # Node js
 add_path $HOME/.npm-global/bin
+# Go
+export GOPATH=$HOME/.go
+add_path $GOPATH/bin
 
 
 # MANPAGER
