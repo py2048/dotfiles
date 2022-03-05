@@ -1,6 +1,8 @@
 # Aliases
 # Open in linux
-alias open='xdg-open'
+open() {
+    nohup xdg-open "$@" > $HOME/.cache/xdg-open.log &
+}
 
 # FEAP alias
 alias feap=~/FEAP/ver84/main/feap
@@ -20,6 +22,13 @@ export I_MPI_CXX=icpc
 
 # Set PATH for paraview
 add_path ~/Apps/paraview_exec/bin
+
+# pacman cleanup
+
+clean_pacman() {
+    local orphan=$(pacman -Qdtq)
+    [ -z "$orphan" ] || sudo pacman -Rsn $(pacman -Qdtq)
+}
 
 # Plugins
 
