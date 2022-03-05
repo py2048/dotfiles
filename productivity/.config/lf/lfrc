@@ -24,13 +24,13 @@ map g<space> &pv "$f"
 # open
 cmd open ${{
     # test -L $f && f=$(readlink -f $f)
-    case $(file --mime-type -b $f) in
+    case $(file --mime-type -b "$f") in
         text/* | inode/x-empty | application/json) nvim $fx;;
         image/* ) pv "$f" &> /dev/null & ;;
-        *) for f in $fx; do open $f > /dev/null 2> /dev/null & done;;
+        *) nohup xdg-open "$f" &> /dev/null &;;
     esac
 }}
-map <enter> :open "$fx"
+map <enter> :open "$f"
 
 # permission
 cmd premission %{{
@@ -69,6 +69,6 @@ cmd zlua ${{
 map zl :zlua
 
 # Open
-map o &open "$fx"
+map o &xdg-open "$f" &> /dev/null
 
 map R $batch_rename.sh
