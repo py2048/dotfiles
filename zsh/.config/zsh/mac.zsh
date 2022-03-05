@@ -27,6 +27,18 @@ alias dust='dust -H'
 # Python installed dir
 export PYTHONUSERBASE="$HOME/.local"
 
+# Scan QR
+function scan_qr() {
+  local result=""
+  while true; do
+    imagesnap -q -w 1 /tmp/snap.jpg
+    result="$(zbarimg -1 --raw -q -Sbinary /tmp/snap.jpg)"
+    [[ -n $result ]] && break
+    sleep 1
+  done
+  echo "${result}"
+}
+
 # Plugins
 
 # If not running interactively, don't do anything
