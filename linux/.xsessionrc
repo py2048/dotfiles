@@ -1,5 +1,4 @@
 . /etc/profile
 . ~/.profile
 
-export TERMINAL="kitty"
 xinput set-prop 15 323 1
