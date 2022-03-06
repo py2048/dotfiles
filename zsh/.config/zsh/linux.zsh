@@ -20,6 +20,9 @@ export I_MPI_FC=ifort
 export I_MPI_CC=icc
 export I_MPI_CXX=icpc
 
+# Julia
+alias jl="julia -J$HOME/.local/lib/jlrepl -J$HOME/.local/lib/jlplots"
+
 # Set PATH for paraview
 add_path ~/Apps/paraview_exec/bin
 
