@@ -44,6 +44,9 @@ os_update(){
         Fedora)
             sudo dnf update
             ;;
+        EndeavourOS)
+            yay
+            ;;
         *)
             echo_red Cannot update packages manager: unknown operating system
             ;;

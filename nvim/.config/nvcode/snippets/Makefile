@@ -1,6 +1,6 @@
 UNAME := $(shell uname)
 ifeq ($(UNAME), Linux)
-	target = ~/.config
+	target = ~/.config/Code/User/snippets
 endif
 ifeq ($(UNAME), Darwin)
 	target = ~/Library/Application\ Support/Code/User/snippets

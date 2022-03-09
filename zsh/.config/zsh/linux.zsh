@@ -41,10 +41,12 @@ clean_pacman() {
 # Activate conda environment
 conda()
 {
-    if [ -f "~/.miniconda3/etc/profile.d/conda.sh" ]; then
-        source ~/.miniconda3/etc/profile.d/conda.sh
+    if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
+        source /opt/miniconda3/etc/profile.d/conda.sh
     elif [ -f "/opt/intel/oneapi/intelpython/latest/env/vars.sh" ]; then
         source /opt/intel/oneapi/intelpython/latest/env/vars.sh
+    else
+        return
     fi
   
     conda activate base
