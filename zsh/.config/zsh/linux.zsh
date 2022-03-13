@@ -1,8 +1,9 @@
 # Aliases
 # Open in linux
-open() {
-    nohup xdg-open "$@" > $HOME/.cache/xdg-open.log &
-}
+# open() {
+#     nohup xdg-open "$@" &> $HOME/.cache/xdg-open.log &
+# }
+alias open=xdg-open
 
 # FEAP alias
 alias feap=~/FEAP/ver84/main/feap
