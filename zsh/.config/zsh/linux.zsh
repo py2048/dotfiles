@@ -34,6 +34,11 @@ clean_pacman() {
     [ -z "$orphan" ] || sudo pacman -Rsn $(pacman -Qdtq)
 }
 
+
+# nvm
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
 # Plugins
 
 # If not running interactively, don't do anything

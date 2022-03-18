@@ -15,7 +15,7 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 # zsh plugins
 z_plug "zsh-users/zsh-autosuggestions"
 z_plug "zsh-users/zsh-syntax-highlighting"
-z_plug "kutsan/zsh-system-clipboard"
+# z_plug "kutsan/zsh-system-clipboard"
 z_plug "skywind3000/z.lua"
 #
 # zsh-autosuggestions bindings

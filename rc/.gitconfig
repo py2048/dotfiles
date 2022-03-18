@@ -2,10 +2,5 @@
 	name = py2048
 	email = quannhn2001@gmail.com
 
-[core]
-	pager = git-split-diffs --color | less -RFX
-
-[split-diffs]
-	theme-name = github-dark-dim
 [credential]
 	helper = store
