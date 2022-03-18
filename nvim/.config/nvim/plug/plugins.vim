@@ -16,7 +16,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'windwp/nvim-autopairs'
     
     " Julia support
-    Plug 'JuliaEditorSupport/julia-vim'
+    " Plug 'JuliaEditorSupport/julia-vim'
 
     " Subtitle Alpha support
     " Plug 'joeky888/Ass.vim', { 'for': 'ass' }
@@ -31,12 +31,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Commenter
     Plug 'b3nj5m1n/kommentary'
     " FZF
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    Plug 'junegunn/fzf.vim'
+    " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    " Plug 'junegunn/fzf.vim'
     " Vim-which-key
     Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
     " Color
-    Plug 'norcalli/nvim-colorizer.lua'
+    " Plug 'norcalli/nvim-colorizer.lua'
     " Indent line
     Plug 'lukas-reineke/indent-blankline.nvim'
     " Terminal
@@ -50,7 +50,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     
     " Markdown  
     " Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-    Plug 'dhruvasagar/vim-table-mode', {'for': 'markdown'}
+    " Plug 'dhruvasagar/vim-table-mode', {'for': 'markdown'}
     
     " Color scheme
     " Plug 'christianchiarulli/nvcode-color-schemes.vim'
@@ -63,7 +63,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'karb94/neoscroll.nvim'
 
     " Completion
-    Plug 'neovim/nvim-lspconfig'
+    " Plug 'neovim/nvim-lspconfig'
 
     Plug 'hrsh7th/nvim-cmp'
     Plug 'hrsh7th/cmp-path'
@@ -82,7 +82,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Plug 'rafamadriz/friendly-snippets'
 
     " Motion
-    Plug 'justinmk/vim-sneak'
+    " Plug 'justinmk/vim-sneak'
     Plug 'unblevable/quick-scope'
 
     " Vim ipython
