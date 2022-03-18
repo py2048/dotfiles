@@ -125,6 +125,13 @@ vwhich(){
 }
 compdef _path_commands vwhich
 
+# delta
+dt() {
+    delta -s "$@"
+}
+compdef _path_files dt
+
+# zsh plugins
 function z_plug() {
     PLUGIN_NAME=$(echo $1 | cut -d "/" -f 2)
     if [ -d "$ZDOTDIR/plugins/$PLUGIN_NAME" ]; then 

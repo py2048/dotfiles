@@ -3,9 +3,19 @@
 	email = quannhn2001@gmail.com
 
 [core]
-	pager = git-split-diffs --color | less -RFX
+    pager = delta -s
 
-[split-diffs]
-	theme-name = github-dark-dim
+[interactive]
+    diffFilter = delta -s --color-only
+
+[delta]
+    navigate = true  # use n and N to move between diff sections
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+
 [credential]
 	helper = store

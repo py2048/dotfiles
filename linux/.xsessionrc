@@ -1,6 +1,6 @@
 . /etc/profile
 . ~/.profile
 
-xinput set-prop 15 323 1
 pactl load-module module-switch-on-connect
+xinput set-prop 15 323 1
 
