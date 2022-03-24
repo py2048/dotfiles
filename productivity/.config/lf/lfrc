@@ -72,3 +72,6 @@ map zl :zlua
 map o &xdg-open "$fx"
 
 map R $batch_rename.sh
+
+# reload
+cmd r :reload

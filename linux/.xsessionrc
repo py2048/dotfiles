@@ -2,5 +2,4 @@
 . ~/.profile
 
 pactl load-module module-switch-on-connect
-xinput set-prop 15 323 1
 
