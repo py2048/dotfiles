@@ -2,6 +2,9 @@
 set drawbox true
 set icons true
 
+# preview
+set previewer ~/.go/bin/pistol
+
 # Sort
 # Set hidden file
 map . set hidden!
@@ -16,14 +19,15 @@ map z<esc> cmd-escape
 
 # Util
 # Trash-cli
-cmd trash %trash-put "$fx"
-map x trash
+# cmd trash %trash-put "$fx"
+# map x trash
+map x %trash-put $fx
 # Preview
 map g<space> &pv "$fx"
 
 # open
 cmd open ${{
-    # test -L $f && f=$(readlink -f $f)
+    test -L $f && f=$(readlink -f $f)
     case $(file --mime-type -b "$f") in
         text/* | inode/x-empty | application/json) nvim $fx;;
         image/* ) pv "$f" &> /dev/null & ;;
