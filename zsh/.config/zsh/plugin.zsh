@@ -5,6 +5,9 @@
 load_file ~/.config/fzf/completion.zsh
 load_file ~/.config/fzf/key-bindings.zsh
 
+# fzf config
+export FZF_CTRL_T_COMMAND="fd --type f --exclude .git --exclude .npm --exclude .julia --exclude .cache --follow --hidden"
+
 # fzf theme
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
  --color=fg:#cbccc6,hl:#707a8c

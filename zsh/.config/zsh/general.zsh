@@ -71,5 +71,6 @@ bindkey "^A" vi-beginning-of-line
 bindkey "^E" vi-end-of-line
 bindkey "^U" backward-kill-line
 bindkey "^[[H"  beginning-of-line
+bindkey "^[[1;2H" backward-kill-line
 bindkey "^[[F"  end-of-line
 bindkey "^[[3~" delete-char

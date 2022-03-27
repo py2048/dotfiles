@@ -67,6 +67,9 @@ augroup END
 " Latex files
 au BufRead,BufNewFile *.tex set filetype=latex
 
+" kbd files
+au BufRead,BufNewFile *.kbd set filetype=lisp
+
 " Set tab
 " autocmd FileType json setlocal shiftwidth=2 softtabstop=2 expandtab
 " autocmd FileType jsonc setlocal shiftwidth=2 softtabstop=2 expandtab

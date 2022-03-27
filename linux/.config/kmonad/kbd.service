@@ -1,0 +1,8 @@
+[Unit]
+Description=An advanced keyboard manager
+
+[Service]
+ExecStart=/bin/bash /home/<user>/.config/kmonad/start.sh
+
+[Install]
+WantedBy=multi-user.target
