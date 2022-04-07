@@ -27,7 +27,9 @@ export I_MPI_CXX=icpc
 alias jl="julia -J$HOME/.local/lib/jlrepl -J$HOME/.local/lib/jlplots"
 
 # Set PATH for paraview
-add_path ~/Apps/paraview_exec/bin
+# add_path ~/Apps/paraview_exec/bin
+# add_path ~/Apps/paraview/gui/bin
+add_path ~/Apps/paraview/egl/bin
 
 # pacman cleanup
 
@@ -44,8 +46,8 @@ clean_pacman() {
 # Activate conda environment
 conda()
 {
-    if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
-        source /opt/miniconda3/etc/profile.d/conda.sh
+    if [ -f "$HOME/.miniconda3/etc/profile.d/conda.sh" ]; then
+        source $HOME/.miniconda3/etc/profile.d/conda.sh
     elif [ -f "/opt/intel/oneapi/intelpython/latest/env/vars.sh" ]; then
         source /opt/intel/oneapi/intelpython/latest/env/vars.sh
     else

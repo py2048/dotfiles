@@ -21,7 +21,7 @@ map z<esc> cmd-escape
 # Trash-cli
 # cmd trash %trash-put "$fx"
 # map x trash
-map x %trash-put $fx
+map x %trash-put "$fx"
 # Preview
 map g<space> &pv "$fx"
 

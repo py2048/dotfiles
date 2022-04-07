@@ -37,8 +37,8 @@ alias ffmpeg='ffmpeg -hide_banner'
 alias ffprobe='ffprobe -hide_banner'
 
 # lf
-source ~/.config/lf/lfcd.sh
-source ~/.config/lf/icons.sh
+load_file ~/.config/lf/lfcd.sh
+load_file ~/.config/lf/icons.sh
 
 # ls colors
 
