@@ -113,6 +113,11 @@ gg(){
 #
 # Custom function
 
+# Activate python venv
+venv() {
+    [ -d "./venv" ] && source ./venv/bin/activate || echo 'venv not found'
+}
+
 # Print out which 
 bwhich(){
     bat $(which $1)

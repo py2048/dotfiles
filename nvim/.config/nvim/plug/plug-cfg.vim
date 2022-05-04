@@ -7,6 +7,8 @@ luafile $HOME/.config/nvim/lua/nvim_cmp.lua
 luafile $HOME/.config/nvim/lua/auto-pairs.lua
 luafile $HOME/.config/nvim/lua/lsp_cfg.lua
 luafile $HOME/.config/nvim/lua/plug-colorizer.lua
+luafile $HOME/.config/nvim/lua/coderun.lua
+luafile $HOME/.config/nvim/lua/floatterm.lua
 
 " Vim plugins config
 source $HOME/.config/nvim/plug/fzf.vim
@@ -21,8 +23,8 @@ source $HOME/.config/nvim/plug/vsnip.vim
 " Plugins config values
 
 " Float Term
-hi FloatermBorder guibg=NONE guifg=#5e81ac
-autocmd TermOpen * setlocal nonumber norelativenumber
+" hi FloatermBorder guibg=NONE guifg=#5e81ac
+" autocmd TermOpen * setlocal nonumber norelativenumber
 
 " Quick scope
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
