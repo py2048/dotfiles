@@ -29,7 +29,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     
     " Code runner
     Plug 'nvim-lua/plenary.nvim'
-    Plug 'CRAG666/code_runner.nvim'
 
     " Commenter
     Plug 'b3nj5m1n/kommentary'
@@ -43,7 +42,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Indent line
     Plug 'lukas-reineke/indent-blankline.nvim'
     " Terminal
-    " Plug 'voldikss/vim-floaterm'
     Plug 'numToStr/FTerm.nvim'
     " Tag bar
     " Plug 'preservim/tagbar'
@@ -57,7 +55,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'dhruvasagar/vim-table-mode', {'for': 'markdown'}
     
     " Color scheme
-    " Plug 'christianchiarulli/nvcode-color-schemes.vim'
     Plug 'Shatur/neovim-ayu'
     " Plug 'navarasu/onedark.nvim'
     " Plug 'shaunsingh/nord.nvim'

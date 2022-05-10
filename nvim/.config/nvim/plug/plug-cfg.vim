@@ -7,7 +7,6 @@ luafile $HOME/.config/nvim/lua/nvim_cmp.lua
 luafile $HOME/.config/nvim/lua/auto-pairs.lua
 luafile $HOME/.config/nvim/lua/lsp_cfg.lua
 luafile $HOME/.config/nvim/lua/plug-colorizer.lua
-luafile $HOME/.config/nvim/lua/coderun.lua
 luafile $HOME/.config/nvim/lua/floatterm.lua
 
 " Vim plugins config

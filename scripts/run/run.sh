@@ -1,6 +1,14 @@
 #!/usr/bin/env bash
+
 export LC_NUMERIC="en_US.UTF-8"
 start=$(date +%s.%N)
+
+finish() {
+    end=$(date +%s.%N)
+    dtime=$(printf %.3f "$(bc <<<"$end - $start")")
+    echo "[Finished in ${dtime}s]"
+
+}
 
 CC=${CC:-cc}
 CXX=${CXX:-c++}
@@ -10,15 +18,15 @@ PY=${PY:-python3}
 SH=${SH:-zsh}
 CD=${CD:-false}
 
-[ "$1" = "-d" ] && CD=true && shift && cd $(dirname "$src")
-src=$(realpath "$1")
+# src=$(realpath "$1")
+[[ "$1" == *"/"* ]] && src="$1" || src=./"$1"
 base="${src%.*}"
 ext="${src##*.}"
 
 
 shebang=$(head -1 "$src")
 sb=$(cut -c 1-2 <<< "$shebang")
-! [ -z "$sb" ] && [ "$sb" = "#!" ] && eval "${shebang##*!} \"$src\"" && exit
+! [ -z "$sb" ] && [ "$sb" = "#!" ] && eval "${shebang##*!} \"$src\"" && finish && exit
 
 case $ext in
     c)
@@ -44,6 +52,4 @@ case $ext in
         ;;
 esac
 
-end=$(date +%s.%N)
-dtime=$(printf %.3f "$(bc <<<"$end - $start")")
-echo "[Finished in ${dtime}s]"
+finish()

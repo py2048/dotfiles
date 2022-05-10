@@ -38,27 +38,6 @@ nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 nmap <leader>sv :vsplit<CR>
 nmap <leader>sh :split<CR>
 
-" Terminal
-" tnoremap <Esc> <C-\><C-n>
-" map <leader>, :FloatermNew<CR>
-" map <leader>. :FloatermToggle<CR>
-" map <silent> <F12> :FloatermToggle<CR>
-" tnoremap <silent> <F12> <C-\><C-n>:FloatermToggle<CR>
-" tnoremap <silent> <F24> <C-\><C-n>:FloatermNew<CR>
-" tnoremap <silent> <S-TAB> <C-\><C-n>:FloatermNext<CR>
-" tnoremap <silent> [[ <C-\><C-n>:FloatermPrev<CR>
-
-" function! FRunInit()
-"     if !exists('b:FloatRun')
-"         :FloatermNew! --autoclose=0 --silent --name=float_run
-"         let b:FloatRun = 1
-"     end
-" endfunction
-
-" nmap <silent> <leader>r :w<CR>:call FRunInit()<CR>:FloatermSend! --name=float_run run.lua %<CR>:FloatermShow! float_run<CR>
-" nmap <silent> <leader>r :up<CR>:FloatermNew --autoclose=1 run.lua % ; read<CR>
-" nmap <silent> <leader>r :up<CR>:FloatermNew --autoclose=1 run.sh % ; read<CR>
-
 " Delete without copy to clipboard
 map <leader>d "_d
 " Paste without copy to clipboard

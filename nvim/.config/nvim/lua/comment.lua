@@ -9,6 +9,11 @@ kmt.configure_language("julia", {
     multi_line_comment_strings = {"#=", "=#"},
 })
 
+
+kmt.configure_language("gnuplot", {
+    single_line_comment_string = "#",
+})
+
 vim.g.kommentary_create_default_mappings = false
 
 vim.api.nvim_set_keymap("n", "<leader>/", "<Plug>kommentary_line_default", {})
