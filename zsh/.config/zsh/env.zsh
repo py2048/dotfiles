@@ -19,8 +19,8 @@ add_path $GOPATH/bin
 
 # MANPAGER
 # export MANPATH="/usr/local/man:$HOME/.local/man:$MANPATH"
-# export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-export MANPAGER="most"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+# export MANPAGER="most"
 
 # Set language environment
 export LANGUAGE=en_US.UTF-8

@@ -52,4 +52,4 @@ case $ext in
         ;;
 esac
 
-finish()
+finish

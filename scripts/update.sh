@@ -65,7 +65,7 @@ cargo_update(){
 pip_update(){
     ! [ -x "$(command -v pip)" ] && echo_red pip is not installed && return
     [ $CONDA_DEFAULT_ENV ] && echo_red Cannot update pip: anaconda environment is activated && return
-    pip install -U pip
+    # pip install -U pip
     pip list --user | tail -n +3 | awk '{print $1}' | xargs verbose.sh pip install -U --user
 }
 
@@ -98,9 +98,9 @@ zsh_update(){
 all_update(){
     os_update
     zsh_update
-    cargo_update
-    conda_update
-    pip_update
+    # cargo_update
+    # conda_update
+    # pip_update
     # [ "$RANDOM" -lt "10000" ] && echo_green Cleanning history && clear_hist.sh
 }
 
