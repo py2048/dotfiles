@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Update system",
+        "command": "~/.local/bin/update.sh all",
+        "terminal": true
+    },
+    {
+        "name": "Restart kmonad",
+        "command": "systemctl restart --user kbd.service",
+        "terminal": false
+    },
+    {
+        "name": "Restart network",
+        "command": "sudo -A systemctl restart NetworkManager",
+        "terminal": false
+    }
+]

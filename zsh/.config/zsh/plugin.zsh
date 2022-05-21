@@ -15,17 +15,50 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
  --color=info:#73d0ff,prompt:#707a8c,pointer:#cbccc6
  --color=marker:#73d0ff,spinner:#73d0ff,header:#d4bfff'
 
+
+# zsh plugins
+function z_plug() {
+    PLUGIN_NAME=$(echo $1 | cut -d "/" -f 2)
+    if [ -d "$ZDOTDIR/plugins/$PLUGIN_NAME" ]; then 
+        # source plugins
+        source "$ZDOTDIR/plugins/$PLUGIN_NAME/$PLUGIN_NAME.plugin.zsh" > /dev/null || \
+        source "$ZDOTDIR/plugins/$PLUGIN_NAME/$PLUGIN_NAME.zsh" > /dev/null
+    else
+        # install plugins
+        git clone "https://github.com/$1.git" "$ZDOTDIR/plugins/$PLUGIN_NAME"
+        source "$ZDOTDIR/plugins/$PLUGIN_NAME/$PLUGIN_NAME.plugin.zsh" || \
+        source "$ZDOTDIR/plugins/$PLUGIN_NAME/$PLUGIN_NAME.zsh"
+
+    fi
+}
+
 # zsh plugins
 z_plug "zsh-users/zsh-autosuggestions"
 z_plug "zsh-users/zsh-syntax-highlighting"
 z_plug "hlissner/zsh-autopair"
 z_plug "kutsan/zsh-system-clipboard"
 z_plug "skywind3000/z.lua"
-#
+
 # zsh-autosuggestions bindings
 bindkey '^[[24~' autosuggest-accept
 # Change zlua cache location
 export _ZL_DATA=$XDG_CACHE_HOME/zlua
+
+
+# anaconda
+conda()
+{
+    if [ -f "$HOME/.miniconda3/etc/profile.d/conda.sh" ]; then
+        source $HOME/.miniconda3/etc/profile.d/conda.sh
+    elif [ -f "/opt/intel/oneapi/intelpython/latest/env/vars.sh" ]; then
+        source /opt/intel/oneapi/intelpython/latest/env/vars.sh
+    else
+        return
+    fi
+  
+    conda activate base
+    [ -z "$1" ] || conda $@
+}
 
 
 # Set PS1 prompt

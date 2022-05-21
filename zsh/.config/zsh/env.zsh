@@ -32,16 +32,14 @@ export LC_NUMERIC=en_US.UTF-8
 export EDITOR='nvim'
 export VISUAL="nvim"
 
-# ffmpeg
-alias ffmpeg='ffmpeg -hide_banner'
-alias ffprobe='ffprobe -hide_banner'
+# askpass
+export SUDO_ASKPASS=/usr/lib/seahorse/ssh-askpass
 
 # lf
 load_file ~/.config/lf/lfcd.sh
 load_file ~/.config/lf/icons.sh
 
 # ls colors
-
 command -v vivid > /dev/null && export LS_COLORS="$(vivid generate ~/.config/vivid/iceberg-dark.yml)"
 # Color for suggestions
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
@@ -49,9 +47,15 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 # User aliases
 
+# open
+alias open="xdg-open &>$HOME/.cache/xdg-open.log"
+
+# ffmpeg
+alias ffmpeg='ffmpeg -hide_banner'
+alias ffprobe='ffprobe -hide_banner'
+
 # Neovim aliases
 alias v='nvim'
-# alias vim="~/Apps/nvcode/nvim"
 alias nv='cd ~/.config/nvim && nvim ~/.config/nvim/init.vim'
 alias vim='nvim -u ~/.config/nvcode/init.vim'
 
@@ -73,6 +77,9 @@ alias d="cd ~/repo/dotfiles"
 # ipython
 alias ipy="ipython"
 
+# Julia
+alias jl="julia -J$HOME/.local/lib/jlrepl -J$HOME/.local/lib/jlplots"
+
 # Tree
 alias tree='tree -C'
 
@@ -90,6 +97,8 @@ alias gl='git log'
 alias gst='git status'
 alias gd='git diff'
 alias gt='gitui'
+
+# Custom function
 
 # Add, commit then push
 gg(){
@@ -109,9 +118,6 @@ gg(){
     git commit -m "$mess"
     # git push
 }
-
-#
-# Custom function
 
 # Activate python venv
 venv() {
@@ -136,43 +142,28 @@ dt() {
 }
 compdef _path_files dt
 
-# zsh plugins
-function z_plug() {
-    PLUGIN_NAME=$(echo $1 | cut -d "/" -f 2)
-    if [ -d "$ZDOTDIR/plugins/$PLUGIN_NAME" ]; then 
-        # source plugins
-        source "$ZDOTDIR/plugins/$PLUGIN_NAME/$PLUGIN_NAME.plugin.zsh" > /dev/null || \
-        source "$ZDOTDIR/plugins/$PLUGIN_NAME/$PLUGIN_NAME.zsh" > /dev/null
-    else
-        # install plugins
-        git clone "https://github.com/$1.git" "$ZDOTDIR/plugins/$PLUGIN_NAME"
-        source "$ZDOTDIR/plugins/$PLUGIN_NAME/$PLUGIN_NAME.plugin.zsh" || \
-        source "$ZDOTDIR/plugins/$PLUGIN_NAME/$PLUGIN_NAME.zsh"
 
-    fi
-}
+# FEAP alias
+alias feap=~/FEAP/ver84/main/feap
 
+# Set env for intel compilers
+export FEAPHOME8_4=$HOME/FEAP/ver84
+export FEAPPVHOME5_1=$HOME/FEAP/feappv
+load_file /opt/intel/oneapi/compiler/latest/env/vars.sh
+load_file /opt/intel/oneapi/mkl/latest/env/vars.sh
+load_file /opt/intel/oneapi/mpi/latest/env/vars.sh
+# load_file /opt/intel/oneapi/tbb/latest/env/vars.sh
+export I_MPI_F90=ifort
+export I_MPI_F77=ifort
+export I_MPI_FC=ifort
+export I_MPI_CC=icc
+export I_MPI_CXX=icpc
 
-# Os specific
-# if [ $(uname) = "Darwin" ]; then
-#     NAME="MacOS"
-# elif [ $(uname) = "Linux" ]; then
-#     . /etc/os-release 
-# fi
-# export OS_NAME="$NAME"
-case "$OSTYPE" in
-
-    darwin*)
-        load_file $ZDOTDIR/mac.zsh
-        export OS_NAME="MacOS"
-        ;;
-
-    [Ll]inux*)
-        load_file $ZDOTDIR/linux.zsh
-        export OS_NAME="Linux"
-        ;;
-
-esac
 
 # Local executable
 add_path $HOME/.local/bin
+
+# Set PATH for paraview
+add_path ~/Apps/paraview/egl/bin
+
+# custom function
