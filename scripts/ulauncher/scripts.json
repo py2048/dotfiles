@@ -1,8 +1,8 @@
 [
     {
-        "name": "Update system",
-        "command": "~/.local/bin/update.sh all",
-        "terminal": true
+        "name": "Reset WM-1000XM4",
+        "command": "pactl set-card-profile bluez_card.14_3F_A6_6D_BC_65 off && pactl set-card-profile bluez_card.14_3F_A6_6D_BC_65 a2dp-sink-aac",
+        "terminal": false
     },
     {
         "name": "Restart kmonad",
