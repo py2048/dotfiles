@@ -126,13 +126,15 @@ venv() {
 
 # Print out which 
 bwhich(){
-    bat $(which $1)
+    local bin=$(whereis -b "$1" | awk '{print $2}')
+    [ -z "$bin" ] && echo "$1 not found" || bat "$bin"
 }
 compdef _path_commands bwhich 
 
 # Edit which 
 vwhich(){
-    nvim $(which $1)
+    local bin=$(whereis -b "$1" | awk '{print $2}')
+    [ -z "$bin" ] && echo "$1 not found" || nvim "$bin"
 }
 compdef _path_commands vwhich
 
