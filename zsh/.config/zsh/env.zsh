@@ -86,6 +86,9 @@ alias tree='tree -C'
 # terminal config
 alias k="v ~/.config/kitty/kitty.conf"
 
+# aria2
+alias a2='aria2c'
+
 # Git
 alias g='git'
 alias gc='git clone'
