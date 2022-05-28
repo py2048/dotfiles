@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 
-trap '[ -n "$(jobs -pr)" ] && kill $(jobs -pr); rm $logfile; exit 1' SIGINT SIGTERM
+cleanup() {
+    [ -n "$(jobs -pr)" ] && kill $(jobs -pr)
+    rm $logfile
+    # exit 1
+}
+
+trap cleanup SIGINT SIGTERM
 
 logfile=$HOME/.cache/wormhole.log
 sendfile=false
@@ -26,5 +32,5 @@ code="wormhole:ws://relay.magic-wormhole.io:4000/v1?code=${wcode}"
 echo $code
 qrencode "$code" -o - | convert -resize 400x400 - - | display
 
-wait
-rm $logfile
+# wait
+cleanup

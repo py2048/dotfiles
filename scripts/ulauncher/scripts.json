@@ -10,6 +10,11 @@
         "terminal": false
     },
     {
+        "name": "Share clipboard",
+        "command": "/home/dquan/.local/bin/wh.sh",
+        "terminal": false
+    },
+    {
         "name": "Restart network",
         "command": "sudo -A systemctl restart NetworkManager",
         "terminal": false
