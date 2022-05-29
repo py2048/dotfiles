@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+~/Apps/mangadex-dl/mangadex-dl.py -a -o ~/Pictures/Mangas "$@"
