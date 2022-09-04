@@ -50,4 +50,5 @@
 (defalias
   l1 (tap-next esc (layer-toggle fn1))
   delline (tap-macro (around lsft home) bspc)
+  findpaste (tap-macro C-f C-v ret)
 )
