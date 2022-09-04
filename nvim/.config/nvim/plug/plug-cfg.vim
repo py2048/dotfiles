@@ -44,7 +44,8 @@ set colorcolumn=99999
 lua require("indent_blankline").setup { char = "│", buftype_exclude = {"terminal"}}
 
 " lf
-nmap <silent> <leader>l <Plug>LfEdit
+" nmap <silent> <leader>l <Plug>LfEdit
+nmap <silent> <leader>l :lua require('lf').start()<CR>
 
 " Yapf
 let g:yapf_format_style='{based_on_style: pep8, column_limit: 120, dedent_closing_brackets: 1, join_multiple_lines: 0, SPACE_BETWEEN_ENDING_COMMA_AND_CLOSING_BRACKET: 0}'

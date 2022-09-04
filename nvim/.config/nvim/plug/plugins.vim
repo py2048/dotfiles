@@ -48,7 +48,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Surround
     Plug 'machakann/vim-sandwich'
     " lf
-    Plug 'py2048/vim-lf'
+    " Plug 'py2048/vim-lf'
+    Plug 'akinsho/toggleterm.nvim'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'lmburns/lf.nvim'
     
     " Markdown  
     " Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
