@@ -28,7 +28,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'nvim-lualine/lualine.nvim'
     
     " Code runner
-    Plug 'nvim-lua/plenary.nvim'
+    " Plug 'nvim-lua/plenary.nvim'
 
     " Commenter
     Plug 'b3nj5m1n/kommentary'

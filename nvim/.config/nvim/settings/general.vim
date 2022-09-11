@@ -58,9 +58,15 @@ augroup END
 
 
 " python auto format
+function! PyYapfFormat()
+    if exists("*YapfFullFormat")
+        call YapfFullFormat()
+    endif
+endfunction
+
 augroup PyFormatSave
     autocmd!
-    autocmd BufWritePre *.py,*.ipy call YapfFullFormat()
+    autocmd BufWritePre *.py,*.ipy call PyYapfFormat()
 augroup END
 
 
