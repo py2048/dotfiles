@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<mime-info xmlns='http://www.freedesktop.org/standards/shared-mime-info'>
+  <mime-type type="application/x-vesta">
+    <comment>Crystallographic Information Files</comment>
+    <glob pattern="*.cif"/>
+  </mime-type>
+</mime-info>
