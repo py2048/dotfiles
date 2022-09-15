@@ -2,5 +2,4 @@
 . ~/.profile
 
 pactl load-module module-switch-on-connect
-(sleep 10; systemctl restart --user kbd.service) &
 
