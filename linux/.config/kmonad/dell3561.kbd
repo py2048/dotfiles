@@ -33,7 +33,7 @@
   grv  1    2    3    4    5    6    7    8    9    0    -     =    bspc     nlck kp/  kp*  kp-
   tab  q    w    e    r    t    y    u    i    o    p    [     ]    \        kp7  kp8  kp9  kp+
   @l1  a    s    d    f    g    h    j    k    l    ;    '          ret      kp4  kp5  kp6
-  lsft z    x    c    v    b    n    m    ,    .    /   rsft    up           kp1  kp2  kp3  kprt
+  lsft z    x    c    v    b    n    m    ,    .    /   @sf12   up           kp1  kp2  kp3  kprt
   lctl lmet lalt           spc            C-A-S   rctl    left down rght     kp0  kp.
 )
 
@@ -50,5 +50,6 @@
 (defalias
   l1 (tap-next esc (layer-toggle fn1))
   delline (tap-macro (around lsft home) bspc)
+  sf12 (tap-next f12 rsft)
   findpaste (tap-macro C-f C-v ret)
 )
