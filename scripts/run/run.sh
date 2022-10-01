@@ -17,6 +17,7 @@ F90=${F90:-gfortran}
 PY=${PY:-python3}
 SH=${SH:-zsh}
 CD=${CD:-false}
+JL=${JL:-julia}
 
 # src=$(realpath "$1")
 [[ "$1" == *"/"* ]] && src="$1" || src=./"$1"
@@ -43,6 +44,9 @@ case $ext in
         ;;
     py)
         $PY -u "$src"
+        ;;
+    jl)
+        $JL "$src"
         ;;
     sh)
         $SH "$src"
