@@ -42,13 +42,23 @@
   grv  C-A-S-1    C-A-S-2    C-A-S-3    C-A-S-4    C-A-S-5    C-A-S-6    C-A-S-7    C-A-S-8    C-A-S-9    C-A-S-0   (around lctl -) (around lctl =)  @delline nlck kp/  kp*  kp-
   tab  M-q        C-w        C-A-S-e    C-A-S-r    C-t        C-A-S-y    C-A-S-u    C-A-S-i    C-A-S-o    C-A-S-p   C-S-tab         C-tab            \        kp7  kp8  kp9  kp+
   esc  C-A-S-a    C-A-S-s    C-A-S-d    C-A-S-f    C-A-S-g    left       down       up         rght       C-A-S-;   C-A-S-'         C-A-S-ret                 kp4  kp5  kp6
-  lsft C-A-S-z    C-A-S-x    C-ins      S-ins      C-A-S-b    C-A-S-n    C-A-S-m    C-A-S-,    C-A-S-.    C-A-S-/   rsft     VolumeUp                         kp1  kp2  kp3  kprt
+  @l2  C-A-S-z    C-A-S-x    C-ins      S-ins      C-A-S-b    C-A-S-n    C-A-S-m    C-A-S-,    C-A-S-.    C-A-S-/   rsft     VolumeUp                         kp1  kp2  kp3  kprt
   lctl lmet       lalt                             M-spc                            C-A-S       rctl                home     VolumeDown     end               kp0  kp.
+)
+
+(deflayer fn2
+  caps f1           f2           f3           f4           f5           f6           f7           f8           f9           f10         f11             f12              ins  del
+  grv  C-A-S-M-1    C-A-S-M-2    C-A-S-M-3    C-A-S-M-4    C-A-S-M-5    C-A-S-M-6    C-A-S-M-7    C-A-S-M-8    C-A-S-M-9    C-A-S-M-0   (around lctl -) (around lctl =)  @delline nlck kp/  kp*  kp-
+  tab  C-A-S-M-q    C-A-S-M-w    C-A-S-M-e    C-A-S-M-r    C-A-S-M-t    C-A-S-M-y    C-A-S-M-u    C-A-S-M-i    C-A-S-M-o    C-A-S-M-p   C-S-tab         C-tab            \        kp7  kp8  kp9  kp+
+  esc  C-A-S-M-a    C-A-S-M-s    C-A-S-M-d    C-A-S-M-f    C-A-S-M-g    C-A-S-M-h    C-A-S-M-j    C-A-S-M-k    C-A-S-M-l    C-A-S-M-;   C-A-S-M-'       C-A-S-M-ret               kp4  kp5  kp6
+  lsft C-A-S-M-z    C-A-S-M-x    C-A-S-M-C    C-A-S-M-V    C-A-S-M-b    C-A-S-M-n    C-A-S-M-m    C-A-S-M-,    C-A-S-M-.    C-A-S-M-/   rsft     VolumeUp                         kp1  kp2  kp3  kprt
+  lctl lmet       lalt                             M-spc                            C-A-S       rctl                                    home     VolumeDown     end               kp0  kp.
 )
 
 
 (defalias
   l1 (tap-next esc (layer-toggle fn1))
+  l2 (layer-toggle fn2)
   delline (tap-macro (around lsft home) bspc)
   sf12 (tap-next f12 rsft)
   findpaste (tap-macro C-f C-v ret)
