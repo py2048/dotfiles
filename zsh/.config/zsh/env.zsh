@@ -122,9 +122,19 @@ gg(){
     # git push
 }
 
-# Activate python venv
+#python venv
 venv() {
-    [ -d "./venv" ] && source ./venv/bin/activate || echo 'venv not found'
+    local rep
+    if [ -d "./venv" ]; then
+        source ./venv/bin/activate
+    else
+        echo "${PWD}/venv not found"
+        vared -p "Would you like to create ${PWD}/venv [yN] " -c rep
+        if [ "$rep" = 'y' ]; then
+            python -m venv "${PWD}/venv"
+            source ./venv/bin/activate
+        fi
+    fi
 }
 
 # Print out which 
