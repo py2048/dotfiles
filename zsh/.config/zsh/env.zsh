@@ -89,6 +89,9 @@ alias k="v ~/.config/kitty/kitty.conf"
 # aria2
 alias a2='aria2c'
 
+# Clipboard
+alias clip='xsel -b'
+
 # Git
 alias g='git'
 alias gc='git clone'
