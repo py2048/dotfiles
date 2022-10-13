@@ -125,19 +125,48 @@ gg(){
     # git push
 }
 
-#python venv
+# python venv
 venv() {
+    _VENV=${1:-venv}
+    export VIRTUAL_ENV_DISABLE_PROMPT=1
     local rep
-    if [ -d "./venv" ]; then
-        source ./venv/bin/activate
-    else
-        echo "${PWD}/venv not found"
-        vared -p "Would you like to create ${PWD}/venv [yN] " -c rep
-        if [ "$rep" = 'y' ]; then
-            python -m venv "${PWD}/venv"
-            source ./venv/bin/activate
+    if ! [ -d "$_VENV" ]; then
+        echo "${PWD}/${_VENV} not found"
+        vared -p "Would you like to create ${PWD}/${_VENV} [yN] " -c rep
+        if ! [ "$rep" = 'y' ]; then
+            return 1
+        fi
+        python -m venv "${PWD}/${_VENV}"
+    fi
+
+    source ./${_VENV}/bin/activate
+    _optional_env=" ${_VENV}"
+
+    functions[deactivate]="
+    unset _optional_env
+    unset VIRTUAL_ENV_DISABLE_PROMPT
+    $functions[deactivate]"
+    
+}
+
+# julia virtual environment
+jlenv() {
+    local _JLENV=${1:-jlenv}
+    if ! [ -d "$_JLENV" ]; then
+        echo "${PWD}/${_JLENV} not found"
+        vared -p "Would you like to create ${PWD}/jlvenv [yN] " -c rep
+        if ! [ "$rep" = 'y' ]; then
+            return 1
         fi
     fi
+
+    export JULIA_DEPOT_PATH="$(realpath $_JLENV)"
+    export _optional_env=" ${_JLENV}"
+
+    deactivate() {
+        unset JULIA_DEPOT_PATH
+        unset _optional_env
+    }
 }
 
 # Print out which 
@@ -160,6 +189,11 @@ dt() {
 }
 compdef _path_files dt
 
+# symbolic link realpath
+lns() {
+    ln -sf "$(realpath $1)" "$(realpath $2)"
+}
+
 
 # FEAP alias
 alias feap=~/FEAP/ver84/main/feap
@@ -169,14 +203,16 @@ export FEAPHOME8_4=$HOME/FEAP/ver84
 export FEAPPVHOME5_1=$HOME/FEAP/feappv
 load_file /opt/intel/oneapi/compiler/latest/env/vars.sh
 load_file /opt/intel/oneapi/mkl/latest/env/vars.sh
-# load_file /opt/intel/oneapi/mpi/latest/env/vars.sh
-# load_file /opt/intel/oneapi/tbb/latest/env/vars.sh
-export I_MPI_F90=ifort
-export I_MPI_F77=ifort
-export I_MPI_FC=ifort
-export I_MPI_CC=icc
-export I_MPI_CXX=icpc
 
+intel_mpi_activate() {
+    load_file /opt/intel/oneapi/mpi/latest/env/vars.sh
+    load_file /opt/intel/oneapi/tbb/latest/env/vars.sh
+    export I_MPI_F90=ifort
+    export I_MPI_F77=ifort
+    export I_MPI_FC=ifort
+    export I_MPI_CC=icc
+    export I_MPI_CXX=icpc
+}
 
 # Local executable
 add_path $HOME/.local/bin

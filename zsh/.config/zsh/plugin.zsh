@@ -88,6 +88,9 @@ PS1+=\$vcs_info_msg_0_
 PS1+=" %{$fg[green]%}"
 PS1+=\$conda_env
 
+#Optional
+PS1+=\$_optional_env
+
 # New line prompt
 PS1+="${NEWLINE}"
 PS1+=\$status_color
