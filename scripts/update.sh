@@ -94,10 +94,18 @@ zsh_update(){
     find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull
 }
 
+# Binaries udpate
+bin_update() {
+    echo_green Updating Binaries
+    ~/repo/dotfiles/scripts/github_update/update.py
+}
+
+
 # Update all
 all_update(){
     os_update
     zsh_update
+    bin_update
     # cargo_update
     # conda_update
     # pip_update

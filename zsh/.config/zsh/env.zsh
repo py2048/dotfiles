@@ -169,7 +169,7 @@ export FEAPHOME8_4=$HOME/FEAP/ver84
 export FEAPPVHOME5_1=$HOME/FEAP/feappv
 load_file /opt/intel/oneapi/compiler/latest/env/vars.sh
 load_file /opt/intel/oneapi/mkl/latest/env/vars.sh
-load_file /opt/intel/oneapi/mpi/latest/env/vars.sh
+# load_file /opt/intel/oneapi/mpi/latest/env/vars.sh
 # load_file /opt/intel/oneapi/tbb/latest/env/vars.sh
 export I_MPI_F90=ifort
 export I_MPI_F77=ifort

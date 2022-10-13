@@ -2,7 +2,7 @@
 
 ! [ -d ~/.local/bin ] && mkdir -p ~/.local/bin && chmod 755 ~/.local/bin
 
-for f in $(ls | grep -v 'install\.sh' | grep -Pv '^_'); do
+for f in $(find . -maxdepth 1 -type f -not -name .gitignore); do
     chmod 755 $f
     f_rp=$(realpath $f)
     ln -sfn "$f_rp" ~/.local/bin

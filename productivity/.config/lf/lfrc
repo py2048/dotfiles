@@ -3,7 +3,7 @@ set drawbox true
 set icons true
 
 # preview
-set previewer ~/.go/bin/pistol
+set previewer ~/.local/bin/pistol
 
 # Sort
 # Set hidden file
