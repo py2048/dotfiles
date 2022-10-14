@@ -1,6 +1,8 @@
 " Plugins
-map <space>/ <Plug>VSCodeCommentary
 source ~/.config/nvcode/plugins.vim
+
+" config
+map <space>/ <Plug>VSCodeCommentary
 
 " Settigns
 set clipboard=unnamedplus

@@ -3,11 +3,13 @@ if empty(glob('~/.config/nvcode/autoload/plug.vim'))
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 endif
 
+set rtp+=~/.config/nvcode
+
 call plug#begin('~/.config/nvcode/autoload/plugged')
 
     
     " Vim-which-key
-    Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+    " Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
     " Surround
     Plug 'machakann/vim-sandwich'
     
