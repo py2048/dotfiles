@@ -3,3 +3,4 @@ __pycache__/
 .DS_Store
 check_src_bin
 run/check_src_bin
+github_update/latest.json
