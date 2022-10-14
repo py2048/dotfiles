@@ -6,7 +6,7 @@ import os
 
 apps = {
     'pistol': ['doronbehar/pistol', 'pistol'],
-    'onlyoffice': ['ONLYOFFICE/appimage-desktopeditors', 'DesktopEditors-x86_64.AppImage']
+    # 'onlyoffice': ['ONLYOFFICE/appimage-desktopeditors', 'DesktopEditors-x86_64.AppImage']
 }
 cache_file = os.path.dirname(os.path.abspath(__file__)) + '/latest.json'
 
