@@ -102,5 +102,10 @@ au VimLeave * set guicursor=a:ver25
 " Search for any string
 com! -nargs=1 Search :let @/='\V'.escape(<q-args>, '\/')| normal! n
 
+" auto reload file
+set autoread
+autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
+autocmd FileChangedShellPost * echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
+
 " impatient
 lua require('impatient')

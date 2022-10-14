@@ -14,6 +14,7 @@ source $HOME/.config/nvim/plug/fzf.vim
 source $HOME/.local/share/nvim/site/pack/packer/start/vim-sandwich/macros/sandwich/keymap/surround.vim
 source $HOME/.config/nvim/plug/sneak.vim
 source $HOME/.config/nvim/plug/vsnip.vim
+source $HOME/.config/nvim/plug/pluto.vim
 " source $HOME/.config/nvim/plug/ipython.vim
 " source $HOME/.config/nvim/plug/table-md.vim
 " source $HOME/.config/nvim/plug/md_preview.vim
