@@ -7,10 +7,11 @@ set clipboard=unnamedplus
 
 " Mapping
 
-" Delete
-map <space>d "_d
-" nmap <space>p "_ddkp
-" vmap <space>p "_dkp
+" Delete without copy to clipboard
+map <leader>d "_d
+" Paste without copy to clipboard
+nmap <silent> <expr> <leader>p (line('.') == line('$')) ? '"_ddp' : '"_ddP'
+vmap <silent> <expr> <leader>p (col('.') == col('$')-1) ? '<leader>dp' : '<leader>dP'
 
 
 " Selection
