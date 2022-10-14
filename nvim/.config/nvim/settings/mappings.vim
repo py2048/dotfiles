@@ -7,10 +7,6 @@ nnoremap <M-k>    :resize +2<CR>
 nnoremap <M-h>    :vertical resize -2<CR>
 nnoremap <M-l>    :vertical resize +2<CR>
 
-" I hate escape more than anything else
-" inoremap kj <Esc>
-" inoremap jk <Esc>
-
 
 " TAB in general mode will move to text buffer
 nnoremap <silent> <TAB> :BufferNext<CR>
@@ -55,9 +51,6 @@ nmap J <C-d>
 " Move lines in visual mode
 vmap <c-k> :move '<-2<CR>gv-gv
 vmap <c-j> :move '>+1<CR>gv-gv
-
-" Search for any string
-com! -nargs=1 Search :let @/='\V'.escape(<q-args>, '\/')| normal! n
 
 " Close Buffer
 nnoremap <leader>w :BufferClose<CR>

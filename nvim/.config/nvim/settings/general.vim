@@ -98,3 +98,9 @@ augroup END
 
 " Change cursor when quit
 au VimLeave * set guicursor=a:ver25
+"
+" Search for any string
+com! -nargs=1 Search :let @/='\V'.escape(<q-args>, '\/')| normal! n
+
+" impatient
+lua require('impatient')
