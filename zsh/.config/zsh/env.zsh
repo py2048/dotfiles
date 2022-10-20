@@ -48,7 +48,7 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # User aliases
 
 # open
-alias open="xdg-open &>$HOME/.cache/xdg-open.log"
+alias o="xdg-open &>$HOME/.cache/xdg-open.log"
 
 # ffmpeg
 alias ffmpeg='ffmpeg -hide_banner'
@@ -78,7 +78,7 @@ alias d="cd ~/repo/dotfiles"
 alias ipy="ipython"
 
 # Julia
-alias jl="julia -J$HOME/.local/lib/jlrepl -J$HOME/.local/lib/jlplots"
+alias jl="julia -J$HOME/.local/lib/jlrepl -J$HOME/.local/lib/jlplots -J$HOME/.local/lib/jldf"
 
 # Tree
 alias tree='tree -C'
