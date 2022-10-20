@@ -56,6 +56,8 @@ augroup END
 nmap K <C-u>
 nmap J <C-d>
 
+nmap <silent> gJ :join<CR>
+
 imap <C-h> <Left>
 imap <C-j> <Down>
 imap <C-k> <Up>
@@ -100,3 +102,6 @@ map <silent> <space>; : call VSCodeCall('workbench.action.showCommands')<CR>
 " Split
 nmap <silent> <space>sv :call VSCodeCall('workbench.action.splitEditor')<CR>
 nmap <silent> <space>sh :call VSCodeCall('workbench.action.splitEditorOrthogonal')<CR>
+
+" Macro
+let @m = 'S{hi\mathrm'

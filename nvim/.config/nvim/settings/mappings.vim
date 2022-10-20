@@ -48,6 +48,9 @@ vmap <leader>v <Esc>0v$h
 nmap K <C-u>
 nmap J <C-d>
 
+" Join line
+nmap <silent> gJ :join<CR>
+
 " Move lines in visual mode
 vmap <c-k> :move '<-2<CR>gv-gv
 vmap <c-j> :move '>+1<CR>gv-gv
