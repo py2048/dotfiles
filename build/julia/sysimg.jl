@@ -4,6 +4,7 @@ using PackageCompiler
 function compile(ext)
     create_sysimage(["Plots"]; sysimage_path=ENV["HOME"] * "/.local/lib/jlplots." * ext)
     create_sysimage(["OhMyREPL"]; sysimage_path=ENV["HOME"] * "/.local/lib/jlrepl." * ext, precompile_statements_file="ohmyrepl_precompile.jl")
+    create_sysimage(["DataFrames"]; sysimage_path=ENV["HOME"] * "/.local/lib/jldf." * ext)
 end
 
 if Sys.islinux()
