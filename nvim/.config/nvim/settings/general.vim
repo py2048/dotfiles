@@ -41,7 +41,7 @@ filetype plugin on
 cmap w!! w !sudo tee %
 
 " Fortran
-" au BufWritePost *.f90 silent! execute "!fprettify -i 4 <afile>" | e!
+" au BufWritePost *.f90 silent! execute '!fprettify -i 4 <afile>' | e!
 
 " C auto format
 function! ClangFormat()
