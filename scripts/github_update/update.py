@@ -6,6 +6,10 @@ import os
 
 apps = {
     'pistol': ['doronbehar/pistol', 'pistol'],
+    'deno': [
+        'denoland/deno', 'deno-x86_64-unknown-linux-gnu.zip',
+        'unzip deno-x86_64-unknown-linux-gnu.zip && rm deno-x86_64-unknown-linux-gnu.zip'
+    ]
     # 'onlyoffice': ['ONLYOFFICE/appimage-desktopeditors', 'DesktopEditors-x86_64.AppImage']
 }
 cache_file = os.path.dirname(os.path.abspath(__file__)) + '/latest.json'
@@ -20,10 +24,12 @@ def redirect(url):
     return res.url, res.ok
 
 
-def download_file(url, local_filename=None):
+def download_file(url, local_filename=None, cmds=None):
     os.system(
         f'cd ~/.local/bin && /usr/bin/aria2c --allow-overwrite=true {url} -o {local_filename} && chmod +x {local_filename}'
     )
+    if cmds:
+        os.system('cd ~/.local/bin && ' + cmds)
 
 
 try:
@@ -35,11 +41,11 @@ except FileNotFoundError:
 # print(latest_ver)
 
 for app, info in apps.items():
-    if len(info) > 2:
-        repo, bin, bin_name = info
+    if len(info) == 3:
+        repo, bin_name, cmds = info
     else:
-        repo, bin = info
-        bin_name = bin
+        repo, bin_name = info
+        cmds = None
 
     url = 'https://github.com/' + repo
 
@@ -57,7 +63,7 @@ for app, info in apps.items():
         continue
     bin_url = f'{latest}/{bin_name}'.replace('tag', 'download')
     print(bin_url)
-    download_file(bin_url, bin_name)
+    download_file(bin_url, bin_name, cmds)
     print(f'{app} is updated to {tag}')
     latest_ver[app] = tag
 
