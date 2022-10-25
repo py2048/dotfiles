@@ -68,6 +68,7 @@ return require('packer').startup(function(use)
     use 'hrsh7th/cmp-vsnip'
     use 'hrsh7th/cmp-nvim-lsp'
     -- use 'hrsh7th/cmp-nvim-lua'
+    use 'kdheepak/cmp-latex-symbols'
 
     -- Yapf format
     use {'pignacio/vim-yapf-format', opt = true, ft = 'python'}
