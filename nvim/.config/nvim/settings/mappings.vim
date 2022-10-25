@@ -72,7 +72,7 @@ imap <c-k> <Up>
 imap <c-l> <Right>
 
 " Turn on lsp
-nmap <silent> <leader>s :LspStart<CR>
+nmap <silent> <leader>s :LspStart<CR>:echo 'Lsp started'<CR>
 
 
 " Vim RegEx
