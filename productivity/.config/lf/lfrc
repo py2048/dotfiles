@@ -30,7 +30,6 @@ cmd open ${{
     test -L $f && f=$(readlink -f $f)
     case $(file --mime-type -b "$f") in
         text/* | inode/x-empty | application/json) nvim "$f";;
-        image/* ) pv "$f" &> /dev/null & ;;
         *) xdg-open "$f" &;;
     esac
 }}
