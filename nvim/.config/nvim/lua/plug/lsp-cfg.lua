@@ -26,3 +26,7 @@ require'lspconfig'.julials.setup{
 -- require'lspconfig'.bashls.setup {
 --   capabilities = capabilities,
 -- }
+--
+
+-- Turn on lsp
+vim.api.nvim_set_keymap("n", "<leader>s", ":LspStart<CR>:echo 'Lsp started'<CR>", {silent=true})

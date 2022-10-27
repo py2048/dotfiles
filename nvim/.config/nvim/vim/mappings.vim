@@ -1,3 +1,6 @@
+" set leader key
+let g:mapleader = "\<Space>"
+
 " Set F12 key
 set <F12>=<c-v><F12>
 
@@ -25,10 +28,6 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 " nnoremap <Leader>o o<Esc>^Da
 " nnoremap <Leader>O O<Esc>^Da
-
-
-" Which vim keys
-nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 
 " Split window
 nmap <leader>sv :vsplit<CR>
@@ -70,10 +69,6 @@ imap <c-h> <Left>
 imap <c-j> <Down>
 imap <c-k> <Up>
 imap <c-l> <Right>
-
-" Turn on lsp
-nmap <silent> <leader>s :LspStart<CR>:echo 'Lsp started'<CR>
-
 
 " Vim RegEx
 " nnoremap / /\v

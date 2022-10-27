@@ -40,16 +40,12 @@ return require('packer').startup(function(use)
     -- Terminal
     use 'numToStr/FTerm.nvim'
     -- Surround
-    use 'machakann/vim-sandwich'
-    -- lf
-    -- use 'py2048/vim-lf'
-    use 'akinsho/toggleterm.nvim'
-    use 'nvim-lua/plenary.nvim'
-    use 'lmburns/lf.nvim'
-    
-    -- Markdown  
+    -- use 'machakann/vim-sandwich'
+    use { "kylechui/nvim-surround", tag = "*"}
+
+    -- Markdown
     use {'dhruvasagar/vim-table-mode', opt = true, ft = {'markdown'}}
-    
+
     -- Color scheme
     use 'Shatur/neovim-ayu'
     -- use 'navarasu/onedark.nvim'

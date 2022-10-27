@@ -34,7 +34,7 @@ cmp.setup {
          -- load lspkind icons
         vim_item.kind = string.format(
             "%s %s",
-            require("lspkind_icons").icons[vim_item.kind],
+            require("plug/lspkind_icons").icons[vim_item.kind],
             vim_item.kind
         )
 
@@ -86,5 +86,3 @@ cmp.setup {
         -- { name = "latex_symbols" },
     },
 }
-
-vim.keymap.set('n', '<leader>t', ":lua table.insert(require('cmp').get_config().sources, { name = 'latex_symbols' })<CR>:echo 'latex_symbols loaded'<CR>")

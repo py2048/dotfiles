@@ -56,7 +56,7 @@ alias ffprobe='ffprobe -hide_banner'
 
 # Neovim aliases
 alias v='nvim'
-alias nv='cd ~/.config/nvim && nvim ~/.config/nvim/init.vim'
+alias nv='cd ~/.config/nvim && nvim ~/.config/nvim/init.lua'
 alias vim='nvim -u ~/.config/nvcode/init.vim'
 
 # Lsd replace for ls

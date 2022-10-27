@@ -1,0 +1,80 @@
+# Appearance
+set drawbox true
+set icons true
+
+# preview
+set previewer ~/.local/bin/pistol
+
+# Sort
+# Set hidden file
+map . set hidden!
+# Size of file/directory
+map gs %du -s --si "$f"
+# Sort by add time
+map sa :set sortby atime; set info atime; set reverse
+# Sort normal
+map sn :set noreverse; set sortby natural; set info
+# Escape
+map z<esc> cmd-escape
+
+# Util
+# Trash-cli
+# cmd trash %trash-put "$fx"
+# map x trash
+map x %trash-put "$fx"
+# Preview
+map g<space> &pv "$fx"
+
+# open
+cmd open ${{
+    test -L $f && f=$(readlink -f $f)
+    case $(file --mime-type -b "$f") in
+        text/* | inode/x-empty | application/json) nohup python ~/.config/lf/nvim-terminal/open.py "$f" &> /dev/null & ;;
+        *) xdg-open "$f" &;;
+    esac
+}}
+map <enter> :open "$f"
+
+# permission
+cmd premission %{{
+        chmod +x "$f"
+        lf -remote "send $id reload"
+    }}
+
+map gx :premission
+
+# new file and dir
+cmd new-file %{{
+        printf 'New file: '
+        read nfile
+        touch "$nfile"
+    }}
+
+cmd new-dir %{{
+        printf 'New directory: '
+        read ndir
+        mkdir -p "$ndir"
+    }}
+
+map n
+map nf :new-file
+map nd :new-dir
+
+# Navigation
+# cd
+map ~ :cd
+# zlua
+cmd zlua ${{
+        res=$(lua $ZDOTDIR/plugins/z.lua/z.lua -l | tac | fzf | cut -f 2- -d ' ' | xargs)
+        lf -remote "send $id cd \"$res\""
+    }}
+
+map zl :zlua
+
+# Open
+map o &xdg-open "$fx"
+
+map R $batch_rename.sh
+
+# reload
+cmd r :reload
