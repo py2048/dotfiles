@@ -82,7 +82,8 @@ return require('packer').startup(function(use)
 
     -- Motion
     use 'justinmk/vim-sneak'
-    use 'unblevable/quick-scope'
+    -- use 'unblevable/quick-scope'
+    use "jinh0/eyeliner.nvim"
 
     -- Automatically set up your configuration after cloning packer.nvim
     if packer_bootstrap then

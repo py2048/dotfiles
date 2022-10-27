@@ -15,12 +15,6 @@ source $HOME/.config/nvim/vim/vplug/pluto.vim
 nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 highlight Pmenu guibg=#191e2a
 
-
-" Quick scope
-let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-highlight QuickScopePrimary guifg='#1EFFFF' gui=underline ctermfg=155 cterm=underline
-highlight QuickScopeSecondary guifg='#FF00FF' gui=underline ctermfg=81 cterm=underline
-
 " Snippets
 let g:vsnip_snippet_dir = "$HOME/.config/nvcode/snippets/src"
 
