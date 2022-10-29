@@ -10,6 +10,6 @@ cmd_green(){
 ! [ -z "$1" ] && stow -t ~ "$@" && exit
 
 command -v logid > /dev/null && sudo /usr/bin/stow logitech -t /etc
-cmd_green stow color goldendict linux mpv nvim paraview productivity rc zsh
-stow -t ~ color goldendict linux mpv nvim paraview productivity rc zsh
+cmd_green stow color goldendict linux lib mpv nvim paraview productivity rc zsh
+stow -t ~ color goldendict linux lib mpv nvim paraview productivity rc zsh
 (cd scripts && ./install.sh)
