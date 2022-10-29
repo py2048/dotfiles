@@ -1,12 +1,13 @@
 " Formatting
 " Fortran
-" au BufWritePost *.f90 silent! execute '!fprettify -i 4 <afile>' | e!
+au BufWritePre *.f90 silent! lua pcall(vim.lsp.buf.format)
 
 " C auto format
 function! ClangFormat()
-    let l:lines='all'
+    " let l:lines='all'
     if bufname() != "keymap.c"
-        py3f ~/.local/bin/clang-format.py
+        " py3f ~/.local/bin/clang-format.py
+        lua pcall(vim.lsp.buf.format)
     endif
 endfunction
 
@@ -15,18 +16,7 @@ augroup CFormatSave
     autocmd BufWritePre *.c,*.h,*.cc,*.cpp call ClangFormat()
 augroup END
 
-
-" python auto format
-function! PyYapfFormat()
-    if exists("*YapfFullFormat")
-        call YapfFullFormat()
-    endif
-endfunction
-
-augroup PyFormatSave
-    autocmd!
-    autocmd BufWritePre *.py,*.ipy call PyYapfFormat()
-augroup END
+au BufWritePre *.py,*.ipy lua pcall(vim.lsp.buf.format)
 
 
 " Latex files
@@ -42,11 +32,8 @@ au BufRead,BufNewFile *.kbd set filetype=lisp
 " Fixed form fortran
 au BufRead,BufNewFile *.f setlocal shiftwidth=2 softtabstop=2 expandtab
 
-"Makefile tab
+" Makefile tab
 autocmd FileType make setlocal noexpandtab softtabstop=0
-
-" Set numberline
-set number relativenumber
 
 " Number line
 augroup numbertoggle

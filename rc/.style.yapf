@@ -1,0 +1,6 @@
+[style]
+based_on_style = pep8
+column_limit = 120
+dedent_closing_brackets = 1
+join_multiple_lines = 0
+SPACE_BETWEEN_ENDING_COMMA_AND_CLOSING_BRACKET = 0

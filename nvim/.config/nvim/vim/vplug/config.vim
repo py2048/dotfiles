@@ -19,4 +19,4 @@ highlight Pmenu guibg=#191e2a
 let g:vsnip_snippet_dir = "$HOME/.config/nvcode/snippets/src"
 
 " Yapf
-let g:yapf_format_style='{based_on_style: pep8, column_limit: 120, dedent_closing_brackets: 1, join_multiple_lines: 0, SPACE_BETWEEN_ENDING_COMMA_AND_CLOSING_BRACKET: 0}'
+" let g:yapf_format_style='{based_on_style: pep8, column_limit: 120, dedent_closing_brackets: 1, join_multiple_lines: 0, SPACE_BETWEEN_ENDING_COMMA_AND_CLOSING_BRACKET: 0}'

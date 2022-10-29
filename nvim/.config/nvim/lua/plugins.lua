@@ -66,8 +66,10 @@ return require('packer').startup(function(use)
     -- use 'hrsh7th/cmp-nvim-lua'
     use 'kdheepak/cmp-latex-symbols'
 
-    -- Yapf format
-    use {'pignacio/vim-yapf-format', opt = true, ft = 'python'}
+    -- plenary
+    use "nvim-lua/plenary.nvim"
+    -- null ls
+    use "jose-elias-alvarez/null-ls.nvim"
 
     -- Julia support
     use 'JuliaEditorSupport/julia-vim'
