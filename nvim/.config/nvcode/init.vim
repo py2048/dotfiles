@@ -52,9 +52,10 @@ augroup filetype_latex
 augroup END
 
 " Pages
-" nmap <A-j> <J>
-nmap K <C-u>
-nmap J <C-d>
+" nmap K <C-u>
+" nmap J <C-d>
+nmap K 10k
+nmap J 10j
 
 nmap <silent> gJ :join<CR>
 
