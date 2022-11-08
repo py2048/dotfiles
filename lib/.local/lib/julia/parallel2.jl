@@ -24,15 +24,21 @@ macro parallel(block)
         push!(tasklist, tmp)
     end
 
-    # spawn threads -> tasks
-    for (i, (_, f)) in enumerate(pkwargs)
-        ea = :($(tasklist[i]) = Threads.@spawn $(f))
+    # Create channels
+    for i in eachindex(args)
+        ea = :($(tasklist[i]) = Channel())
         push!(e.args, ea)
     end
 
-    # fetch the results form tasks
+    # Spawn threads
+    for (i, (_, f)) in enumerate(pkwargs)
+        ea = :(Threads.@spawn put!($(tasklist[i]), $(f)))
+        push!(e.args, ea)
+    end
+
+    # Take results from channels
     for (i, (x, _)) in enumerate(pkwargs)
-        ea = :($(x) = fetch($(tasklist[i])))
+        ea = :($(x) = take!($(tasklist[i])))
         push!(e.args, ea)
     end
 
