@@ -8,7 +8,7 @@ apps = {
     'pistol': ['doronbehar/pistol', 'pistol'],
     'deno': [
         'denoland/deno', 'deno-x86_64-unknown-linux-gnu.zip',
-        'unzip deno-x86_64-unknown-linux-gnu.zip && rm deno-x86_64-unknown-linux-gnu.zip'
+        'unzip -o deno-x86_64-unknown-linux-gnu.zip && rm deno-x86_64-unknown-linux-gnu.zip'
     ]
     # 'onlyoffice': ['ONLYOFFICE/appimage-desktopeditors', 'DesktopEditors-x86_64.AppImage']
 }
