@@ -27,6 +27,7 @@ export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_NUMERIC=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
 
 # Set editor
 export EDITOR='nvim'
@@ -78,7 +79,7 @@ alias d="cd ~/repo/dotfiles"
 alias ipy="ipython"
 
 # Julia
-alias jl="julia -J$HOME/.local/lib/jlrepl -J$HOME/.local/lib/jlplots -J$HOME/.local/lib/jldf"
+source /usr/local/bin/jl
 
 # Tree
 alias tree='tree -C'
@@ -91,6 +92,9 @@ alias a2='aria2c'
 
 # Clipboard
 alias clip='xsel -b'
+
+# Image copy to clipboard
+alias imgcpy='xclip -selection clipboard -t image/png -i'
 
 # Git
 alias g='git'
@@ -162,10 +166,12 @@ jlenv() {
 
     export JULIA_DEPOT_PATH="$(realpath $_JLENV)"
     export _optional_env=" ${_JLENV}"
+    alias jl="julia -t auto -Jenv.so"
 
     deactivate() {
         unset JULIA_DEPOT_PATH
         unset _optional_env
+        source /usr/local/bin/jl
     }
 }
 
@@ -199,10 +205,12 @@ lns() {
 alias feap=~/FEAP/ver84/main/feap
 
 # Set env for intel compilers
-export FEAPHOME8_4=$HOME/FEAP/ver84
-export FEAPPVHOME5_1=$HOME/FEAP/feappv
-load_file /opt/intel/oneapi/compiler/latest/env/vars.sh
-load_file /opt/intel/oneapi/mkl/latest/env/vars.sh
+intel_activate() { 
+    export FEAPHOME8_4=$HOME/FEAP/ver84
+    export FEAPPVHOME5_1=$HOME/FEAP/feappv
+    load_file /opt/intel/oneapi/compiler/latest/env/vars.sh
+    load_file /opt/intel/oneapi/mkl/latest/env/vars.sh
+}
 
 intel_mpi_activate() {
     load_file /opt/intel/oneapi/mpi/latest/env/vars.sh
@@ -214,10 +222,17 @@ intel_mpi_activate() {
     export I_MPI_CXX=icpc
 }
 
-# Local executable
-add_path $HOME/.local/bin
+cuda_activate() {
+    export LD_LIBRARY_PATH="/opt/cuda/lib64:$LD_LIBRARY_PATH"
+    export C_INCLUDE_PATH="/opt/cuda/include:$C_INCLUDE_PATH"
+    export CPLUS_INCLUDE_PATH="/opt/cuda/include:$CPLUS_INCLUDE_PATH"
+}
+
 
 # Set PATH for paraview
-add_path ~/Apps/paraview/egl/bin
+# add_path ~/Apps/paraview/egl/bin
+
+# Local executable
+add_path $HOME/.local/bin
 
 # custom function
