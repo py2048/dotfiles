@@ -29,7 +29,7 @@ map g<space> &pv "$fx"
 cmd open ${{
     test -L $f && f=$(readlink -f $f)
     case $(file --mime-type -b "$f") in
-        text/* | inode/x-empty | application/json) nohup python ~/.config/lf/nvim-terminal/open.py "$f" &> /dev/null & ;;
+        text/* | inode/x-empty | application/json) nohup /usr/bin/python ~/.config/lf/nvim-terminal/open.py "$f" &> ~/.cache/nvim_lf.log & ;;
         *) xdg-open "$f" &;;
     esac
 }}
