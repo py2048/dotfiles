@@ -71,12 +71,6 @@ return require('packer').startup(function(use)
     -- null ls
     use "jose-elias-alvarez/null-ls.nvim"
 
-    -- Julia support
-    use 'JuliaEditorSupport/julia-vim'
-    use {
-        'hasundue/vim-pluto', opt = true, ft = 'julia',
-        requires = {'vim-denops/denops.vim', opt = true}
-    }
 
     -- Snippet
     use 'hrsh7th/vim-vsnip'
@@ -86,6 +80,14 @@ return require('packer').startup(function(use)
     use 'justinmk/vim-sneak'
     -- use 'unblevable/quick-scope'
     use "jinh0/eyeliner.nvim"
+    
+    --- Language
+    -- Julia support
+    use 'JuliaEditorSupport/julia-vim'
+    use {
+        'hasundue/vim-pluto', opt = true, ft = 'julia',
+        requires = {'vim-denops/denops.vim', opt = true}
+    }
 
     -- Automatically set up your configuration after cloning packer.nvim
     if packer_bootstrap then

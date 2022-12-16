@@ -52,10 +52,15 @@ augroup filetype_latex
 augroup END
 
 " Pages
-" nmap K <C-u>
-" nmap J <C-d>
+" nmap <silent> <expr> K <C-u>
+" nmap <silent> <expr> J <C-d>
 nmap K 10k
 nmap J 10j
+"
+" nnoremap <silent> <expr> J VSCodeExtensionCall('scroll', 'halfPage', 'down')
+" xnoremap <silent> <expr> J VSCodeExtensionCall('scroll', 'halfPage', 'down')
+" nnoremap <silent> <expr> K VSCodeExtensionCall('scroll', 'halfPage', 'up')
+" xnoremap <silent> <expr> K VSCodeExtensionCall('scroll', 'halfPage', 'up')
 
 nmap <silent> gJ :join<CR>
 
@@ -97,6 +102,10 @@ nmap <silent> <space>b :call VSCodeCall('workbench.action.tasks.build')<CR>
 " autocmd FileType notebook nmap <buffer> <silent> J :call VSCodeCall('notebook.focusNextEditor')<CR>
 " autocmd FileType notebook nmap <buffer> <silent> K :call VSCodeCall('notebook.focusPreviousEditor')<CR>
 
+" Julia
+" autocmd FileType julia nmap <buffer> <silent> J :call VSCodeCall('language-julia.moveCellDown')<CR>
+" autocmd FileType julia nmap <buffer> <silent> K :call VSCodeCall('language-julia.moveCellUp')<CR>
+"
 " Command Palate
 map <silent> <space>; : call VSCodeCall('workbench.action.showCommands')<CR>
 
