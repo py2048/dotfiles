@@ -1,12 +1,12 @@
 [
     {
-        "name": "Restart kmonad",
-        "command": "systemctl restart --user kbd.service",
+        "name": "Reset WM-1000XM4",
+        "command": "pactl set-card-profile bluez_card.14_3F_A6_6D_BC_65 off && pactl set-card-profile bluez_card.14_3F_A6_6D_BC_65 a2dp-sink-aac && pactl set-default-sink bluez_output.14_3F_A6_6D_BC_65.1",
         "terminal": false
     },
     {
-        "name": "Reset WM-1000XM4",
-        "command": "pactl set-card-profile bluez_card.14_3F_A6_6D_BC_65 off && pactl set-card-profile bluez_card.14_3F_A6_6D_BC_65 a2dp-sink-aac",
+        "name": "Restart kmonad",
+        "command": "systemctl restart --user kbd.service",
         "terminal": false
     },
     {

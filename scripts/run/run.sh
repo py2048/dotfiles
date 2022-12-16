@@ -46,7 +46,7 @@ case $ext in
         $PY -u "$src"
         ;;
     jl)
-        $JL "$src"
+        which jl &> /dev/null && jl "$src" ||$JL "$src"
         ;;
     sh)
         $SH "$src"
