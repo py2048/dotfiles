@@ -1,10 +1,20 @@
 #!/usr/bin/env julia
 using PackageCompiler
+include(ENV["HOME"] * "/.local/lib/julia/parallel.jl")
 
 function compile(ext)
-    create_sysimage(["Plots"]; sysimage_path=ENV["HOME"] * "/.local/lib/jlplots." * ext)
-    create_sysimage(["OhMyREPL"]; sysimage_path=ENV["HOME"] * "/.local/lib/jlrepl." * ext, precompile_statements_file="ohmyrepl_precompile.jl")
-    create_sysimage(["DataFrames"]; sysimage_path=ENV["HOME"] * "/.local/lib/jldf." * ext)
+    @parallel begin
+        # Base
+        create_sysimage(["Plots", "OhMyREPL"]; sysimage_path=ENV["HOME"] * "/.local/lib/julia/base." * ext, precompile_statements_file="ohmyrepl_precompile.jl")
+        # Main
+        create_sysimage(
+            [
+                "Plots",
+                "DataFrames", "CSV",
+                "DifferentialEquations", "MethodOfLines"
+            ];
+            sysimage_path=ENV["HOME"] * "/.local/lib/julia/main." * ext)
+    end
 end
 
 if Sys.islinux()
