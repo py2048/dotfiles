@@ -115,3 +115,6 @@ nmap <silent> <space>sh :call VSCodeCall('workbench.action.splitEditorOrthogonal
 
 " Macro
 let @m = 'S{hi\mathrm'
+
+" Fix bug nvim crash
+map <silent> cie <Nop>
