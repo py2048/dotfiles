@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+[ "$1" = "all" ] && (cd ./run ; ./install.sh)
+
 ! [ -d ~/.local/bin ] && mkdir -p ~/.local/bin && chmod 755 ~/.local/bin
 
 for f in $(find . -maxdepth 1 -type f -not -name .gitignore); do
@@ -9,4 +11,3 @@ for f in $(find . -maxdepth 1 -type f -not -name .gitignore); do
 done
 echo Symlinked scripts to "$HOME/.local/bin"
 
-(cd ./run ; ./install.sh)

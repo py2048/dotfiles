@@ -5,7 +5,7 @@ import json
 import os
 
 apps = {
-    'pistol': ['doronbehar/pistol', 'pistol'],
+    'pistol': ['doronbehar/pistol', 'pistol.x86_64', 'mv pistol.x86_64 pistol'],
     'deno': [
         'denoland/deno', 'deno-x86_64-unknown-linux-gnu.zip',
         'unzip -o deno-x86_64-unknown-linux-gnu.zip && rm deno-x86_64-unknown-linux-gnu.zip'
