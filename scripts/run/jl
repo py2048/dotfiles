@@ -2,5 +2,6 @@
 
 alias jl="julia -t auto -J$HOME/.local/lib/julia/base"
 alias jlmain="julia -t auto -J$HOME/.local/lib/julia/main"
+alias jlmakie="julia -t auto -J$HOME/.local/lib/julia/makie"
 
 [[ $ZSH_EVAL_CONTEXT =~ :file$ ]] || jl "$@"
