@@ -12,6 +12,9 @@ unsetopt BEEP
 # Auto enter directory without cd
 setopt autocd
 
+# Do not save to HISTFILE if command start with space
+setopt histignorespace
+
 # Enable colors and change prompt:
 autoload -U colors && colors
 

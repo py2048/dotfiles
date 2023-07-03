@@ -38,7 +38,7 @@ export SUDO_ASKPASS=/usr/lib/seahorse/ssh-askpass
 
 # lf
 load_file ~/.config/lf/lfcd.sh
-load_file ~/.config/lf/icons.sh
+# load_file ~/.config/lf/icons.sh
 
 # ls colors
 command -v vivid > /dev/null && export LS_COLORS="$(vivid generate ~/.config/vivid/iceberg-dark.yml)"
@@ -144,7 +144,7 @@ venv() {
     fi
 
     source ./${_VENV}/bin/activate
-    _optional_env=" ${_VENV}"
+    _optional_env="  ${_VENV}"
 
     functions[deactivate]="
     unset _optional_env

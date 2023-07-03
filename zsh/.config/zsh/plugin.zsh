@@ -46,18 +46,31 @@ export _ZL_DATA=$XDG_CACHE_HOME/zlua
 
 
 # anaconda
-conda()
-{
-    if [ -f "$HOME/.miniconda3/etc/profile.d/conda.sh" ]; then
-        source $HOME/.miniconda3/etc/profile.d/conda.sh
-    elif [ -f "/opt/intel/oneapi/intelpython/latest/env/vars.sh" ]; then
-        source /opt/intel/oneapi/intelpython/latest/env/vars.sh
-    else
-        return
-    fi
+# conda()
+# {
+#     if [ -f "$HOME/.miniconda3/etc/profile.d/conda.sh" ]; then
+#         source $HOME/.miniconda3/etc/profile.d/conda.sh
+#     elif [ -f "/opt/intel/oneapi/intelpython/latest/env/vars.sh" ]; then
+#         source /opt/intel/oneapi/intelpython/latest/env/vars.sh
+#     else
+#         return
+#     fi
   
-    conda activate base
-    [ -z "$1" ] || conda $@
+#     conda activate base
+#     [ -z "$1" ] || conda $@
+# }
+
+mamba() {
+    z_plug "conda-incubator/conda-zsh-completion"
+    compinit
+    if [ -f "/home/dquan/.mambaforge/etc/profile.d/conda.sh" ]; then
+        . "/home/dquan/.mambaforge/etc/profile.d/conda.sh"
+    fi
+    if [ -f "/home/dquan/.mambaforge/etc/profile.d/mamba.sh" ]; then
+        . "/home/dquan/.mambaforge/etc/profile.d/mamba.sh"
+    fi
+    mamba activate base
+    [ -z "$1" ] || mamba $@
 }
 
 
