@@ -39,10 +39,10 @@
 
 (deflayer fn1
   caps f1         f2         f3         f4         f5         f6         f7         f8         f9         f10       f11             f12              ins  del
-  grv  C-A-S-1    C-A-S-2    C-A-S-3    C-A-S-4    C-A-S-5    C-A-S-6    C-A-S-7    C-A-S-8    C-A-S-9    C-A-S-0   (around lctl -) (around lctl =)  @delline nlck kp/  kp*  kp-
-  tab  M-q        C-w        C-A-S-e    C-A-S-r    C-t        C-A-S-y    C-A-S-u    C-A-S-i    C-A-S-o    C-A-S-p   C-S-tab         C-tab            \        kp7  kp8  kp9  kp+
-  esc  C-A-S-a    C-A-S-s    C-A-S-d    C-A-S-f    C-A-S-g    left       down       up         rght       C-A-S-;   C-A-S-'         C-A-S-ret                 kp4  kp5  kp6
-  @l2  C-A-S-z    C-A-S-x    C-ins      S-ins      C-A-S-b    C-A-S-n    C-A-S-m    C-A-S-,    C-A-S-.    C-A-S-/   rsft     VolumeUp                         kp1  kp2  kp3  kprt
+  grv  C-A-S-1    C-A-S-2    C-A-S-3    C-A-S-4    C-A-S-5    C-A-S-6    C-A-S-7    C-A-S-8    C-A-S-9    C-A-S-0   (around lctl -) (around lctl =)  @delline nlck        kp/  kp*  kp-
+  tab  M-q        C-w        C-A-S-e    C-A-S-r    C-t        C-A-S-y    C-A-S-u    C-A-S-i    C-A-S-o    C-A-S-p   C-S-tab         C-tab            \        kp7         kp8  kp9  kp+
+  esc  C-A-S-a    C-A-M-s    C-A-S-d    C-A-S-f    C-A-S-g    left       down       up         rght       C-A-S-;   C-A-S-'         C-A-S-ret                 kp4         kp5  kp6
+  @l2  C-A-S-z    C-A-S-x    C-ins      S-ins      C-A-S-b    C-A-S-n    C-A-S-m    C-A-S-,    C-A-S-.    C-A-S-/   rsft     VolumeUp                         @findpaste  kp2  kp3  kprt
   lctl lmet       lalt                             M-spc                            C-A-S       rctl                home     VolumeDown     end               kp0  kp.
 )
 
