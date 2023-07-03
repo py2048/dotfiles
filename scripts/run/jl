@@ -1,7 +1,8 @@
 #!/usr/bin/env zsh
 
-alias jl="julia -t auto -J$HOME/.local/lib/julia/base"
+alias jl="julia -t auto"
+alias jlbase="julia -t auto -J$HOME/.local/lib/julia/base.so"
 alias jlmain="julia -t auto -J$HOME/.local/lib/julia/main"
-alias jlmakie="julia -t auto -J$HOME/.local/lib/julia/makie"
+alias jlplt="julia -t auto -J$HOME/.local/lib/julia/plt"
 
 [[ $ZSH_EVAL_CONTEXT =~ :file$ ]] || jl "$@"

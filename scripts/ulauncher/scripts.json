@@ -10,6 +10,16 @@
         "terminal": false
     },
     {
+        "name": "Unicode",
+        "command": "kitty nvim -c LatexSymbols -c 'set buftype=nofile'",
+        "terminal": false
+    },
+    {
+        "name": "Restart logid",
+        "command": "sudo -i systemctl restart --user logid.service",
+        "terminal": false
+    },
+    {
         "name": "Share clipboard",
         "command": "/home/dquan/.local/bin/wh.sh",
         "terminal": false

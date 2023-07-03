@@ -13,7 +13,7 @@ const u_dim_type_to_SI_unit = Dict(
 
 )
 
-function SI(x::Quantity)
+function SI(x::Union{Quantity, PhysicalConstants.PhysicalConstant})
     u_dims = typeof(dimension(x)).parameters[1]
     si_unit = Unitful.NoUnits
     for u_dim in u_dims
@@ -21,4 +21,8 @@ function SI(x::Quantity)
         si_unit *= u_dim_type_to_SI_unit[u_dim_type]^u_dim.power
     end
     return uconvert(si_unit, x)
+end
+
+function to(u::Unitful.Units)
+    return x -> uconvert(u, x)
 end
