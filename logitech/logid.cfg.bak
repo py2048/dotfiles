@@ -4,7 +4,7 @@ devices: (
     smartshift:
     {
         on: true;
-        threshold: 10;
+        threshold: 15;
     };
     hiresscroll:
     {
@@ -48,27 +48,24 @@ devices: (
                 type: "Gestures";
                 gestures: (
                     {
-                        // Show grid desktop (KDE)
                         direction: "Up";
                         mode: "OnRelease";
                         action =
                         {
                             type: "Keypress";
-                            keys: ["KEY_LEFTMETA", "KEY_F8"];
+                            keys: ["KEY_LEFTMETA", "KEY_SPACE"];
                         };
                     },
                     {
-                        // Show all window (KDE)
                         direction: "Down";
                         mode: "OnRelease";
                         action =
                         {
                             type: "Keypress";
-                            keys: ["KEY_LEFTCTRL", "KEY_F10"];
+                            keys: ["KEY_LEFTMETA", "KEY_A"];
                         };
                     },
                     {
-                        // Right Desktop (KDE)
                         direction: "Left";
                         mode: "OnRelease";
                         action =
@@ -78,7 +75,6 @@ devices: (
                         };
                     },
                     {
-                        // Left Desktop (KDE)
                         direction: "Right";
                         mode: "OnRelease";
                         action =
@@ -93,7 +89,7 @@ devices: (
                         action =
                         {
                             type: "Keypress";
-                            keys: ["KEY_LEFTMETA", "KEY_LEFTCTRL", "KEY_LEFTALT", "KEY_S"];
+                            keys: ["KEY_LEFTCTRL", "KEY_C"];
                         };
                     }
                 );
@@ -117,28 +113,25 @@ devices: (
                         }
                     },
 
-                    {
-                        // Close tab
-                        direction:"Up"
-                        mode:"OnRelease"
-                        action = {
-                            type:"Keypress"
-                            keys: ["KEY_LEFTCTRL", "KEY_W"]
-                        }
-                    },
+                    # {
+                    #     direction:"Up"
+                    #     mode:"OnRelease"
+                    #     action = {
+                    #         type:"Keypress"
+                    #         keys: ["KEY_PLAYPAUSE"] // play/pause songs
+                    #     }
+                    # },
+
+                    # {
+                    #     direction:"Down"
+                    #     mode:"OnRelease";
+                    #     action = {
+                    #         type:"Keypress"
+                    #         keys: ["KEY_MUTE"] // mute media
+                    #     }
+                    # },
 
                     {
-                        // Open recently closed tab
-                        direction:"Down"
-                        mode:"OnRelease";
-                        action = {
-                            type:"Keypress"
-                            keys: ["KEY_LEFTCTRL", "KEY_LEFTSHIFT", "KEY_T"]
-                        }
-                    },
-
-                    {
-                        // Left tab
                         direction:"Right"
                         mode:"OnRelease"
                         action =
@@ -149,74 +142,12 @@ devices: (
                     },
 
                     {
-                        // Right tab
                         direction:"Left"
                         mode:"OnRelease"
                         action =
                         {
                             type:"Keypress"
                             keys: ["KEY_LEFTCTRL", "KEY_TAB"]
-                        }
-                    }
-                )
-            }
-        },
-    // Backward button
-        {
-            cid: 0x53
-            action =
-            {
-                type:"Gestures"
-                gestures: (
-                    {
-                        direction:"None"
-                        mode:"OnRelease"
-                        action =
-                        {
-                            type:"Keypress"
-                            keys: ["KEY_BACK"] // default backward button
-                        }
-                    },
-
-                    {
-                        // goldendict
-                        direction:"Up"
-                        mode:"OnRelease"
-                        action = {
-                            type:"Keypress"
-                            keys: ["KEY_LEFTSHIFT", "KEY_LEFTMETA", "KEY_LEFTCTRL", "KEY_LEFTALT", "KEY_P"]
-                        }
-                    },
-
-                    {
-                        // Cut
-                        direction:"Down"
-                        mode:"OnRelease";
-                        action = {
-                            type:"Keypress"
-                            keys: ["KEY_LEFTCTRL", "KEY_X"]
-                        }
-                    },
-
-                    {
-                        // Paste
-                        direction:"Right"
-                        mode:"OnRelease"
-                        action =
-                        {
-                            type:"Keypress"
-                            keys: ["KEY_LEFTSHIFT", "KEY_INSERT"]
-                        }
-                    },
-
-                    {
-                        // Copy
-                        direction:"Left"
-                        mode:"OnRelease"
-                        action =
-                        {
-                            type:"Keypress"
-                            keys: ["KEY_LEFTCTRL", "KEY_INSERT"]
                         }
                     }
                 )
