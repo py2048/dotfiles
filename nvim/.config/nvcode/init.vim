@@ -10,10 +10,11 @@ set clipboard=unnamedplus
 " Mapping
 
 " Delete without copy to clipboard
-map <leader>d "_d
+map <space>d "_d
 " Paste without copy to clipboard
-nmap <silent> <expr> <leader>p (line('.') == line('$')) ? '"_ddp' : '"_ddP'
-vmap <silent> <expr> <leader>p (col('.') == col('$')-1) ? '<leader>dp' : '<leader>dP'
+nmap <space>p (line('.') == line('$')) ? '"_ddp' : '"_ddP'
+" vmap <space>p (col('.') == col('$')-1) ? '<space>dp' : '<space>dP'
+vmap <silent> <space>p "_d :call VSCodeNotifyVisual('editor.action.clipboardPasteAction', 1)<CR>
 
 
 " Selection

@@ -16,7 +16,7 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     -- Reduce startup time
-    use 'nathom/filetype.nvim'
+    -- use 'nathom/filetype.nvim'
     use 'lewis6991/impatient.nvim'
 
     -- Auto pairs 

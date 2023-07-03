@@ -19,6 +19,9 @@ call plug#begin('~/.config/nvmath/autoload/plugged')
 
     " Latex
     " Plug 'py2048/vim-latex-objects'
+    
+    " Color theme
+    Plug 'Shatur/neovim-ayu'
 
     " Plug 'SirVer/ultisnips'
     Plug 'JuliaEditorSupport/julia-vim'
@@ -39,3 +42,6 @@ call plug#end()
 
 " Julia
 let g:latex_to_unicode_auto = 1
+
+" Color scheme
+colorscheme ayu-mirage

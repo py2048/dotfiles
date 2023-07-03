@@ -59,12 +59,12 @@ local theme = {
 }
 
 local function nvicon()
-    return ''
+    return ''
 end 
 
 local function cwdicon()
     local dirname = vim.fn.fnamemodify(vim.fn.getcwd(), ':t')
-    return ' ' .. dirname .. ' '
+    return '  ' .. dirname .. ' '
 end
 
 local function fileicon(str)
@@ -86,7 +86,7 @@ local function para()
 end
 
 local function vimode(str)
-    return '  ' .. str
+    return '  ' .. str
 end
 
 require('lualine').setup {
