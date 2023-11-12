@@ -11,7 +11,7 @@ function compile(ext)
     @parallel begin
         # Base
         # create_sysimage(["Plots", "OhMyREPL"]; sysimage_path=ENV["HOME"] * "/.local/lib/julia/base." * ext, precompile_statements_file="ohmyrepl_precompile.jl")
-        create_sysimage(["GLMakie", "Makie"]; sysimage_path=ENV["HOME"] * "/.local/lib/julia/base." * ext)
+        create_sysimage(["GLMakie", "CairoMakie", "WGLMakie", "Makie"]; sysimage_path=ENV["HOME"] * "/.local/lib/julia/base." * ext)
         # Main
         create_sysimage(
             [
@@ -23,7 +23,7 @@ function compile(ext)
             ];
             sysimage_path=ENV["HOME"] * "/.local/lib/julia/main." * ext)
         # Plot
-        create_sysimage(["Makie", "CairoMakie", "Pluto", "PlutoUI"]; sysimage_path=ENV["HOME"] * "/.local/lib/julia/plt." * ext)
+        # create_sysimage(["Makie", "CairoMakie", "Pluto", "PlutoUI"]; sysimage_path=ENV["HOME"] * "/.local/lib/julia/plt." * ext)
 
     end
 end
