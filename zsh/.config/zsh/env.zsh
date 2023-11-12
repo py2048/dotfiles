@@ -8,6 +8,7 @@ load_file(){
     [ -f "$1" ] && source "$1"
 }
 
+## PATH
 # Rust
 add_path $HOME/.cargo/bin
 # Node js
@@ -16,11 +17,17 @@ add_path $HOME/.npm-global/bin
 export GOPATH=$HOME/.go
 add_path $GOPATH/bin
 
+# Set PATH for paraview
+# add_path ~/Apps/paraview/egl/bin
+
+# Local executable
+add_path $HOME/.local/bin
+
 
 # MANPAGER
 # export MANPATH="/usr/local/man:$HOME/.local/man:$MANPATH"
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-# export MANPAGER="most"
+# export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANPAGER="most"
 
 # Set language environment
 export LANGUAGE=en_US.UTF-8
@@ -35,6 +42,15 @@ export VISUAL="nvim"
 
 # askpass
 export SUDO_ASKPASS=/usr/lib/seahorse/ssh-askpass
+
+# Load profiles from /usr/local/etc/profile.d
+if test -d /usr/local/etc/profile.d/; then
+	for profile in /usr/local/etc/profile.d/*.sh; do
+		test -r "$profile" && . "$profile"
+	done
+	unset profile
+fi
+
 
 # lf
 load_file ~/.config/lf/lfcd.sh
@@ -79,7 +95,7 @@ alias d="cd ~/repo/dotfiles"
 alias ipy="ipython"
 
 # Julia
-source /usr/local/bin/jl
+load_file /usr/local/bin/jl
 
 # Tree
 alias tree='tree -C'
@@ -107,6 +123,7 @@ alias gl='git log'
 alias gst='git status'
 alias gd='git diff'
 alias gt='gitui'
+
 
 # Custom function
 
@@ -203,18 +220,14 @@ lns() {
 
 # FEAP alias
 alias feap=~/FEAP/ver84/main/feap
+export FEAPHOME8_4=$HOME/FEAP/ver84
+# export FEAPPVHOME5_1=$HOME/FEAP/feappv
 
 # Set env for intel compilers
+# activate all
 intel_activate() { 
-    export FEAPHOME8_4=$HOME/FEAP/ver84
-    export FEAPPVHOME5_1=$HOME/FEAP/feappv
-    load_file /opt/intel/oneapi/compiler/latest/env/vars.sh
-    load_file /opt/intel/oneapi/mkl/latest/env/vars.sh
-}
+    source ~/storage/intel/oneapi/setvars.sh
 
-intel_mpi_activate() {
-    load_file /opt/intel/oneapi/mpi/latest/env/vars.sh
-    load_file /opt/intel/oneapi/tbb/latest/env/vars.sh
     export I_MPI_F90=ifort
     export I_MPI_F77=ifort
     export I_MPI_FC=ifort
@@ -222,17 +235,56 @@ intel_mpi_activate() {
     export I_MPI_CXX=icpc
 }
 
+# activate partial
+intel_env() {
+    load_file ~/intel/oneapi/compiler/latest/env/vars.sh
+    load_file ~/intel/oneapi/mkl/latest/env/vars.sh
+
+    load_file ~/intel/oneapi/mpi/latest/env/vars.sh
+    load_file ~/intel/oneapi/tbb/latest/env/vars.sh
+
+    export I_MPI_F90=ifort
+    export I_MPI_F77=ifort
+    export I_MPI_FC=ifort
+    export I_MPI_CC=icc
+    export I_MPI_CXX=icpc
+}
+
+# active CUDA env
 cuda_activate() {
+    export PATH="/opt/cuda/bin:$PATH"
     export LD_LIBRARY_PATH="/opt/cuda/lib64:$LD_LIBRARY_PATH"
     export C_INCLUDE_PATH="/opt/cuda/include:$C_INCLUDE_PATH"
     export CPLUS_INCLUDE_PATH="/opt/cuda/include:$CPLUS_INCLUDE_PATH"
 }
 
+# NV HPC env
+nvhpc_activate() {
+    # compiler
+    NVARCH=`uname -s`_`uname -m`; export NVARCH
+    NVCOMPILERS=/opt/nvidia/hpc_sdk; export NVCOMPILERS
+    MANPATH=$MANPATH:$NVCOMPILERS/$NVARCH/23.9/compilers/man; export MANPATH
+    PATH=$NVCOMPILERS/$NVARCH/23.9/compilers/bin:$PATH; export PATH
+    # mpi
+    export PATH=$NVCOMPILERS/$NVARCH/23.9/comm_libs/mpi/bin:$PATH
+    export MANPATH=$MANPATH:$NVCOMPILERS/$NVARCH/23.9/comm_libs/mpi/man
+}
 
-# Set PATH for paraview
-# add_path ~/Apps/paraview/egl/bin
+# distrobox
+distrobox-login() {
+    TERM=xterm-256color distrobox-enter "$1" -- bash -l
+}
 
-# Local executable
-add_path $HOME/.local/bin
+ubuntu() {
+    DEAL_II_DIR=/usr/local/opt/dealii TERM=xterm-256color distrobox-enter ubuntu -- bash -l
+}
 
-# custom function
+# tmux feap
+tmux_feap() {
+    tmux_name="feap${1}"
+    if not tmux attach -t $tmux_name; then 
+        tmux new -d -s $tmux_name
+        tmux send-keys -t $tmux_name "intel_activate" Enter
+        tmux attach -t $tmux_name
+    fi
+}
