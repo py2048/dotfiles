@@ -8,5 +8,10 @@
 UUID=99A2-0589                            /boot/efi      vfat    umask=0077 0 2
 UUID=4b21cb15-0bdf-423d-8498-25d949393e2b /              ext4    defaults,noatime 0 1
 
-# Media Server
-192.168.0.116:/home/pi/mnt/Media /home/dquan/Media nfs defaults 0 0
+# NFS (Media Server)
+192.168.0.116:/home/pi/mnt/Media /home/dquan/Media nfs rw,exec,relatime,user,noauto 0 0
+192.168.0.116:/home/pi/mnt /media/pi nfs rw,exec,relatime,user,noauto 0 0
+
+# Internal SSD
+UUID=d6e2f18a-905e-488b-b4b0-6d1b2cb844ba /media/ssd ext4 defaults,user,exec,auto 0 0
+

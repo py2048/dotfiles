@@ -1,0 +1,4 @@
+Defaults passwd_timeout=0
+ALL ALL=NOPASSWD: /usr/local/bin/timesync.sh
+ALL ALL=NOPASSWD: /usr/local/bin/enable_libvirt.sh
+ALL ALL=NOPASSWD: /usr/bin/warp-svc
