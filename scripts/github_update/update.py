@@ -5,11 +5,11 @@ import json
 import os
 
 apps = {
-    'pistol': ['doronbehar/pistol', 'pistol-static-x86_64', 'mv pistol-static-x86_64 pistol'],
-    'deno': [
-        'denoland/deno', 'deno-x86_64-unknown-linux-gnu.zip',
-        'unzip -o deno-x86_64-unknown-linux-gnu.zip && rm deno-x86_64-unknown-linux-gnu.zip'
-    ]
+    'pistol': ['doronbehar/pistol', 'pistol-static-linux-x86_64', 'mv pistol-static-linux-x86_64 pistol'],
+    # 'deno': [
+    #     'denoland/deno', 'deno-x86_64-unknown-linux-gnu.zip',
+    #     'unzip -o deno-x86_64-unknown-linux-gnu.zip && rm deno-x86_64-unknown-linux-gnu.zip'
+    # ]
     # 'onlyoffice': ['ONLYOFFICE/appimage-desktopeditors', 'DesktopEditors-x86_64.AppImage']
 }
 cache_file = os.path.dirname(os.path.abspath(__file__)) + '/latest.json'

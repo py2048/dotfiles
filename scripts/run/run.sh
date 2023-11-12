@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 export LC_NUMERIC="en_US.UTF-8"
-start=$(date +%s.%N)
+export t_start="$(date +%s.%N)"
 
 finish() {
-    end=$(date +%s.%N)
-    dtime=$(printf %.3f "$(bc <<<"$end - $start")")
+    t_end="$(date +%s.%N)"
+    dtime="$(printf %.3f "$(bc <<<"$t_end - $t_start")")"
     echo "[Finished in ${dtime}s]"
 
 }
@@ -17,7 +17,8 @@ F90=${F90:-gfortran}
 PY=${PY:-python3}
 SH=${SH:-zsh}
 CD=${CD:-false}
-JL=${JL:-julia}
+command -v jl &> /dev/null && JL="jl" || JL=${JL:-julia}
+
 
 # src=$(realpath "$1")
 [[ "$1" == *"/"* ]] && src="$1" || src=./"$1"
@@ -27,7 +28,13 @@ ext="${src##*.}"
 
 shebang=$(head -1 "$src")
 sb=$(cut -c 1-2 <<< "$shebang")
-! [ -z "$sb" ] && [ "$sb" = "#!" ] && eval "${shebang##*!} \"$src\"" && finish && exit
+
+if ! [ -z "$sb" ] && [ "$sb" = "#!" ]; then
+    echo -e "\033[0;32m${shebang##*!} \"$src\"\033[0m" 
+    eval "${shebang##*!} \"$src\""
+    finish
+    exit
+fi
 
 case $ext in
     c)
@@ -46,7 +53,7 @@ case $ext in
         $PY -u "$src"
         ;;
     jl)
-        which jl &> /dev/null && jl "$src" ||$JL "$src"
+        $JL -t auto "$src"
         ;;
     sh)
         $SH "$src"

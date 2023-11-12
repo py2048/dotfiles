@@ -5,8 +5,18 @@
         "terminal": false
     },
     {
-        "name": "Restart kmonad",
+        "name": "restart kmonad",
         "command": "systemctl restart --user kbd.service",
+        "terminal": false
+    },
+    {
+        "name": "restart plasma",
+        "command": "plasmashell --replace &",
+        "terminal": false
+    },
+    {
+        "name": "Restart libvirtd",
+        "command": "sudo -i systemctl restart --user libvirtd.service",
         "terminal": false
     },
     {
