@@ -7,4 +7,4 @@ for f in $(ls | grep -v 'install.sh'); do
     f_rp=$(realpath $f)
     ln -sfn "$f_rp" ~/.local/bin
 done
-echo Symlinked macscripts to "$HOME/.local/bin"
+echo Symlinked linuxscripts to "$HOME/.local/bin"
