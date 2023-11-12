@@ -84,10 +84,10 @@ return require('packer').startup(function(use)
     --- Language
     -- Julia support
     use 'JuliaEditorSupport/julia-vim'
-    use {
-        'hasundue/vim-pluto', opt = true, ft = 'julia',
-        requires = {'vim-denops/denops.vim', opt = true}
-    }
+    -- use {
+    --     'hasundue/vim-pluto', opt = true, ft = 'julia',
+    --     requires = {'vim-denops/denops.vim', opt = true}
+    -- }
 
     -- Automatically set up your configuration after cloning packer.nvim
     if packer_bootstrap then

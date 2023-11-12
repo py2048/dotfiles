@@ -2,7 +2,7 @@
 source $HOME/.config/nvim/vim/vplug/fzf.vim
 source $HOME/.config/nvim/vim/vplug/sneak.vim
 source $HOME/.config/nvim/vim/vplug/vsnip.vim
-source $HOME/.config/nvim/vim/vplug/pluto.vim
+" source $HOME/.config/nvim/vim/vplug/pluto.vim
 " source $HOME/.local/share/nvim/site/pack/packer/start/vim-sandwich/macros/sandwich/keymap/surround.vim
 " source $HOME/.config/nvim/vim/vplug/ipython.vim
 " source $HOME/.config/nvim/vim/vplug/table-md.vim
