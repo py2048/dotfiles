@@ -7,7 +7,7 @@ require "plug/cmp"
 require "plug/auto-pairs"
 require "plug/latex-symbols"
 require "plug/lsp-cfg"
-require "plug/null-ls"
+require "plug/guard"
 --
 require "plug/colorizer"
 require "plug/floatterm"
@@ -15,11 +15,28 @@ require "plug/floatterm"
 -- Config
 
 -- Surround
-require("nvim-surround").setup()
+require("nvim-surround").setup({
+    surrounds = {
+        ["}"] = {
+            add = { "{ ", " }" },
+            find = function()
+                return M.get_selection({ motion = "a{" })
+            end,
+            delete = "^(. ?)().-( ?.)()$",
+        },
+        ["{"] = {
+            add = { "{", "}" },
+            find = function()
+                return M.get_selection({ motion = "a}" })
+            end,
+            delete = "^(.)().-(.)()$",
+        }
+    }
+})
 
 -- indent
 vim.opt.list = true
-require("indent_blankline").setup()
+require("ibl").setup()
 
 -- ftFT
 require('eyeliner').setup {

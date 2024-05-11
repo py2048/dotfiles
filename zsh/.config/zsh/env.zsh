@@ -30,11 +30,11 @@ add_path $HOME/.local/bin
 export MANPAGER="most"
 
 # Set language environment
-export LANGUAGE=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-export LC_NUMERIC=en_US.UTF-8
-export LC_CTYPE=en_US.UTF-8
+# export LANGUAGE=en_US.UTF-8
+# export LC_ALL=en_US.UTF-8
+# export LANG=en_US.UTF-8
+# export LC_NUMERIC=en_US.UTF-8
+# export LC_CTYPE=en_US.UTF-8
 
 # Set editor
 export EDITOR='nvim'
@@ -223,10 +223,16 @@ alias feap=~/FEAP/ver84/main/feap
 export FEAPHOME8_4=$HOME/FEAP/ver84
 # export FEAPPVHOME5_1=$HOME/FEAP/feappv
 
+# Lammps potentials
+export LAMMPS_POTENTIALS=/usr/local/share/lammps/potentials
+
 # Set env for intel compilers
+intel_oneapi_dir=/media/ssd/ssd/opt/intel/oneapi
+intel_oneapi_dir=$HOME/intel/oneapi
+
 # activate all
 intel_activate() { 
-    source ~/storage/intel/oneapi/setvars.sh
+    source $intel_oneapi_dir/setvars.sh
 
     export I_MPI_F90=ifort
     export I_MPI_F77=ifort
@@ -237,11 +243,11 @@ intel_activate() {
 
 # activate partial
 intel_env() {
-    load_file ~/intel/oneapi/compiler/latest/env/vars.sh
-    load_file ~/intel/oneapi/mkl/latest/env/vars.sh
+    load_file $intel_oneapi_dir/compiler/latest/env/vars.sh
+    load_file $intel_oneapi_dir/mkl/latest/env/vars.sh
 
-    load_file ~/intel/oneapi/mpi/latest/env/vars.sh
-    load_file ~/intel/oneapi/tbb/latest/env/vars.sh
+    load_file $intel_oneapi_dir/mpi/latest/env/vars.sh
+    load_file $intel_oneapi_dir/tbb/latest/env/vars.sh
 
     export I_MPI_F90=ifort
     export I_MPI_F77=ifort
@@ -277,6 +283,28 @@ distrobox-login() {
 
 ubuntu() {
     DEAL_II_DIR=/usr/local/opt/dealii TERM=xterm-256color distrobox-enter ubuntu -- bash -l
+}
+
+# lmp_run () {
+#     command -v icpx > /dev/null || intel_env
+#     mpiexec -n 8 lmp -k on -sf kk "$@"
+# }
+
+lmp_run () {
+    if command -v icpx > /dev/null; then
+        # mpiexec -n 8 lmp -k on -sf kk "$@"
+        mpiexec -n 8 -sf gpu "$@"
+    else
+        mpiexec -n 8 lmp_cuda -sf gpu "$@"
+    fi
+}
+
+lammps_env() {
+    export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib"
+    unset -f lmp_run
+    alias lmp_run='mpiexec -n 8 lmp -k on -sf kk'
+    mamba activate MD
+    intel_activate
 }
 
 # tmux feap

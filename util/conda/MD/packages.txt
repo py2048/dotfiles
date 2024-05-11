@@ -1,0 +1,1 @@
+ipywidgets joblib jupyterlab matplotlib numba pandas pillow pyvista scipy tqdm trame

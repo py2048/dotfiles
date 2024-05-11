@@ -17,9 +17,9 @@ function compile(ext)
             [
                 "Makie", "GLMakie", "CairoMakie", "WGLMakie",
                 "DataFrames", "CSV",
-                "DifferentialEquations", "MethodOfLines",
-                "ModelingToolkit", "Symbolics",
+                "DifferentialEquations", "Symbolics",
                 "FiniteDifferences", "ForwardDiff",
+                "NonlinearSolve"
             ];
             sysimage_path=ENV["HOME"] * "/.local/lib/julia/main." * ext)
         # Plot

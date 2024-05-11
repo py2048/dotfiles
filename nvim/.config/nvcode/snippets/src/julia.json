@@ -1,0 +1,7 @@
+{
+    "#!/usr/bin/env julia": {
+        "prefix": "env",
+        "body": "#!/usr/bin/env julia\n$0",
+        "description" : "Adds shebang line for default julia compiler."
+    },
+}

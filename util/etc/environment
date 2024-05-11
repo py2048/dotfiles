@@ -3,9 +3,9 @@
 #
 # Syntax: simple "KEY=VAL" pairs on separate lines
 #
-QT_QPA_PLATFORMTHEME=qt5ct
+# QT_QPA_PLATFORMTHEME=qt5ct
 TERMINAL=kitty
-BROWSER=brave
+# BROWSER=brave
 EDITOR=nvim
 GTK_IM_MODULE=ibus
 QT_IM_MODULE=ibus

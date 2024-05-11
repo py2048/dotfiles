@@ -1,0 +1,5 @@
+<Servers>
+  <Server name="Local" configuration="" resource="cs://localhost:11111" timeout="60">
+    <ManualStartup/>
+  </Server>
+</Servers>

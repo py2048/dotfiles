@@ -2,4 +2,5 @@
 . ~/.profile
 
 pactl load-module module-switch-on-connect
+setxkbmap -layout us
 

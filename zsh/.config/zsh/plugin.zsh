@@ -84,8 +84,12 @@ precmd(){
     [ "$?" != 0 ] && status_color="%{$fg[red]%}" || status_color="%{$fg[green]%}"
     # Check conda env
     [ -z $CONDA_DEFAULT_ENV ] && conda_env='' || conda_env="🅒 $CONDA_DEFAULT_ENV"
+    # Check intel env
+    [ -z $INTEL_TARGET_ARCH ] && intel_env='' || intel_env=" intel"
     # Check git
     vcs_info
+    # I-Beam cursor
+    echo -ne '\e[5 q'
 }
 zstyle ':vcs_info:git:*' formats '  %b' # Change git style
 
@@ -100,6 +104,10 @@ PS1+=\$vcs_info_msg_0_
 # Conda
 PS1+=" %{$fg[green]%}"
 PS1+=\$conda_env
+
+# intel
+PS1+=" %{$fg[blue]%}"
+PS1+=\$intel_env
 
 #Optional
 PS1+=\$_optional_env

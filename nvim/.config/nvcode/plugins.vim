@@ -47,10 +47,4 @@ let g:sneak#s_next = 1
 " highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline
 " highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
 
-lua <<EOF
-require('eyeliner').setup {
-    highlight_on_key = true,
-}
-vim.api.nvim_set_hl(0, 'eyelinerprimary', { fg='#d4bfff', bold = true, underline = true })
-vim.api.nvim_set_hl(0, 'eyelinersecondary', { fg='#ffcc66', bold = true, underline = true })
-EOF
+luafile ~/.config/nvcode/plugins.lua

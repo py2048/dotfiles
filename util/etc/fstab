@@ -15,3 +15,6 @@ UUID=4b21cb15-0bdf-423d-8498-25d949393e2b /              ext4    defaults,noatim
 # Internal SSD
 UUID=d6e2f18a-905e-488b-b4b0-6d1b2cb844ba /media/ssd ext4 defaults,user,exec,auto 0 0
 
+# Windows Partition
+UUID=3C0C594B0C5900F6 /media/win ntfs permissions,locale-en_US.utf8 0 2
+

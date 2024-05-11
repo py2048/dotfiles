@@ -68,9 +68,12 @@ return require('packer').startup(function(use)
 
     -- plenary
     use "nvim-lua/plenary.nvim"
-    -- null ls
-    use "jose-elias-alvarez/null-ls.nvim"
 
+    -- Format and lint
+    use {
+        'nvimdev/guard.nvim',
+        requires = {'nvimdev/guard-collection'}
+    }
 
     -- Snippet
     use 'hrsh7th/vim-vsnip'

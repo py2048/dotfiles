@@ -13,6 +13,6 @@
   },
   "bash" : {
     "prefix" : "bash",
-    "body": "${1|#!/usr/bin/env bash,#!/bin/bash|}\n"
+    "body": "#!/usr/bin/env bash\n"
   }
 }

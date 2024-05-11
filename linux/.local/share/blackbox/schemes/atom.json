@@ -1,0 +1,25 @@
+{
+    "name": "Atom",
+    "comment": "Ported for Terminix Colour Scheme",
+    "use-theme-colors": false,
+    "foreground-color": "#979eab",
+    "background-color": "#232731",
+    "palette": [
+        "#282c34",
+        "#e06c75",
+        "#98c379",
+        "#e5c07b",
+        "#61afef",
+        "#875999",
+        "#56b6c2",
+        "#979eab",
+        "#4d5461",
+        "#d19a66",
+        "#56b6c2",
+        "#e5c07b",
+        "#61afef",
+        "#875999",
+        "#56b6c2",
+        "#abb2bf"
+    ]
+}

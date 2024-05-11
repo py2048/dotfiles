@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-systemctl start libvirtd
+systemctl restart libvirtd
 

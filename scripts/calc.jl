@@ -1,4 +1,4 @@
-#!/usr/bin/env -S julia -i -J/home/dquan/.local/lib/julia/calc
+#!/usr/bin/env -S julia -i
 using Unitful
 using PhysicalConstants.CODATA2018: c_0, N_A, k_B, R, G, h, ħ, e, m_e, m_p, atm, ε_0, μ_0
 

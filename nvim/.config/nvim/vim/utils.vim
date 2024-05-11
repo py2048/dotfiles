@@ -1,22 +1,24 @@
 " Formatting
 " Fortran
-au BufWritePre *.f90 silent! lua pcall(vim.lsp.buf.format)
+" au BufWritePre *.f90 silent! lua pcall(vim.lsp.buf.format)
 
 " C auto format
 function! ClangFormat()
     " let l:lines='all'
     if bufname() != "keymap.c"
         " py3f ~/.local/bin/clang-format.py
-        lua pcall(vim.lsp.buf.format)
+        " lua pcall(vim.lsp.buf.format)
+        GuardFmt
     endif
 endfunction
 
-augroup CFormatSave
-    autocmd!
-    autocmd BufWritePre *.c,*.h,*.cc,*.cpp call ClangFormat()
-augroup END
+" augroup CFormatSave
+"     autocmd!
+"     autocmd BufWritePre *.c,*.h,*.cc,*.cpp call ClangFormat()
+" augroup END
 
-au BufWritePre *.py,*.ipy lua pcall(vim.lsp.buf.format)
+" au BufWritePre *.py,*.ipy lua pcall(vim.lsp.buf.format)
+au BufWritePre *.py,*.ipy GuardFmt
 
 
 " Latex files
@@ -24,6 +26,9 @@ au BufRead,BufNewFile *.tex set filetype=latex
 
 " kbd files
 au BufRead,BufNewFile *.kbd set filetype=lisp
+
+" lammps files
+au BufRead,BufNewFile in.*,*.lammps setfiletype lammps
 
 " Set tab
 " autocmd FileType json setlocal shiftwidth=2 softtabstop=2 expandtab
